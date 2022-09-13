@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
-using Xamarin.Essentials;
-using static Xamarin.Essentials.Permissions;
+using Microsoft.Maui.ApplicationModel;
+using static Microsoft.Maui.ApplicationModel.Permissions;
 
 namespace Bit.App.Utilities
 {

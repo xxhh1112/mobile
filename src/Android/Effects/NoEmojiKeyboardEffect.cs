@@ -1,7 +1,8 @@
 ﻿using Android.Widget;
 using Bit.Droid.Effects;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.Android;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Platform.Android;
 
 [assembly: ExportEffect(typeof(NoEmojiKeyboardEffect), nameof(NoEmojiKeyboardEffect))]
 namespace Bit.Droid.Effects

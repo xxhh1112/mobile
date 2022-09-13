@@ -7,7 +7,7 @@ using Bit.App.Resources;
 using Bit.Core.Abstractions;
 using Bit.Core.Models.Domain;
 using Bit.Core.Utilities;
-using Xamarin.Essentials;
+using Microsoft.Maui.Essentials;
 
 namespace Bit.App.Pages
 {

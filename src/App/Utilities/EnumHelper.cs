@@ -3,7 +3,7 @@ using System.Linq;
 using System.Reflection;
 using Bit.App.Resources;
 using Bit.Core.Attributes;
-using Xamarin.CommunityToolkit.Helpers;
+using CommunityToolkit.Maui.Helpers;
 
 namespace Bit.App.Utilities
 {

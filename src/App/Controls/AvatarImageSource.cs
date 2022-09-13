@@ -1,10 +1,10 @@
 ﻿using System;
 using System.IO;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Graphics;
 using SkiaSharp;
-using Xamarin.Forms;
 
 namespace Bit.App.Controls
 {
@@ -69,7 +69,7 @@ namespace Bit.App.Controls
             }
 
             var bgColor = StringToColor(upperData);
-            var textColor = Color.White;
+            var textColor = Color.FromArgb("#ffffffff");
             var size = 50;
 
             using (var bitmap = new SKBitmap(size * 2,
@@ -155,7 +155,7 @@ namespace Bit.App.Controls
         {
             if (str == null)
             {
-                return Color.FromHex("#33ffffff");
+                return Color.FromArgb("#33ffffff");
             }
             var hash = 0;
             for (var i = 0; i < str.Length; i++)

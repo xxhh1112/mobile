@@ -13,8 +13,9 @@ using Bit.Core.Enums;
 using Bit.Core.Models.Domain;
 using Bit.Core.Models.View;
 using Bit.Core.Utilities;
-using Xamarin.CommunityToolkit.ObjectModel;
-using Xamarin.Forms;
+using CommunityToolkit.Maui.ObjectModel;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
 
 namespace Bit.App.Pages
 {
@@ -515,7 +516,7 @@ namespace Bit.App.Pages
 
         public async Task SyncAsync()
         {
-            if (Xamarin.Essentials.Connectivity.NetworkAccess == Xamarin.Essentials.NetworkAccess.None)
+            if (Microsoft.Maui.Networking.Connectivity.NetworkAccess == Microsoft.Maui.Networking.NetworkAccess.None)
             {
                 await _platformUtilsService.ShowDialogAsync(AppResources.InternetConnectionRequiredMessage,
                     AppResources.InternetConnectionRequiredTitle);

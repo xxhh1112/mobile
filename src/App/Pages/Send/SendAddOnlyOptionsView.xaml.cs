@@ -1,8 +1,8 @@
 ﻿using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Bit.App.Behaviors;
-using Xamarin.CommunityToolkit.UI.Views;
-using Xamarin.Forms;
+using CommunityToolkit.Maui.UI.Views;
+using Microsoft.Maui.Controls;
 
 namespace Bit.App.Pages
 {

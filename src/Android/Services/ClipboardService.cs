@@ -6,7 +6,7 @@ using Android.OS;
 using Bit.Core.Abstractions;
 using Bit.Droid.Receivers;
 using Plugin.CurrentActivity;
-using Xamarin.Essentials;
+using Microsoft.Maui.Essentials;
 
 namespace Bit.Droid.Services
 {
@@ -30,7 +30,7 @@ namespace Bit.Droid.Services
         {
             try
             {
-                 // Xamarin.Essentials.Clipboard currently doesn't support the IS_SENSITIVE flag for API 33+
+                 // Microsoft.Maui.Essentials.Clipboard currently doesn't support the IS_SENSITIVE flag for API 33+
                 if ((int)Build.VERSION.SdkInt < 33)
                 {
                     await Clipboard.SetTextAsync(text);

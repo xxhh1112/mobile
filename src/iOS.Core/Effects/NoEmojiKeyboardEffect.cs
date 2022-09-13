@@ -1,8 +1,9 @@
 ﻿using System;
 using Bit.iOS.Core.Effects;
 using UIKit;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.iOS;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Platform.iOS;
 
 [assembly: ExportEffect(typeof(NoEmojiKeyboardEffect), nameof(NoEmojiKeyboardEffect))]
 namespace Bit.iOS.Core.Effects

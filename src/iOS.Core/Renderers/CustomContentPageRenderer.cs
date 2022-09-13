@@ -3,8 +3,9 @@ using System.Linq;
 using System.Reflection;
 using Bit.iOS.Core.Renderers;
 using UIKit;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.iOS;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Platform.iOS;
 
 [assembly: ExportRenderer(typeof(ContentPage), typeof(CustomContentPageRenderer))]
 namespace Bit.iOS.Core.Renderers
@@ -33,7 +34,7 @@ namespace Bit.iOS.Core.Renderers
             var newRightButtons = new List<UIBarButtonItem>();
             foreach (var nativeItem in rightNativeButtons)
             {
-                // Use reflection to get Xamarin private field "_item"
+                // Use reflection to get Maui private field "_item"
                 var field = nativeItem.GetType().GetField("_item", BindingFlags.NonPublic | BindingFlags.Instance);
                 if (field == null)
                 {

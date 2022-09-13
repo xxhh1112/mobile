@@ -17,8 +17,9 @@ using Bit.Core.Models.Data;
 using Bit.Core.Models.View;
 using Bit.Core.Utilities;
 using Newtonsoft.Json;
-using Xamarin.Essentials;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.ApplicationModel.DataTransfer;
+using Microsoft.Maui.Networking;
 
 namespace Bit.App.Utilities
 {
@@ -289,7 +290,7 @@ namespace Bit.App.Utilities
             var deviceActionService = ServiceContainer.Resolve<IDeviceActionService>("deviceActionService");
             var sendService = ServiceContainer.Resolve<ISendService>("sendService");
 
-            if (Connectivity.NetworkAccess == NetworkAccess.None)
+            if (Connectivity.NetworkAccess == Microsoft.Maui.Networking.NetworkAccess.None)
             {
                 await platformUtilsService.ShowDialogAsync(AppResources.InternetConnectionRequiredMessage,
                     AppResources.InternetConnectionRequiredTitle);
@@ -328,7 +329,7 @@ namespace Bit.App.Utilities
             var deviceActionService = ServiceContainer.Resolve<IDeviceActionService>("deviceActionService");
             var sendService = ServiceContainer.Resolve<ISendService>("sendService");
 
-            if (Connectivity.NetworkAccess == NetworkAccess.None)
+            if (Connectivity.NetworkAccess == Microsoft.Maui.Networking.NetworkAccess.None)
             {
                 await platformUtilsService.ShowDialogAsync(AppResources.InternetConnectionRequiredMessage,
                     AppResources.InternetConnectionRequiredTitle);

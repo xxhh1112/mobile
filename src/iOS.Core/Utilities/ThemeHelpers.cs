@@ -1,6 +1,6 @@
 ﻿using Bit.App.Utilities;
 using UIKit;
-using Xamarin.Forms.Platform.iOS;
+using Microsoft.Maui.Platform.iOS;
 
 namespace Bit.iOS.Core.Utilities
 {

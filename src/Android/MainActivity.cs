@@ -19,7 +19,7 @@ using Bit.Core.Enums;
 using Bit.Core.Utilities;
 using Bit.Droid.Receivers;
 using Bit.Droid.Utilities;
-using Xamarin.Essentials;
+using Microsoft.Maui.Essentials;
 using ZXing.Net.Mobile.Android;
 using FileProvider = AndroidX.Core.Content.FileProvider;
 
@@ -83,8 +83,8 @@ namespace Bit.Droid
                 toplayout.FilterTouchesWhenObscured = true;
             }
 
-            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
-            Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            Microsoft.Maui.Essentials.Platform.Init(this, savedInstanceState);
+            Microsoft.Maui.Init(this, savedInstanceState);
             _appOptions = GetOptions();
             LoadApplication(new App.App(_appOptions));
             DisableAndroidFontScale();
@@ -127,7 +127,7 @@ namespace Bit.Droid
         protected override void OnResume()
         {
             base.OnResume();
-            Xamarin.Essentials.Platform.OnResume();
+            Microsoft.Maui.Essentials.Platform.OnResume();
             AppearanceAdjustments();
 
             ThemeManager.UpdateThemeOnPagesAsync();
@@ -206,7 +206,7 @@ namespace Bit.Droid
             }
             else
             {
-                Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+                Microsoft.Maui.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
                 PermissionsHandler.OnRequestPermissionsResult(requestCode, permissions, grantResults);
             }
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);

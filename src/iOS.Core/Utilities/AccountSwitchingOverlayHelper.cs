@@ -4,8 +4,9 @@ using Bit.App.Controls;
 using Bit.Core.Abstractions;
 using Bit.Core.Utilities;
 using UIKit;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.iOS;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Platform.iOS;
 
 namespace Bit.iOS.Core.Utilities
 {

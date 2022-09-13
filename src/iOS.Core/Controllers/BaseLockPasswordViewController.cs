@@ -14,7 +14,8 @@ using Bit.iOS.Core.Utilities;
 using Bit.iOS.Core.Views;
 using Foundation;
 using UIKit;
-using Xamarin.Forms;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
 
 namespace Bit.iOS.Core.Controllers
 {

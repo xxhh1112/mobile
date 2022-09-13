@@ -9,8 +9,9 @@ using Bit.Core;
 using Bit.Core.Abstractions;
 using Bit.Core.Exceptions;
 using Bit.Core.Utilities;
-using Xamarin.CommunityToolkit.ObjectModel;
-using Xamarin.Forms;
+using CommunityToolkit.Maui.ObjectModel;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Networking;
 
 namespace Bit.App.Pages
 {
@@ -120,7 +121,7 @@ namespace Bit.App.Pages
 
         public async Task LogInAsync(bool showLoading = true, bool checkForExistingAccount = false)
         {
-            if (Xamarin.Essentials.Connectivity.NetworkAccess == Xamarin.Essentials.NetworkAccess.None)
+            if (Connectivity.NetworkAccess == NetworkAccess.None)
             {
                 await _platformUtilsService.ShowDialogAsync(AppResources.InternetConnectionRequiredMessage,
                     AppResources.InternetConnectionRequiredTitle, AppResources.Ok);

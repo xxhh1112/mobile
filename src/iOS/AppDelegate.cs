@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AuthenticationServices;
+using Bit.App;
 using Bit.App.Abstractions;
 using Bit.App.Pages;
 using Bit.App.Services;
@@ -16,13 +17,14 @@ using Bit.iOS.Services;
 using CoreNFC;
 using Foundation;
 using UIKit;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.iOS;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Platform.iOS;
 
 namespace Bit.iOS
 {
     [Register("AppDelegate")]
-    public partial class AppDelegate : FormsApplicationDelegate
+    public partial class AppDelegate : MauiUIApplicationDelegate
     {
         const int SPLASH_VIEW_TAG = 4321;
 
@@ -40,6 +42,8 @@ namespace Bit.iOS
         private IStorageService _storageService;
         private IStateService _stateService;
         private IEventService _eventService;
+
+        protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
 
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
@@ -235,13 +239,13 @@ namespace Bit.iOS
 
         public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
         {
-            return Xamarin.Essentials.Platform.OpenUrl(app, url, options);
+            return Microsoft.Maui.Essentials.Platform.OpenUrl(app, url, options);
         }
 
         public override bool ContinueUserActivity(UIApplication application, NSUserActivity userActivity,
             UIApplicationRestorationHandler completionHandler)
         {
-            if (Xamarin.Essentials.Platform.ContinueUserActivity(application, userActivity, completionHandler))
+            if (Microsoft.Maui.Essentials.Platform.ContinueUserActivity(application, userActivity, completionHandler))
             {
                 return true;
             }

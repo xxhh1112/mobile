@@ -16,7 +16,8 @@ using Bit.iOS.Core.Services;
 using CoreNFC;
 using Foundation;
 using UIKit;
-using Xamarin.Forms;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
 
 namespace Bit.iOS.Core.Utilities
 {

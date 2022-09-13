@@ -1,8 +1,9 @@
 ﻿using Android.Views;
 using Bit.Droid.Effects;
 using Google.Android.Material.BottomNavigation;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.Android;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Platform.Android;
 
 [assembly: ResolutionGroupName("Bitwarden")]
 [assembly: ExportEffect(typeof(TabBarEffect), "TabBarEffect")]

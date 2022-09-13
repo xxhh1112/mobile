@@ -1,7 +1,8 @@
 ﻿using Foundation;
 using WebKit;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.iOS;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Platform.iOS;
 using Bit.App.Controls;
 using Bit.iOS.Core.Renderers;
 using System.ComponentModel;

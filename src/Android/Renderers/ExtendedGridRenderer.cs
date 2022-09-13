@@ -1,8 +1,9 @@
 ﻿using Android.Content;
 using Bit.App.Controls;
 using Bit.Droid.Renderers;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.Android;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Platform.Android;
 
 [assembly: ExportRenderer(typeof(ExtendedGrid), typeof(ExtendedGridRenderer))]
 namespace Bit.Droid.Renderers

@@ -10,8 +10,8 @@ using Bit.Core.Enums;
 using Bit.Core.Models.Domain;
 using Bit.Core.Models.Request;
 using Bit.Core.Utilities;
-using Xamarin.CommunityToolkit.Helpers;
-using Xamarin.Forms;
+using CommunityToolkit.Maui.Helpers;
+using Microsoft.Maui.Controls;
 
 namespace Bit.App.Pages
 {

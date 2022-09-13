@@ -4,7 +4,7 @@ using System.Windows.Input;
 using Bit.App.Resources;
 using Bit.Core.Abstractions;
 using Bit.Core.Utilities;
-using Xamarin.CommunityToolkit.ObjectModel;
+using CommunityToolkit.Maui.ObjectModel;
 
 namespace Bit.App.Pages
 {

@@ -1,12 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<pages:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<pages:BaseContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="Bit.App.Pages.GroupingsPage"
     xmlns:pages="clr-namespace:Bit.App.Pages"
     xmlns:u="clr-namespace:Bit.App.Utilities"
     xmlns:effects="clr-namespace:Bit.App.Effects"
     xmlns:controls="clr-namespace:Bit.App.Controls"
-    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
     xmlns:core="clr-namespace:Bit.Core;assembly=BitwardenCore"
     x:DataType="pages:GroupingsPageViewModel"
     Title="{Binding PageTitle}"

@@ -12,8 +12,9 @@ using Bit.Core.Enums;
 using Bit.Core.Models.Data;
 using Bit.Core.Services;
 using Bit.Core.Utilities;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Bit.App
@@ -307,7 +308,7 @@ namespace Bit.App
 
         private void SyncIfNeeded()
         {
-            if (Xamarin.Essentials.Connectivity.NetworkAccess == Xamarin.Essentials.NetworkAccess.None)
+            if (Microsoft.Maui.Networking.Connectivity.NetworkAccess == Microsoft.Maui.Networking.NetworkAccess.None)
             {
                 return;
             }

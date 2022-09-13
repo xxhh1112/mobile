@@ -12,8 +12,9 @@ using Bit.Core.Enums;
 using Bit.Core.Exceptions;
 using Bit.Core.Models.View;
 using Bit.Core.Utilities;
-using Xamarin.CommunityToolkit.ObjectModel;
-using Xamarin.Forms;
+using CommunityToolkit.Maui.ObjectModel;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
 
 namespace Bit.App.Pages
 {
@@ -193,7 +194,7 @@ namespace Bit.App.Pages
                 {
                     var options = new List<string> { AppResources.Yes };
                     if (cipher.Type == CipherType.Login &&
-                        Xamarin.Essentials.Connectivity.NetworkAccess != Xamarin.Essentials.NetworkAccess.None)
+                        Microsoft.Maui.Networking.Connectivity.NetworkAccess != Microsoft.Maui.Networking.NetworkAccess.None)
                     {
                         options.Add(AppResources.YesAndSave);
                     }

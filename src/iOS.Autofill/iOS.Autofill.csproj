@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
+    <UseMaui>true</UseMaui>
+    <TargetFramework>net6.0-ios</TargetFramework>
+    <OutputType>Exe</OutputType>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProjectGuid>{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}</ProjectGuid>
@@ -199,7 +202,7 @@
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
-    <Reference Include="Xamarin.iOS" />
+    <!--<Reference Include="Xamarin.iOS" />-->
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\App\App.csproj">
@@ -266,7 +269,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AppCenter.Crashes">
-      <Version>4.4.0</Version>
+      <Version>4.5.3</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
@@ -278,5 +281,4 @@
   <ItemGroup>
     <BundleResource Include="Resources\yubikey%403x.png" />
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.AppExtension.CSharp.targets" />
 </Project>

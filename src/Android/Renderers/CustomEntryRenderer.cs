@@ -7,8 +7,9 @@ using Android.Views.InputMethods;
 using Android.Widget;
 using Bit.Droid.Renderers;
 using Bit.Droid.Utilities;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.Android;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Platform.Android;
 
 [assembly: ExportRenderer(typeof(Entry), typeof(CustomEntryRenderer))]
 namespace Bit.Droid.Renderers

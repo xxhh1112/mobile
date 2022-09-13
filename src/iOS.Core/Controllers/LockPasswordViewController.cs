@@ -13,7 +13,8 @@ using Bit.Core.Models.Domain;
 using Bit.Core.Enums;
 using Bit.App.Pages;
 using Bit.App.Models;
-using Xamarin.Forms;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
 using Bit.Core;
 
 namespace Bit.iOS.Core.Controllers

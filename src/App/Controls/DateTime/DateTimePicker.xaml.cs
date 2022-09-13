@@ -1,6 +1,7 @@
 ﻿using System.Runtime.CompilerServices;
-using Xamarin.CommunityToolkit.UI.Views;
-using Xamarin.Forms;
+using CommunityToolkit.Maui;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
 
 namespace Bit.App.Controls
 {

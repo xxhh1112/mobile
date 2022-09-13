@@ -3,7 +3,8 @@ using Bit.Core.Abstractions;
 using Foundation;
 using MobileCoreServices;
 using UIKit;
-using Xamarin.Forms;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
 
 namespace Bit.iOS.Core.Services
 {

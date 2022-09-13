@@ -3,7 +3,7 @@ using Bit.App.Controls;
 using Bit.Core.Services;
 using Foundation;
 using UIKit;
-using Xamarin.Forms.Platform.iOS;
+using Microsoft.Maui.Platform.iOS;
 
 namespace Bit.iOS.Core.Renderers.CollectionView
 {

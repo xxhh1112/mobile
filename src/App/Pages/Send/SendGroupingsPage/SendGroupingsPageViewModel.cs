@@ -10,9 +10,10 @@ using Bit.Core.Abstractions;
 using Bit.Core.Enums;
 using Bit.Core.Models.View;
 using Bit.Core.Utilities;
-using Xamarin.CommunityToolkit.ObjectModel;
-using Xamarin.Essentials;
-using Xamarin.Forms;
+using CommunityToolkit.Maui.ObjectModel;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Networking;
 using DeviceType = Bit.Core.Enums.DeviceType;
 
 namespace Bit.App.Pages

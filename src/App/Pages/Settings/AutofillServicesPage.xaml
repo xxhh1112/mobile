@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <pages:BaseContentPage 
-    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="Bit.App.Pages.AutofillServicesPage"
     xmlns:pages="clr-namespace:Bit.App.Pages"
+    xmlns:compat="clr-namespace:Microsoft.Maui.Controls.Compatibility;assembly=Microsoft.Maui.Controls"
     xmlns:u="clr-namespace:Bit.App.Utilities"
     x:DataType="pages:AutofillServicesPageViewModel"
     Title="{Binding PageTitle}">
@@ -21,7 +22,7 @@
                         Text="{u:I18n AutofillService}"
                         StyleClass="box-label-regular"
                         HorizontalOptions="StartAndExpand" />
-                    <RelativeLayout HorizontalOptions="End">
+                    <compat:RelativeLayout HorizontalOptions="End">
                         <Switch
                             x:Name="AutofillServiceSwitch"
                             IsToggled="{Binding AutofillServiceToggled}"
@@ -34,7 +35,7 @@
                             RelativeLayout.YConstraint="0"
                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToView, ElementName=AutofillServiceSwitch, Property=Width}"
                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToView, ElementName=AutofillServiceSwitch, Property=Height}" />
-                    </RelativeLayout>
+                    </compat:RelativeLayout>
                 </StackLayout>
                 <Label
                     Text="{u:I18n AutofillServiceDescription}"
@@ -49,7 +50,7 @@
                         StyleClass="box-label-regular"
                         IsEnabled="{Binding InlineAutofillEnabled}"
                         HorizontalOptions="StartAndExpand" />
-                    <RelativeLayout HorizontalOptions="End">
+                    <compat:RelativeLayout HorizontalOptions="End">
                         <Switch
                             x:Name="InlineAutofillSwitch"
                             IsEnabled="{Binding InlineAutofillEnabled}"
@@ -63,7 +64,7 @@
                             RelativeLayout.YConstraint="0"
                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToView, ElementName=InlineAutofillSwitch, Property=Width}"
                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToView, ElementName=InlineAutofillSwitch, Property=Height}" />
-                    </RelativeLayout>
+                    </compat:RelativeLayout>
                 </StackLayout>
                 <Label
                     Text="{u:I18n InlineAutofillDescription}"
@@ -76,7 +77,7 @@
                         Text="{u:I18n Accessibility}"
                         StyleClass="box-label-regular"
                         HorizontalOptions="StartAndExpand" />
-                    <RelativeLayout HorizontalOptions="End">
+                    <compat:RelativeLayout HorizontalOptions="End">
                         <Switch
                             x:Name="AccessibilitySwitch"
                             IsToggled="{Binding AccessibilityToggled}"
@@ -89,7 +90,7 @@
                             RelativeLayout.YConstraint="0"
                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToView, ElementName=AccessibilitySwitch, Property=Width}"
                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToView, ElementName=AccessibilitySwitch, Property=Height}" />
-                    </RelativeLayout>
+                    </compat:RelativeLayout>
                 </StackLayout>
                 <Label
                     Text="{Binding AccessibilityDescriptionLabel}"
@@ -104,7 +105,7 @@
                         StyleClass="box-label-regular"
                         IsEnabled="{Binding DrawOverEnabled}"
                         HorizontalOptions="StartAndExpand" />
-                    <RelativeLayout HorizontalOptions="End">
+                    <compat:RelativeLayout HorizontalOptions="End">
                         <Switch
                             x:Name="DrawOverSwitch"
                             IsEnabled="{Binding DrawOverEnabled}"
@@ -118,7 +119,7 @@
                             RelativeLayout.YConstraint="0"
                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToView, ElementName=DrawOverSwitch, Property=Width}"
                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToView, ElementName=DrawOverSwitch, Property=Height}" />
-                    </RelativeLayout>
+                    </compat:RelativeLayout>
                 </StackLayout>
                 <Label
                     Text="{Binding DrawOverDescriptionLabel}"

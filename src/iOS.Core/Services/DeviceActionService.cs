@@ -16,7 +16,8 @@ using LocalAuthentication;
 using MobileCoreServices;
 using Photos;
 using UIKit;
-using Xamarin.Forms;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
 
 namespace Bit.iOS.Core.Services
 {
@@ -42,7 +43,7 @@ namespace Bit.iOS.Core.Services
             {
                 if (string.IsNullOrWhiteSpace(_userAgent))
                 {
-                    _userAgent = $"Bitwarden_Mobile/{Xamarin.Essentials.AppInfo.VersionString} " +
+                    _userAgent = $"Bitwarden_Mobile/{Microsoft.Maui.Essentials.AppInfo.VersionString} " +
                         $"(iOS {UIDevice.CurrentDevice.SystemVersion}; Model {UIDevice.CurrentDevice.Model})";
                 }
                 return _userAgent;

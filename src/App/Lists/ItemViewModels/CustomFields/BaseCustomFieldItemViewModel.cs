@@ -1,7 +1,8 @@
 ﻿using System.Windows.Input;
 using Bit.Core.Models.View;
 using Bit.Core.Utilities;
-using Xamarin.Forms;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
 
 namespace Bit.App.Lists.ItemViewModels.CustomFields
 {
