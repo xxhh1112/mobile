@@ -203,7 +203,7 @@ namespace Bit.App.Pages
             }
         }
 
-        public bool ShowUpgradePremiumTotpText => !CanAccessPremium && ShowTotp;
+        public bool ShowUpgradePremiumTotpText => !CanAccessPremium && !Cipher.OrganizationUseTotp && ShowTotp;
         public bool ShowUris => IsLogin && Cipher.Login.HasUris;
         public bool ShowIdentityAddress => IsIdentity && (
             !string.IsNullOrWhiteSpace(Cipher.Identity.Address1) ||
@@ -217,7 +217,7 @@ namespace Bit.App.Pages
         public string PasswordVisibilityAccessibilityText => ShowPassword ? AppResources.PasswordIsVisibleTapToHide : AppResources.PasswordIsNotVisibleTapToShow;
         public string TotpCodeFormatted
         {
-            get => _canAccessPremium ? _totpCodeFormatted : string.Empty;
+            get => ShowUpgradePremiumTotpText ? string.Empty : _totpCodeFormatted;
             set => SetProperty(ref _totpCodeFormatted, value,
                 additionalPropertyNames: new string[]
                 {

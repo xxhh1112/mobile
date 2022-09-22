@@ -52,14 +52,6 @@ namespace Bit.App.Pages
             }
         }
 
-        private async void Save_Clicked(object sender, EventArgs e)
-        {
-            if (DoOnce())
-            {
-                await _vm.SubmitAsync();
-            }
-        }
-
         private async void ChooseFile_Clicked(object sender, EventArgs e)
         {
             if (DoOnce())
