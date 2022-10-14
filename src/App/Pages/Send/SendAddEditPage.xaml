@@ -17,8 +17,8 @@
     </ContentPage.BindingContext>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="{u:I18n Save}" Clicked="Save_Clicked" Order="Primary"
-                     x:Key="saveItem" x:Name="_saveItem"/>
+        <!--x:Key="saveItem"-->
+        <ToolbarItem Text="{u:I18n Save}" Clicked="Save_Clicked" Order="Primary" x:Name="_saveItem"/>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Resources>
@@ -28,7 +28,7 @@
             <u:IsNotNullConverter x:Key="notNull" />
             <ToolbarItem Text="{u:I18n Cancel}" Clicked="Close_Clicked" Order="Primary" Priority="-1"
                          x:Key="closeItem" x:Name="_closeItem" />
-            <ToolbarItem Icon="more_vert.png" Clicked="More_Clicked" Order="Primary" x:Name="_moreItem"
+            <ToolbarItem IconImageSource="more_vert.png" Clicked="More_Clicked" Order="Primary" x:Name="_moreItem"
                          x:Key="moreItem"
                          AutomationProperties.IsInAccessibleTree="True"
                          AutomationProperties.Name="{u:I18n Options}" />
@@ -60,25 +60,29 @@
             <ScrollView x:Key="scrollView" x:Name="_scrollView">
                 <StackLayout Spacing="20">
                     <StackLayout StyleClass="box">
+                        
+                        <!-- TODO: [MAUI-Migration] Check if border color is ok, it was Accent before-->
                         <Frame
                             IsVisible="{Binding SendEnabled, Converter={StaticResource inverseBool}}"
                             Padding="10"
                             Margin="0, 12, 0, 0"
                             HasShadow="False"
                             BackgroundColor="Transparent"
-                            BorderColor="Accent">
+                            BorderColor="{DynamicResource PrimaryColor}">
                             <Label
                                 Text="{u:I18n SendDisabledWarning}"
                                 StyleClass="text-muted, text-sm, text-bold"
                                 HorizontalTextAlignment="Center" />
                         </Frame>
+                        
+                        <!-- TODO: [MAUI-Migration] Check if border color is ok, it was Accent before-->
                         <Frame
                             IsVisible="{Binding SendOptionsPolicyInEffect}"
                             Padding="10"
                             Margin="0, 12, 0, 0"
                             HasShadow="False"
                             BackgroundColor="Transparent"
-                            BorderColor="Accent">
+                            BorderColor="{DynamicResource PrimaryColor}">
                             <Label
                                 Text="{u:I18n SendOptionsPolicyInEffect}"
                                 StyleClass="text-muted, text-sm, text-bold"
@@ -250,12 +254,19 @@
                                 HorizontalOptions="End"
                                 Margin="10,0,0,0" />
                         </StackLayout>
+
+                        
+                        <!-- TODO: [MAUI-Migration] Check touch command works
+                        xct:TouchEffect.Command="{Binding ToggleOptionsCommand}"
+                        -->
                         <StackLayout
                             Orientation="Horizontal"
                             Spacing="0"
-                            xct:TouchEffect.Command="{Binding ToggleOptionsCommand}"
                             AutomationProperties.IsInAccessibleTree="True"
                             AutomationProperties.Name="{Binding OptionsAccessilibityText}">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ToggleOptionsCommand}" />
+                            </StackLayout.GestureRecognizers>
                             <Button
                                 Text="{u:I18n Options}"
                                 x:Name="_btnOptions"

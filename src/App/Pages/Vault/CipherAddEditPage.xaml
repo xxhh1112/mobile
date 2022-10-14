@@ -40,7 +40,7 @@
                          x:Name="_shareItem"
                          Clicked="Share_Clicked"
                          Order="Secondary" />
-            <ToolbarItem Icon="more_vert.png" Clicked="More_Clicked" Order="Primary" x:Name="_moreItem"
+            <ToolbarItem IconImageSource="more_vert.png" Clicked="More_Clicked" Order="Primary" x:Name="_moreItem"
                          x:Key="moreItem"
                          AutomationProperties.IsInAccessibleTree="True"
                          AutomationProperties.Name="{u:I18n Options}" />
@@ -92,11 +92,12 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
+                    <!--TODO: [MAUI-Migration] Border Accent-->
                     <Frame Padding="10"
                            Margin="0"
                            HasShadow="False"
                            BackgroundColor="Transparent"
-                           BorderColor="Accent">
+                           BorderColor="{DynamicResource PrimaryColor}">
                         <Label
                             Text="{u:I18n PersonalOwnershipPolicyInEffect}"
                             StyleClass="text-muted, text-sm, text-bold"

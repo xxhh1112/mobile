@@ -13,7 +13,6 @@ using Bit.Core.Exceptions;
 using Bit.Core.Models.Request;
 using Bit.Core.Utilities;
 using Newtonsoft.Json;
-using CommunityToolkit.Maui.ObjectModel;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Authentication;
 

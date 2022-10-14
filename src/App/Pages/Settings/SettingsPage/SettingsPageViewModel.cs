@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 using Bit.App.Abstractions;
 using Bit.App.Pages.Accounts;
 using Bit.App.Resources;
+using Bit.App.Utilities;
 using Bit.Core.Abstractions;
 using Bit.Core.Enums;
 using Bit.Core.Models.Domain;
 using Bit.Core.Utilities;
-using CommunityToolkit.Maui.ObjectModel;
 using Microsoft.Maui.Controls;
 
 namespace Bit.App.Pages
@@ -92,7 +92,7 @@ namespace Bit.App.Pages
 
         public ObservableRangeCollection<ISettingsPageListItem> GroupedItems { get; set; }
 
-        public IAsyncCommand<SettingsPageListItem> ExecuteSettingItemCommand { get; }
+        public AsyncCommand<SettingsPageListItem> ExecuteSettingItemCommand { get; }
 
         public async Task InitAsync()
         {

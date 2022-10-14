@@ -2,11 +2,11 @@
 using System.Threading.Tasks;
 using Bit.App.Abstractions;
 using Bit.App.Resources;
+using Bit.App.Utilities;
 using Bit.Core.Abstractions;
 using Bit.Core.Exceptions;
 using Bit.Core.Models.View;
 using Bit.Core.Utilities;
-using CommunityToolkit.Maui.ObjectModel;
 
 namespace Bit.App.Pages
 {

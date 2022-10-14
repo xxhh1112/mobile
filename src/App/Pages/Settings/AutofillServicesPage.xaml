@@ -31,10 +31,10 @@
                         <Button
                             Clicked="ToggleAutofillService"
                             StyleClass="box-overlay"
-                            RelativeLayout.XConstraint="0"
-                            RelativeLayout.YConstraint="0"
-                            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToView, ElementName=AutofillServiceSwitch, Property=Width}"
-                            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToView, ElementName=AutofillServiceSwitch, Property=Height}" />
+                            compat:RelativeLayout.XConstraint="0"
+                            compat:RelativeLayout.YConstraint="0"
+                            compat:RelativeLayout.WidthConstraint="{compat:ConstraintExpression Type=RelativeToView, ElementName=AutofillServiceSwitch, Property=Width}"
+                            compat:RelativeLayout.HeightConstraint="{compat:ConstraintExpression Type=RelativeToView, ElementName=AutofillServiceSwitch, Property=Height}" />
                     </compat:RelativeLayout>
                 </StackLayout>
                 <Label
@@ -60,10 +60,10 @@
                         <Button
                             Clicked="ToggleInlineAutofill"
                             StyleClass="box-overlay"
-                            RelativeLayout.XConstraint="0"
-                            RelativeLayout.YConstraint="0"
-                            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToView, ElementName=InlineAutofillSwitch, Property=Width}"
-                            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToView, ElementName=InlineAutofillSwitch, Property=Height}" />
+                            compat:RelativeLayout.XConstraint="0"
+                            compat:RelativeLayout.YConstraint="0"
+                            compat:RelativeLayout.WidthConstraint="{compat:ConstraintExpression Type=RelativeToView, ElementName=InlineAutofillSwitch, Property=Width}"
+                            compat:RelativeLayout.HeightConstraint="{compat:ConstraintExpression Type=RelativeToView, ElementName=InlineAutofillSwitch, Property=Height}" />
                     </compat:RelativeLayout>
                 </StackLayout>
                 <Label
@@ -86,10 +86,10 @@
                         <Button
                             Clicked="ToggleAccessibility"
                             StyleClass="box-overlay"
-                            RelativeLayout.XConstraint="0"
-                            RelativeLayout.YConstraint="0"
-                            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToView, ElementName=AccessibilitySwitch, Property=Width}"
-                            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToView, ElementName=AccessibilitySwitch, Property=Height}" />
+                            compat:RelativeLayout.XConstraint="0"
+                            compat:RelativeLayout.YConstraint="0"
+                            compat:RelativeLayout.WidthConstraint="{compat:ConstraintExpression Type=RelativeToView, ElementName=AccessibilitySwitch, Property=Width}"
+                            compat:RelativeLayout.HeightConstraint="{compat:ConstraintExpression Type=RelativeToView, ElementName=AccessibilitySwitch, Property=Height}" />
                     </compat:RelativeLayout>
                 </StackLayout>
                 <Label
@@ -115,10 +115,10 @@
                         <Button
                             Clicked="ToggleDrawOver"
                             StyleClass="box-overlay"
-                            RelativeLayout.XConstraint="0"
-                            RelativeLayout.YConstraint="0"
-                            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToView, ElementName=DrawOverSwitch, Property=Width}"
-                            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToView, ElementName=DrawOverSwitch, Property=Height}" />
+                            compat:RelativeLayout.XConstraint="0"
+                            compat:RelativeLayout.YConstraint="0"
+                            compat:RelativeLayout.WidthConstraint="{compat:ConstraintExpression Type=RelativeToView, ElementName=DrawOverSwitch, Property=Width}"
+                            compat:RelativeLayout.HeightConstraint="{compat:ConstraintExpression Type=RelativeToView, ElementName=DrawOverSwitch, Property=Height}" />
                     </compat:RelativeLayout>
                 </StackLayout>
                 <Label

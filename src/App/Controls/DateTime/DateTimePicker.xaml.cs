@@ -29,7 +29,9 @@ namespace Bit.App.Controls
         }
     }
 
-    public class LazyDateTimePicker : LazyView<DateTimePicker>
-    {
-    }
+
+    // TODO: [MAUI-Migration] [Critical]
+    //public class LazyDateTimePicker : LazyView<DateTimePicker>
+    //{
+    //}
 }

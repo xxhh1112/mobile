@@ -6,7 +6,6 @@ using Bit.App.Utilities;
 using Bit.Core.Abstractions;
 using Bit.Core.Models.View;
 using Bit.Core.Utilities;
-using CommunityToolkit.Maui.ObjectModel;
 using Microsoft.Maui.Controls;
 
 namespace Bit.App.Controls

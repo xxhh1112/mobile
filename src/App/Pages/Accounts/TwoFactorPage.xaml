@@ -25,7 +25,7 @@
             <ToolbarItem 
                 x:Name="_moreItem"
                 x:Key="moreItem"
-                Icon="more_vert.png"
+                IconImageSource="more_vert.png"
                 Order="Primary"
                 Command="{Binding MoreCommand}"
                 AutomationProperties.IsInAccessibleTree="True"

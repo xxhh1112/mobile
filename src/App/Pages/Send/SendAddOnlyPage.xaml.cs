@@ -169,11 +169,12 @@ namespace Bit.App.Pages
         {
             _vm.ToggleOptionsCommand.Execute(null);
 
-            if (!_lazyOptionsView.IsLoaded)
-            {
-                _lazyOptionsView.MainScrollView = _scrollView;
-                _lazyOptionsView.LoadViewAsync();
-            }
+            // TODO: [MAUI-Migration] [Critical]
+            //if (!_lazyOptionsView.IsLoaded)
+            //{
+            //    _lazyOptionsView.MainScrollView = _scrollView;
+            //    _lazyOptionsView.LoadViewAsync();
+            //}
         }
     }
 }

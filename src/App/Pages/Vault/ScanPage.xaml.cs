@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Bit.App.Utilities;
@@ -8,6 +9,11 @@ using Bit.Core.Abstractions;
 using Bit.Core.Utilities;
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
+using Microsoft.Maui.Devices;
+using Microsoft.Maui.Graphics;
+using SkiaSharp;
+using SkiaSharp.Views.Maui;
+using ZXing.Net.Maui;
 
 namespace Bit.App.Pages
 {
@@ -31,10 +37,10 @@ namespace Bit.App.Pages
         {
             _callback = callback;
             InitializeComponent();
-            _zxing.Options = new ZXing.Mobile.MobileBarcodeScanningOptions
+            _zxing.Options = new ZXing.Net.Maui.BarcodeReaderOptions
             {
-                UseNativeScanning = true,
-                PossibleFormats = new List<ZXing.BarcodeFormat> { ZXing.BarcodeFormat.QR_CODE },
+                //UseNativeScanning = true,
+                Formats = BarcodeFormat.QrCode,
                 AutoRotate = false,
                 TryInverted = true
             };
@@ -53,7 +59,9 @@ namespace Bit.App.Pages
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            _zxing.IsScanning = true;
+
+            // TODO: [MAUI-Migration] [Critical]
+            //_zxing.IsScanning = true;
 
             // Fix for Autofocus, now it's done every 2 seconds so that the user does't have to do it
             // https://github.com/Redth/ZXing.Net.Mobile/issues/414
@@ -103,18 +111,29 @@ namespace Bit.App.Pages
             {
                 await _continuousAutofocusTask;
             }
-            _zxing.IsScanning = false;
+
+            // TODO: [MAUI-Migration] [Critical]
+            //_zxing.IsScanning = false;
             _pageIsActive = false;
             base.OnDisappearing();
         }
 
-        private async void OnScanResult(ZXing.Result result)
+        // TODO: [MAUI-Migration] [Critical]
+        private async void _zxing_BarcodesDetected(System.Object sender, ZXing.Net.Maui.BarcodeDetectionEventArgs e)
         {
             try
             {
+                if (!e.Results.Any())
+                {
+                    return;
+                }
+                var result = e.Results[0];
+
                 // Stop analysis until we navigate away so we don't keep reading barcodes
-                _zxing.IsAnalyzing = false;
-                var text = result?.Text;
+
+                // TODO: [MAUI-Migration] [Critical]
+                //_zxing.IsAnalyzing = false;
+                var text = result?.Value;
                 if (!string.IsNullOrWhiteSpace(text))
                 {
                     if (text.StartsWith("otpauth://totp"))
@@ -155,7 +174,8 @@ namespace Bit.App.Pages
             _qrcodeFound = true;
             Vibration.Vibrate();
             await Task.Delay(1000);
-            _zxing.IsScanning = false;
+            // TODO: [MAUI-Migration] [Critical]
+            //_zxing.IsScanning = false;
         }
 
         private async void Close_Clicked(object sender, System.EventArgs e)

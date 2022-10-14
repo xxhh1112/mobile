@@ -4,13 +4,13 @@
     x:Class="Bit.App.Controls.CipherViewCell"
     xmlns:controls="clr-namespace:Bit.App.Controls"
     xmlns:u="clr-namespace:Bit.App.Utilities"
-    xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:core="clr-namespace:Bit.Core;assembly=BitwardenCore"
     StyleClass="list-row, list-row-platform"
     RowSpacing="0"
     ColumnSpacing="0"
     x:DataType="controls:CipherViewCellViewModel">
-
+    
+    <!--xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"-->
     <Grid.Resources>
         <u:IconGlyphConverter x:Key="iconGlyphConverter"/>
         <u:IconImageConverter x:Key="iconImageConverter"/>
@@ -38,7 +38,8 @@
         ShouldUpdateFontSizeDynamicallyForAccesibility="True"
         AutomationProperties.IsInAccessibleTree="False" />
 
-    <ff:CachedImage
+    <!--TODO: [MAUI-Migration] [Critical]-->
+    <!--<ff:CachedImage
         x:Name="_iconImage"
         Grid.Column="0"
         BitmapOptimizations="True"
@@ -52,7 +53,7 @@
         Aspect="AspectFit"
         IsVisible="{Binding ShowIconImage}"
         Source="{Binding IconImageSource, Mode=OneTime}"
-        AutomationProperties.IsInAccessibleTree="False" />
+        AutomationProperties.IsInAccessibleTree="False" />-->
 
     <Grid RowSpacing="0" ColumnSpacing="0" Grid.Row="0" Grid.Column="1" VerticalOptions="Center" Padding="0, 7">
         <Grid.RowDefinitions>

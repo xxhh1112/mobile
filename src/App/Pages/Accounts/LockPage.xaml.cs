@@ -79,7 +79,8 @@ namespace Bit.App.Pages
 
             await _vm.InitAsync();
 
-            _vm.FocusSecretEntry += PerformFocusSecretEntry;
+            // TODO: [MAUI-Migration] [Critical]
+            //_vm.FocusSecretEntry += PerformFocusSecretEntry;
 
             if (!_vm.BiometricLock)
             {

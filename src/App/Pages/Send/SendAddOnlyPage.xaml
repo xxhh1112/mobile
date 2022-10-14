@@ -42,25 +42,27 @@
             AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
             AbsoluteLayout.LayoutFlags="All">
             <StackLayout x:Name="_mainContainer" StyleClass="box">
+                <!--TODO: [MAUI-Migration] Accent border color-->
                 <Frame
                     IsVisible="{Binding SendEnabled, Converter={StaticResource inverseBool}}"
                     Padding="10"
                     Margin="0, 12, 0, 0"
                     HasShadow="False"
                     BackgroundColor="Transparent"
-                    BorderColor="Accent">
+                    BorderColor="{DynamicResource PrimaryColor}">
                     <Label
                         Text="{u:I18n SendDisabledWarning}"
                         StyleClass="text-muted, text-sm, text-bold"
                         HorizontalTextAlignment="Center" />
                 </Frame>
+                <!--TODO: [MAUI-Migration] Accent border color-->
                 <Frame
                     IsVisible="{Binding SendOptionsPolicyInEffect}"
                     Padding="10"
                     Margin="0, 12, 0, 0"
                     HasShadow="False"
                     BackgroundColor="Transparent"
-                    BorderColor="Accent">
+                    BorderColor="{DynamicResource PrimaryColor}">
                     <Label
                         Text="{u:I18n SendOptionsPolicyInEffect}"
                         StyleClass="text-muted, text-sm, text-bold"
@@ -175,7 +177,10 @@
                         TextColor="{DynamicResource PrimaryColor}"
                         AutomationProperties.IsInAccessibleTree="False"/>
                 </StackLayout>
-                <pages:SendAddOnlyOptionsLazyView x:Name="_lazyOptionsView" IsVisible="{Binding ShowOptions}" />
+                <!-- TODO: [MAUI-Migration] [Critical]
+                pages:SendAddOnlyOptionsLazyView
+                -->
+                <pages:SendAddOnlyOptionsView x:Name="_lazyOptionsView" IsVisible="{Binding ShowOptions}" />
             </StackLayout>
         </ScrollView>
         

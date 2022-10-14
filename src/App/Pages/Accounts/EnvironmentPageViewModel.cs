@@ -2,9 +2,9 @@
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Bit.App.Resources;
+using Bit.App.Utilities;
 using Bit.Core.Abstractions;
 using Bit.Core.Utilities;
-using CommunityToolkit.Maui.ObjectModel;
 
 namespace Bit.App.Pages
 {

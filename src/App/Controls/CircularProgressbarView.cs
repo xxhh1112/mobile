@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 using SkiaSharp;
-using SkiaSharp.Views.Forms;
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
+using SkiaSharp.Views.Maui.Controls;
+using SkiaSharp.Views.Maui;
+using Microsoft.Maui.Devices;
+using Microsoft.Maui.Graphics;
 
 namespace Bit.App.Controls
 {
@@ -20,14 +23,17 @@ namespace Bit.App.Controls
         public static readonly BindableProperty StrokeWidthProperty = BindableProperty.Create(
             nameof(StrokeWidth), typeof(float), typeof(CircularProgressbarView), 3f);
 
+        // TODO: [MAUI-Migration] Check default colors, given that Color.Default doesn't exist anymore
         public static readonly BindableProperty ProgressColorProperty = BindableProperty.Create(
-            nameof(ProgressColor), typeof(Color), typeof(CircularProgressbarView), Color.Default);
+            nameof(ProgressColor), typeof(Color), typeof(CircularProgressbarView), Colors.Black);
 
+        // TODO: [MAUI-Migration] Check default colors, given that Color.Default doesn't exist anymore
         public static readonly BindableProperty EndingProgressColorProperty = BindableProperty.Create(
-            nameof(EndingProgressColor), typeof(Color), typeof(CircularProgressbarView), Color.Default);
+            nameof(EndingProgressColor), typeof(Color), typeof(CircularProgressbarView), Colors.Black);
 
+        // TODO: [MAUI-Migration] Check default colors, given that Color.Default doesn't exist anymore
         public static readonly BindableProperty BackgroundProgressColorProperty = BindableProperty.Create(
-            nameof(BackgroundProgressColor), typeof(Color), typeof(CircularProgressbarView), Color.Default);
+            nameof(BackgroundProgressColor), typeof(Color), typeof(CircularProgressbarView), Colors.White);
 
         public double Progress
         {

@@ -9,7 +9,6 @@ using Bit.Core;
 using Bit.Core.Abstractions;
 using Bit.Core.Exceptions;
 using Bit.Core.Utilities;
-using CommunityToolkit.Maui.ObjectModel;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Networking;
 

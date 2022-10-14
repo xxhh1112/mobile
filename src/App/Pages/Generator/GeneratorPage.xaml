@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <pages:BaseContentPage 
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -9,6 +9,7 @@
     xmlns:effects="clr-namespace:Bit.App.Effects"
     xmlns:core="clr-namespace:Bit.Core;assembly=BitwardenCore"
     xmlns:enums="clr-namespace:Bit.Core.Enums;assembly=BitwardenCore"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     x:DataType="pages:GeneratorPageViewModel"
     Title="{Binding PageTitle}">
     <ContentPage.BindingContext>
@@ -19,7 +20,7 @@
         <ResourceDictionary>
             <u:InverseBoolConverter x:Key="inverseBool" />
             <u:LocalizableEnumConverter x:Key="localizableEnum" />
-            <xct:EnumToBoolConverter x:Key="enumToBool"/>
+            <toolkit:EnumToBoolConverter x:Key="enumToBool"/>
             <ToolbarItem Text="{u:I18n Cancel}" Clicked="Close_Clicked" Order="Primary" Priority="-1"
                          x:Name="_closeItem" x:Key="closeItem" />
             <ToolbarItem Text="{u:I18n Select}"
@@ -32,7 +33,7 @@
                      Order="Secondary"
                      x:Name="_historyItem"
                      x:Key="historyItem" />
-            <ToolbarItem Icon="more_vert.png"
+            <ToolbarItem IconImageSource="more_vert.png"
                          AutomationProperties.IsInAccessibleTree="True"
                          AutomationProperties.Name="{u:I18n Options}"
                          Clicked="More_Clicked"
@@ -61,11 +62,13 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
+
+                    <!-- TODO: [MAUI-Migration] Check if border color is ok, it was Accent before-->
                     <Frame Padding="10"
                             Margin="0"
                             HasShadow="False"
                             BackgroundColor="Transparent"
-                            BorderColor="Accent">
+                            BorderColor="{DynamicResource PrimaryColor}">
                         <Label
                             Text="{u:I18n PasswordGeneratorPolicyInEffect}"
                             StyleClass="text-muted, text-sm, text-bold"

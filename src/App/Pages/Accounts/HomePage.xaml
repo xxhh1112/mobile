@@ -16,7 +16,6 @@
     <ContentPage.ToolbarItems>
         <controls:ExtendedToolbarItem
             x:Name="_accountAvatar"
-            x:Key="accountAvatar"
             IconImageSource="{Binding AvatarImageSource}"
             Command="{Binding Source={x:Reference _accountListOverlay}, Path=ToggleVisibililtyCommand}"
             Order="Primary"
@@ -25,7 +24,7 @@
             AutomationProperties.IsInAccessibleTree="True"
             AutomationProperties.Name="{u:I18n Account}" />
         <ToolbarItem
-            Icon="cog_environment.png" Clicked="Environment_Clicked" Order="Primary"
+            IconImageSource="cog_environment.png" Clicked="Environment_Clicked" Order="Primary"
             AutomationProperties.IsInAccessibleTree="True"
             AutomationProperties.Name="{u:I18n Options}" />
     </ContentPage.ToolbarItems>

@@ -2,10 +2,10 @@
 using System.Windows.Input;
 using Bit.App.Abstractions;
 using Bit.App.Resources;
+using Bit.App.Utilities;
 using Bit.Core.Abstractions;
 using Bit.Core.Exceptions;
 using Bit.Core.Utilities;
-using CommunityToolkit.Maui.ObjectModel;
 using Microsoft.Maui.Networking;
 
 namespace Bit.App.Pages

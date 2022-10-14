@@ -9,7 +9,6 @@ using Bit.Core.Enums;
 using Bit.Core.Exceptions;
 using Bit.Core.Models.Domain;
 using Bit.Core.Utilities;
-using CommunityToolkit.Maui.ObjectModel;
 using Microsoft.Maui.Authentication;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Networking;

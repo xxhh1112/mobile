@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <controls:ExtendedGrid xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                        x:Class="Bit.App.Controls.AuthenticatorViewCell"
                        xmlns:controls="clr-namespace:Bit.App.Controls"
                        xmlns:pages="clr-namespace:Bit.App.Pages"
                        xmlns:u="clr-namespace:Bit.App.Utilities"
-                       xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
                        xmlns:core="clr-namespace:Bit.Core;assembly=BitwardenCore"
                        StyleClass="list-row, list-row-platform"
                        HorizontalOptions="FillAndExpand"
@@ -14,6 +13,9 @@
                        RowSpacing="0"
                        Padding="0,10,0,0"
                        RowDefinitions="*,*">
+
+    
+                       <!--TODO: [MAUI-Migration] [Critical] xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"-->
 
     <Grid.Resources>
         <u:IconGlyphConverter x:Key="iconGlyphConverter" />
@@ -30,6 +32,7 @@
         Text="{Binding Cipher, Converter={StaticResource iconGlyphConverter}}"
         AutomationProperties.IsInAccessibleTree="False" />
 
+    <!--TODO: [MAUI-Migration] [Critical]
     <ff:CachedImage
         Grid.Column="0"
         BitmapOptimizations="True"
@@ -42,7 +45,7 @@
         Grid.RowSpan="2"
         IsVisible="{Binding ShowIconImage}"
         Source="{Binding IconImageSource, Mode=OneTime}"
-        AutomationProperties.IsInAccessibleTree="False" />
+        AutomationProperties.IsInAccessibleTree="False" /> -->
 
     <Label
         LineBreakMode="TailTruncation"

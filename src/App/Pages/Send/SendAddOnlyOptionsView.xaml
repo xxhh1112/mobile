@@ -6,7 +6,7 @@
     xmlns:u="clr-namespace:Bit.App.Utilities"
     xmlns:controls="clr-namespace:Bit.App.Controls"
     xmlns:effects="clr-namespace:Bit.App.Effects"
-    xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft"
+    xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
     x:DataType="pages:SendAddEditPageViewModel"
     x:Class="Bit.App.Pages.SendAddOnlyOptionsView">
     <ContentView.Resources>
@@ -32,7 +32,12 @@
                     ios:Picker.UpdateMode="WhenFinished"
                     AutomationProperties.IsInAccessibleTree="True"
                     AutomationProperties.Name="{u:I18n DeletionTime}" />
-                <controls:LazyDateTimePicker
+
+                
+                <!-- TODO: [MAUI-Migration] [Critical]
+                controls:LazyDateTimePicker
+                -->
+                <controls:DateTimePicker
                     x:Name="_lazyDeletionDateTimePicker"
                     BindingContext="{Binding DeletionDateTimeViewModel}"
                     IsVisible="{Binding ShowDeletionCustomPickers}"
@@ -56,7 +61,10 @@
                     StyleClass="box-value"
                     AutomationProperties.IsInAccessibleTree="True"
                     AutomationProperties.Name="{u:I18n ExpirationTime}" />
-                <controls:LazyDateTimePicker
+                <!-- TODO: [MAUI-Migration] [Critical]
+                controls:LazyDateTimePicker
+                -->
+                <controls:DateTimePicker
                     x:Name="_lazyExpirationDateTimePicker"
                     BindingContext="{Binding ExpirationDateTimeViewModel}"
                     IsVisible="{Binding ShowExpirationCustomPickers}"

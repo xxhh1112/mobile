@@ -25,10 +25,11 @@ namespace Bit.App.Controls
         {
             InitializeComponent();
 
-            var fontScale = ServiceContainer.Resolve<IDeviceActionService>("deviceActionService").GetSystemFontSizeScale();
-            _iconColumn.Width = new GridLength(ICON_COLUMN_DEFAULT_WIDTH * fontScale, GridUnitType.Absolute);
-            _iconImage.WidthRequest = ICON_IMAGE_DEFAULT_WIDTH * fontScale;
-            _iconImage.HeightRequest = ICON_IMAGE_DEFAULT_WIDTH * fontScale;
+            // TODO: [MAUI-Migration] [Critical]
+            //var fontScale = ServiceContainer.Resolve<IDeviceActionService>("deviceActionService").GetSystemFontSizeScale();
+            //_iconColumn.Width = new GridLength(ICON_COLUMN_DEFAULT_WIDTH * fontScale, GridUnitType.Absolute);
+            //_iconImage.WidthRequest = ICON_IMAGE_DEFAULT_WIDTH * fontScale;
+            //_iconImage.HeightRequest = ICON_IMAGE_DEFAULT_WIDTH * fontScale;
         }
 
         public bool? WebsiteIconsEnabled

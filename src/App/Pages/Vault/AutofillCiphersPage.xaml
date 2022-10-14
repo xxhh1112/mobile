@@ -24,7 +24,7 @@
             UseOriginalImage="True"
             AutomationProperties.IsInAccessibleTree="True"
             AutomationProperties.Name="{u:I18n Account}" />
-        <ToolbarItem Icon="search.png" Clicked="Search_Clicked"
+        <ToolbarItem IconImageSource="search.png" Clicked="Search_Clicked"
                      AutomationProperties.IsInAccessibleTree="True"
                      AutomationProperties.Name="{u:I18n Search}" />
     </ContentPage.ToolbarItems>
@@ -104,7 +104,7 @@
         <!-- Android FAB -->
         <Button
             x:Name="_fab"
-            Image="plus.png"
+            ImageSource="plus.png"
             Clicked="AddButton_Clicked"
             Style="{StaticResource btn-fab}"
             AbsoluteLayout.LayoutFlags="PositionProportional"

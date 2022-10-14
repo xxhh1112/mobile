@@ -7,7 +7,9 @@ using Bit.Core.Abstractions;
 using Bit.Core.Services;
 using Bit.Core.Utilities;
 using Microsoft.Maui;
+using Microsoft.Maui.ApplicationModel;
 using Microsoft.Maui.Controls;
+using Microsoft.Maui.Graphics;
 
 namespace Bit.App.Utilities
 {
@@ -62,7 +64,7 @@ namespace Bit.App.Utilities
                 // Platform styles
                 if (Device.RuntimePlatform == Device.Android)
                 {
-                    resources.MergedDictionaries.Add(new Android());
+                    resources.MergedDictionaries.Add(new Styles.Android());
                 }
                 else if (Device.RuntimePlatform == Device.iOS)
                 {
@@ -143,9 +145,9 @@ namespace Bit.App.Utilities
             {
                 // called from iOS extension
                 var app = new App(new AppOptions { IosExtension = true });
-                return app.RequestedTheme == OSAppTheme.Dark;
+                return app.RequestedTheme == AppTheme.Dark;
             }
-            return Application.Current.RequestedTheme == OSAppTheme.Dark;
+            return Application.Current.RequestedTheme == AppTheme.Dark;
         }
 
         public static void ApplyResourcesTo(VisualElement element)

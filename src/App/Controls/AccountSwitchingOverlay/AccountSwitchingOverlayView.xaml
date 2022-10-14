@@ -19,10 +19,12 @@
         <Frame
             Padding="0"
             HorizontalOptions="Fill"
-            VerticalOptions="Start"
-            xct:ShadowEffect.Color="Black"
-            xct:ShadowEffect.Radius="10"
-            xct:ShadowEffect.OffsetY="3">
+            VerticalOptions="Start">
+            <Frame.Shadow>
+                <Shadow Brush="Black"
+                        Radius="10"
+                        Offset="0,3" />
+            </Frame.Shadow>
             <ListView
                 x:Name="_accountListView"
                 ItemsSource="{Binding BindingContext.AccountViews, Source={x:Reference _mainOverlay}}"

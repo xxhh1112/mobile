@@ -21,12 +21,13 @@
                 x:DataType="pages:SettingsPageListItem">
                 <controls:ExtendedStackLayout Orientation="Horizontal"
                              StyleClass="list-row, list-row-platform">
+                    <!--TODO: [MAUI-Migration] Border Accent-->
                     <Frame
                         IsVisible="{Binding UseFrame}"
                         Padding="10"
                         HasShadow="False"
                         BackgroundColor="Transparent"
-                        BorderColor="Accent">
+                        BorderColor="{DynamicResource PrimaryColor}">
                         <Label
                             Text="{Binding Name, Mode=OneWay}"
                             StyleClass="text-muted, text-sm, text-bold"
@@ -52,12 +53,13 @@
                 x:DataType="pages:SettingsPageListItem">
                 <controls:ExtendedStackLayout Orientation="Horizontal"
                              StyleClass="list-row, list-row-platform">
+                    <!--TODO: [MAUI-Migration] Border Accent-->
                     <Frame
                         IsVisible="{Binding UseFrame}"
                         Padding="10"
                         HasShadow="False"
                         BackgroundColor="Transparent"
-                        BorderColor="Accent">
+                        BorderColor="{DynamicResource PrimaryColor}">
                         <Label
                             Text="{Binding Name, Mode=OneWay}"
                             StyleClass="text-muted, text-sm, text-bold"

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Bit.App.Lists.ItemViewModels.CustomFields;
 using Bit.App.Models;
 using Bit.App.Resources;
+using Bit.App.Utilities;
 using Bit.Core;
 using Bit.Core.Abstractions;
 using Bit.Core.Enums;

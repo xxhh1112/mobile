@@ -7,7 +7,7 @@ using Bit.App.Resources;
 using Bit.Core.Abstractions;
 using Bit.Core.Models.Domain;
 using Bit.Core.Utilities;
-using Microsoft.Maui.Essentials;
+using Microsoft.Maui.Networking;
 
 namespace Bit.App.Pages
 {

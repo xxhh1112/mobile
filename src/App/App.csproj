@@ -15,9 +15,20 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebugType>pdbonly</DebugType>
     <DebugSymbols>true</DebugSymbols>
+    <CreatePackage>false</CreatePackage>
+    <EnableCodeSigning>false</EnableCodeSigning>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <CreatePackage>false</CreatePackage>
+    <EnableCodeSigning>false</EnableCodeSigning>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'FDroid|AnyCPU' ">
+    <CreatePackage>false</CreatePackage>
+    <EnableCodeSigning>false</EnableCodeSigning>
+  </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="CommunityToolkit.MVVM" Version="8.0.0" />
     <PackageReference Include="Plugin.Fingerprint" Version="3.0.0-beta.1" />
     <PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="2.88.2" />
     <PackageReference Include="CommunityToolkit.Maui" Version="1.3.0" />
@@ -174,136 +185,163 @@
       <DependentUpon>AppResources.cs.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <Link>Resources\AppResources.cs.Designer.cs</Link>
     </Compile>
     <Compile Update="Resources\AppResources.da.Designer.cs">
       <DependentUpon>AppResources.da.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <Link>Resources\AppResources.da.Designer.cs</Link>
     </Compile>
     <Compile Update="Resources\AppResources.de.Designer.cs">
       <DependentUpon>AppResources.de.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <Link>Resources\AppResources.de.Designer.cs</Link>
     </Compile>
     <Compile Update="Resources\AppResources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>AppResources.resx</DependentUpon>
+      <Link>Resources\AppResources.Designer.cs</Link>
     </Compile>
     <Compile Update="Resources\AppResources.es.Designer.cs">
       <DependentUpon>AppResources.es.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <Link>Resources\AppResources.es.Designer.cs</Link>
     </Compile>
     <Compile Update="Resources\AppResources.fi.Designer.cs">
       <DependentUpon>AppResources.fi.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <Link>Resources\AppResources.fi.Designer.cs</Link>
     </Compile>
     <Compile Update="Resources\AppResources.fr.Designer.cs">
       <DependentUpon>AppResources.fr.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <Link>Resources\AppResources.fr.Designer.cs</Link>
     </Compile>
     <Compile Update="Resources\AppResources.hi.Designer.cs">
       <DependentUpon>AppResources.hi.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <Link>Resources\AppResources.hi.Designer.cs</Link>
     </Compile>
     <Compile Update="Resources\AppResources.hr.Designer.cs">
       <DependentUpon>AppResources.hr.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <Link>Resources\AppResources.hr.Designer.cs</Link>
     </Compile>
     <Compile Update="Resources\AppResources.hu.Designer.cs">
       <DependentUpon>AppResources.hu.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <Link>Resources\AppResources.hu.Designer.cs</Link>
     </Compile>
     <Compile Update="Resources\AppResources.id.Designer.cs">
       <DependentUpon>AppResources.id.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <Link>Resources\AppResources.id.Designer.cs</Link>
     </Compile>
     <Compile Update="Resources\AppResources.it.Designer.cs">
       <DependentUpon>AppResources.it.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <Link>Resources\AppResources.it.Designer.cs</Link>
     </Compile>
     <Compile Update="Resources\AppResources.ja.Designer.cs">
       <DependentUpon>AppResources.ja.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <Link>Resources\AppResources.ja.Designer.cs</Link>
     </Compile>
     <Compile Update="Resources\AppResources.nl.Designer.cs">
       <DependentUpon>AppResources.nl.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <Link>Resources\AppResources.nl.Designer.cs</Link>
     </Compile>
     <Compile Update="Resources\AppResources.pl.Designer.cs">
       <DependentUpon>AppResources.pl.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <Link>Resources\AppResources.pl.Designer.cs</Link>
     </Compile>
     <Compile Update="Resources\AppResources.pt-BR.Designer.cs">
       <DependentUpon>AppResources.pt-BR.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <Link>Resources\AppResources.pt-BR.Designer.cs</Link>
     </Compile>
     <Compile Update="Resources\AppResources.pt-PT.Designer.cs">
       <DependentUpon>AppResources.pt-PT.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <Link>Resources\AppResources.pt-PT.Designer.cs</Link>
     </Compile>
     <Compile Update="Resources\AppResources.ro.Designer.cs">
       <DependentUpon>AppResources.ro.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <Link>Resources\AppResources.ro.Designer.cs</Link>
     </Compile>
     <Compile Update="Resources\AppResources.ru.Designer.cs">
       <DependentUpon>AppResources.ru.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <Link>Resources\AppResources.ru.Designer.cs</Link>
     </Compile>
     <Compile Update="Resources\AppResources.sk.Designer.cs">
       <DependentUpon>AppResources.sk.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <Link>Resources\AppResources.sk.Designer.cs</Link>
     </Compile>
     <Compile Update="Resources\AppResources.sv.Designer.cs">
       <DependentUpon>AppResources.sv.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <Link>Resources\AppResources.sv.Designer.cs</Link>
     </Compile>
     <Compile Update="Resources\AppResources.th.Designer.cs">
       <DependentUpon>AppResources.th.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <Link>Resources\AppResources.th.Designer.cs</Link>
     </Compile>
     <Compile Update="Resources\AppResources.tr.Designer.cs">
       <DependentUpon>AppResources.tr.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <Link>Resources\AppResources.tr.Designer.cs</Link>
     </Compile>
     <Compile Update="Resources\AppResources.uk.Designer.cs">
       <DependentUpon>AppResources.uk.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <Link>Resources\AppResources.uk.Designer.cs</Link>
     </Compile>
     <Compile Update="Resources\AppResources.vi.Designer.cs">
       <DependentUpon>AppResources.vi.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <Link>Resources\AppResources.vi.Designer.cs</Link>
     </Compile>
     <Compile Update="Resources\AppResources.zh-Hans.Designer.cs">
       <DependentUpon>AppResources.zh-Hans.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <Link>Resources\AppResources.zh-Hans.Designer.cs</Link>
     </Compile>
     <Compile Update="Resources\AppResources.zh-Hant.Designer.cs">
       <DependentUpon>AppResources.zh-Hant.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <Link>Resources\AppResources.zh-Hant.Designer.cs</Link>
     </Compile>
   </ItemGroup>
 
@@ -311,110 +349,137 @@
     <EmbeddedResource Update="Resources\AppResources.cs.resx">
       <LastGenOutput>AppResources.cs.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
+      <Link>Resources\AppResources.cs.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\AppResources.da.resx">
       <LastGenOutput>AppResources.da.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
+      <Link>Resources\AppResources.da.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\AppResources.de.resx">
       <LastGenOutput>AppResources.de.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
+      <Link>Resources\AppResources.de.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\AppResources.es.resx">
       <LastGenOutput>AppResources.es.Designer.cs</LastGenOutput>
       <Generator>PublicResXFileCodeGenerator</Generator>
+      <Link>Resources\AppResources.es.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\AppResources.fi.resx">
       <LastGenOutput>AppResources.fi.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
+      <Link>Resources\AppResources.fi.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\AppResources.fr.resx">
       <LastGenOutput>AppResources.fr.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
+      <Link>Resources\AppResources.fr.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\AppResources.hi.resx">
       <LastGenOutput>AppResources.hi.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
+      <Link>Resources\AppResources.hi.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\AppResources.hr.resx">
       <LastGenOutput>AppResources.hr.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
+      <Link>Resources\AppResources.hr.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\AppResources.hu.resx">
       <LastGenOutput>AppResources.hu.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
+      <Link>Resources\AppResources.hu.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\AppResources.id.resx">
       <LastGenOutput>AppResources.id.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
+      <Link>Resources\AppResources.id.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\AppResources.it.resx">
       <LastGenOutput>AppResources.it.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
+      <Link>Resources\AppResources.it.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\AppResources.ja.resx">
       <LastGenOutput>AppResources.ja.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
+      <Link>Resources\AppResources.ja.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\AppResources.nl.resx">
       <LastGenOutput>AppResources.nl.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
+      <Link>Resources\AppResources.nl.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\AppResources.pl.resx">
       <LastGenOutput>AppResources.pl.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
+      <Link>Resources\AppResources.pl.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\AppResources.pt-BR.resx">
       <LastGenOutput>AppResources.pt-BR.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
+      <Link>Resources\AppResources.pt-BR.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\AppResources.pt-PT.resx">
       <LastGenOutput>AppResources.pt-PT.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
+      <Link>Resources\AppResources.pt-PT.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\AppResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+      <Link>Resources\AppResources.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\AppResources.ro.resx">
       <LastGenOutput>AppResources.ro.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
+      <Link>Resources\AppResources.ro.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\AppResources.ru.resx">
       <LastGenOutput>AppResources.ru.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
+      <Link>Resources\AppResources.ru.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\AppResources.sk.resx">
       <LastGenOutput>AppResources.sk.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
+      <Link>Resources\AppResources.sk.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\AppResources.sv.resx">
       <LastGenOutput>AppResources.sv.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
+      <Link>Resources\AppResources.sv.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\AppResources.th.resx">
       <LastGenOutput>AppResources.th.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
+      <Link>Resources\AppResources.th.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\AppResources.tr.resx">
       <LastGenOutput>AppResources.tr.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
+      <Link>Resources\AppResources.tr.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\AppResources.uk.resx">
       <LastGenOutput>AppResources.uk.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
+      <Link>Resources\AppResources.uk.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\AppResources.vi.resx">
       <LastGenOutput>AppResources.vi.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
+      <Link>Resources\AppResources.vi.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\AppResources.zh-Hans.resx">
       <LastGenOutput>AppResources.zh-Hans.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
+      <Link>Resources\AppResources.zh-Hans.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\AppResources.zh-Hant.resx">
       <LastGenOutput>AppResources.zh-Hant.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
+      <Link>Resources\AppResources.zh-Hant.resx</Link>
     </EmbeddedResource>
   </ItemGroup>
 
@@ -429,5 +494,91 @@
     <None Remove="Controls\AccountSwitchingOverlay\" />
     <None Remove="Utilities\AccountManagement\" />
     <None Remove="Controls\DateTime\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Condition="'$(_ResourcePrefix)' != ''" Update="Resources\AppResources.lv.resx">
+      <Link>Resources\AppResources.lv.resx</Link>
+    </BundleResource>
+    <BundleResource Condition="'$(_ResourcePrefix)' != ''" Update="Resources\AppResources.af.resx">
+      <Link>Resources\AppResources.af.resx</Link>
+    </BundleResource>
+    <BundleResource Condition="'$(_ResourcePrefix)' != ''" Update="Resources\AppResources.fa.resx">
+      <Link>Resources\AppResources.fa.resx</Link>
+    </BundleResource>
+    <BundleResource Condition="'$(_ResourcePrefix)' != ''" Update="Resources\AppResources.nb.resx">
+      <Link>Resources\AppResources.nb.resx</Link>
+    </BundleResource>
+    <BundleResource Condition="'$(_ResourcePrefix)' != ''" Update="Resources\AppResources.nn.resx">
+      <Link>Resources\AppResources.nn.resx</Link>
+    </BundleResource>
+    <BundleResource Condition="'$(_ResourcePrefix)' != ''" Update="Resources\AppResources.ar.resx">
+      <Link>Resources\AppResources.ar.resx</Link>
+    </BundleResource>
+    <BundleResource Condition="'$(_ResourcePrefix)' != ''" Update="Resources\AppResources.en-IN.resx">
+      <Link>Resources\AppResources.en-IN.resx</Link>
+    </BundleResource>
+    <BundleResource Condition="'$(_ResourcePrefix)' != ''" Update="Resources\AppResources.bs.resx">
+      <Link>Resources\AppResources.bs.resx</Link>
+    </BundleResource>
+    <BundleResource Condition="'$(_ResourcePrefix)' != ''" Update="Resources\AppResources.et.resx">
+      <Link>Resources\AppResources.et.resx</Link>
+    </BundleResource>
+    <BundleResource Condition="'$(_ResourcePrefix)' != ''" Update="Resources\AppResources.kn.resx">
+      <Link>Resources\AppResources.kn.resx</Link>
+    </BundleResource>
+    <BundleResource Condition="'$(_ResourcePrefix)' != ''" Update="Resources\AppResources.ko.resx">
+      <Link>Resources\AppResources.ko.resx</Link>
+    </BundleResource>
+    <BundleResource Condition="'$(_ResourcePrefix)' != ''" Update="Resources\AppResources.eu.resx">
+      <Link>Resources\AppResources.eu.resx</Link>
+    </BundleResource>
+    <BundleResource Condition="'$(_ResourcePrefix)' != ''" Update="Resources\AppResources.he.resx">
+      <Link>Resources\AppResources.he.resx</Link>
+    </BundleResource>
+    <BundleResource Condition="'$(_ResourcePrefix)' != ''" Update="Resources\AppResources.el.resx">
+      <Link>Resources\AppResources.el.resx</Link>
+    </BundleResource>
+    <BundleResource Condition="'$(_ResourcePrefix)' != ''" Update="Resources\AppResources.bg.resx">
+      <Link>Resources\AppResources.bg.resx</Link>
+    </BundleResource>
+    <BundleResource Condition="'$(_ResourcePrefix)' != ''" Update="Resources\AppResources.si.resx">
+      <Link>Resources\AppResources.si.resx</Link>
+    </BundleResource>
+    <BundleResource Condition="'$(_ResourcePrefix)' != ''" Update="Resources\AppResources.ca.resx">
+      <Link>Resources\AppResources.ca.resx</Link>
+    </BundleResource>
+    <BundleResource Condition="'$(_ResourcePrefix)' != ''" Update="Resources\AppResources.ta.resx">
+      <Link>Resources\AppResources.ta.resx</Link>
+    </BundleResource>
+    <BundleResource Condition="'$(_ResourcePrefix)' != ''" Update="Resources\AppResources.fil.resx">
+      <Link>Resources\AppResources.fil.resx</Link>
+    </BundleResource>
+    <BundleResource Condition="'$(_ResourcePrefix)' != ''" Update="Resources\AppResources.sr.resx">
+      <Link>Resources\AppResources.sr.resx</Link>
+    </BundleResource>
+    <BundleResource Condition="'$(_ResourcePrefix)' != ''" Update="Resources\AppResources.az.resx">
+      <Link>Resources\AppResources.az.resx</Link>
+    </BundleResource>
+    <BundleResource Condition="'$(_ResourcePrefix)' != ''" Update="Resources\AppResources.ml.resx">
+      <Link>Resources\AppResources.ml.resx</Link>
+    </BundleResource>
+    <BundleResource Condition="'$(_ResourcePrefix)' != ''" Update="Resources\AppResources.be.resx">
+      <Link>Resources\AppResources.be.resx</Link>
+    </BundleResource>
+    <BundleResource Condition="'$(_ResourcePrefix)' != ''" Update="Resources\AppResources.ka.resx">
+      <Link>Resources\AppResources.ka.resx</Link>
+    </BundleResource>
+    <BundleResource Condition="'$(_ResourcePrefix)' != ''" Update="Resources\AppResources.en-GB.resx">
+      <Link>Resources\AppResources.en-GB.resx</Link>
+    </BundleResource>
+    <BundleResource Condition="'$(_ResourcePrefix)' != ''" Update="Resources\AppResources.lt.resx">
+      <Link>Resources\AppResources.lt.resx</Link>
+    </BundleResource>
+    <BundleResource Condition="'$(_ResourcePrefix)' != ''" Update="Resources\AppResources.bn.resx">
+      <Link>Resources\AppResources.bn.resx</Link>
+    </BundleResource>
+    <BundleResource Condition="'$(_ResourcePrefix)' != ''" Update="Resources\AppResources.sl.resx">
+      <Link>Resources\AppResources.sl.resx</Link>
+    </BundleResource>
   </ItemGroup>
 </Project>

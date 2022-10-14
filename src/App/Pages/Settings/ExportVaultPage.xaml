@@ -28,13 +28,14 @@
         <StackLayout
             StyleClass="box"
             Spacing="20">
+            <!--TODO: [MAUI-Migration] Border Accent-->
             <Frame
                 IsVisible="{Binding DisablePrivateVaultPolicyEnabled}"
                 Padding="10"
                 Margin="0, 12, 0, 0"
                 HasShadow="False"
                 BackgroundColor="Transparent"
-                BorderColor="Accent">
+                BorderColor="{DynamicResource PrimaryColor}">
                 <Label
                     Text="{u:I18n DisablePersonalVaultExportPolicyInEffect}"
                     StyleClass="text-muted, text-sm, text-bold"

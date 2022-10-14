@@ -1,7 +1,7 @@
 ﻿using Microsoft.Maui;
 using Microsoft.Maui.Controls;
-using Microsoft.Maui.PlatformConfiguration;
-using Microsoft.Maui.PlatformConfiguration.iOSSpecific;
+using Microsoft.Maui.Controls.PlatformConfiguration;
+using Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;
 
 namespace Bit.App.Pages
 {

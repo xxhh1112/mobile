@@ -1,7 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Bit.App.Behaviors;
-using CommunityToolkit.Maui.UI.Views;
 using Microsoft.Maui.Controls;
 
 namespace Bit.App.Pages
@@ -40,52 +39,57 @@ namespace Bit.App.Pages
             }
         }
 
-        protected override void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            base.OnPropertyChanged(propertyName);
 
-            if (propertyName == nameof(BindingContext)
-               &&
-               ViewModel != null)
-            {
-                ViewModel.PropertyChanged += ViewModel_PropertyChanged;
-            }
-        }
+        // TODO: [MAUI-Migration] [Critical]
 
-        private void ViewModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
-        {
-            if (!_lazyDeletionDateTimePicker.IsLoaded
-                &&
-                e.PropertyName == nameof(SendAddEditPageViewModel.ShowDeletionCustomPickers)
-                &&
-                ViewModel.ShowDeletionCustomPickers)
-            {
-                _lazyDeletionDateTimePicker.LoadViewAsync();
-            }
+        //protected override void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        //{
+        //    base.OnPropertyChanged(propertyName);
 
-            if (!_lazyExpirationDateTimePicker.IsLoaded
-                &&
-                e.PropertyName == nameof(SendAddEditPageViewModel.ShowExpirationCustomPickers)
-                &&
-                ViewModel.ShowExpirationCustomPickers)
-            {
-                _lazyExpirationDateTimePicker.LoadViewAsync();
-            }
-        }
+        //    if (propertyName == nameof(BindingContext)
+        //       &&
+        //       ViewModel != null)
+        //    {
+        //        ViewModel.PropertyChanged += ViewModel_PropertyChanged;
+        //    }
+        //}
+
+
+        //private void ViewModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        //{
+        //    if (!_lazyDeletionDateTimePicker.IsLoaded
+        //        &&
+        //        e.PropertyName == nameof(SendAddEditPageViewModel.ShowDeletionCustomPickers)
+        //        &&
+        //        ViewModel.ShowDeletionCustomPickers)
+        //    {
+        //        _lazyDeletionDateTimePicker.LoadViewAsync();
+        //    }
+
+        //    if (!_lazyExpirationDateTimePicker.IsLoaded
+        //        &&
+        //        e.PropertyName == nameof(SendAddEditPageViewModel.ShowExpirationCustomPickers)
+        //        &&
+        //        ViewModel.ShowExpirationCustomPickers)
+        //    {
+        //        _lazyExpirationDateTimePicker.LoadViewAsync();
+        //    }
+        //}
     }
 
-    public class SendAddOnlyOptionsLazyView : LazyView<SendAddOnlyOptionsView>
-    {
-        public ScrollView MainScrollView { get; set; }
+    // TODO: [MAUI-Migration] [Critical]
+    //public class SendAddOnlyOptionsLazyView : LazyView<SendAddOnlyOptionsView>
+    //{
+    //    public ScrollView MainScrollView { get; set; }
 
-        public override async ValueTask LoadViewAsync()
-        {
-            await base.LoadViewAsync();
+    //    public override async ValueTask LoadViewAsync()
+    //    {
+    //        await base.LoadViewAsync();
 
-            if (Content is SendAddOnlyOptionsView optionsView)
-            {
-                optionsView.SetMainScrollView(MainScrollView);
-            }
-        }
-    }
+    //        if (Content is SendAddOnlyOptionsView optionsView)
+    //        {
+    //            optionsView.SetMainScrollView(MainScrollView);
+    //        }
+    //    }
+    //}
 }
