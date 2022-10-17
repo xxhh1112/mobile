@@ -7,9 +7,11 @@ using Android.Views.InputMethods;
 using Android.Widget;
 using Bit.Droid.Renderers;
 using Bit.Droid.Utilities;
-using Microsoft.Maui;
 using Microsoft.Maui.Controls;
-using Microsoft.Maui.Platform.Android;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls.Compatibility.Platform.Android;
+using Microsoft.Maui.Controls.Platform;
+using Microsoft.Maui.Platform;
 
 [assembly: ExportRenderer(typeof(Entry), typeof(CustomEntryRenderer))]
 namespace Bit.Droid.Renderers

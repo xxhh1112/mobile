@@ -34,6 +34,10 @@ namespace Bit.App
 
         private static bool _isResumed;
 
+        public App() : this(null)
+        {
+        }
+
         public App(AppOptions appOptions)
         {
             Options = appOptions ?? new AppOptions();

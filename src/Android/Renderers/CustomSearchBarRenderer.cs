@@ -1,9 +1,11 @@
 ﻿using Android.Content;
 using Android.Views.InputMethods;
 using Bit.Droid.Renderers;
-using Microsoft.Maui;
 using Microsoft.Maui.Controls;
-using Microsoft.Maui.Platform.Android;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls.Compatibility.Platform.Android;
+using Microsoft.Maui.Controls.Platform;
+using Microsoft.Maui.Platform;
 
 [assembly: ExportRenderer(typeof(SearchBar), typeof(CustomSearchBarRenderer))]
 namespace Bit.Droid.Renderers
@@ -26,7 +28,8 @@ namespace Bit.Droid.Renderers
                     magImage.LayoutParameters = new Android.Widget.LinearLayout.LayoutParams(0, 0);
                 }
                 catch { }
-                Control.SetImeOptions(Control.ImeOptions | (ImeAction)ImeFlags.NoPersonalizedLearning |
+                // TODO: [MAUI-Migration] check if this setting of options work
+                Control.ImeOptions = (int)((ImeAction)Control.ImeOptions | (ImeAction)ImeFlags.NoPersonalizedLearning |
                     (ImeAction)ImeFlags.NoExtractUi);
             }
         }

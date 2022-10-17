@@ -75,7 +75,7 @@ namespace Bit.Droid.Services
             {
                 if (string.IsNullOrWhiteSpace(_userAgent))
                 {
-                    _userAgent = $"Bitwarden_Mobile/{Microsoft.Maui.Essentials.AppInfo.VersionString} " +
+                    _userAgent = $"Bitwarden_Mobile/{Microsoft.Maui.ApplicationModel.AppInfo.VersionString} " +
                         $"(Android {Build.VERSION.Release}; SDK {Build.VERSION.Sdk}; Model {Build.Model})";
                 }
                 return _userAgent;
@@ -631,7 +631,8 @@ namespace Bit.Droid.Services
         public async Task<string> DisplayActionSheetAsync(string title, string cancel, string destruction,
             params string[] buttons)
         {
-            return await Xamarin.Forms.Application.Current.MainPage.DisplayActionSheet(
+            // TODO: [MAUI-Migration] check it works
+            return await Microsoft.Maui.Controls.Application.Current.MainPage.DisplayActionSheet(
                 title, cancel, destruction, buttons);
         }
 

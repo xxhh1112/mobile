@@ -23,6 +23,7 @@ using Bit.App.Utilities.AccountManagement;
 using Bit.App.Controls;
 using Bit.App;
 using Microsoft.Maui;
+using Microsoft.Maui.Hosting;
 #if !FDROID
 using Android.Gms.Security;
 #endif
@@ -114,18 +115,19 @@ namespace Bit.Droid
 #endif
             ServiceContainer.Register("logger", logger);
 
+            // TODO: [MAUI-Migration] [Critical]
             // Note: This might cause a race condition. Investigate more.
-            Task.Run(() =>
-            {
-                FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
-                FFImageLoading.ImageService.Instance.Initialize(new FFImageLoading.Config.Configuration
-                {
-                    FadeAnimationEnabled = false,
-                    FadeAnimationForCachedImages = false,
-                    HttpClient = new HttpClient(new AndroidClientHandler() { AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate })
-                });
-                ZXing.Net.Mobile.Forms.Android.Platform.Init();
-            });
+            //Task.Run(() =>
+            //{
+            //    FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
+            //    FFImageLoading.ImageService.Instance.Initialize(new FFImageLoading.Config.Configuration
+            //    {
+            //        FadeAnimationEnabled = false,
+            //        FadeAnimationForCachedImages = false,
+            //        HttpClient = new HttpClient(new AndroidClientHandler() { AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate })
+            //    });
+            //    ZXing.Net.Mobile.Forms.Android.Platform.Init();
+            //});
             CrossFingerprint.SetCurrentActivityResolver(() => CrossCurrentActivity.Current.Activity);
 
             var preferencesStorage = new PreferencesStorageService(null);

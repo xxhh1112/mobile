@@ -19,8 +19,10 @@ using Bit.Core.Enums;
 using Bit.Core.Utilities;
 using Bit.Droid.Receivers;
 using Bit.Droid.Utilities;
-using Microsoft.Maui.Essentials;
-using ZXing.Net.Mobile.Android;
+using Microsoft.Maui;
+using Microsoft.Maui.ApplicationModel;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Devices;
 using FileProvider = AndroidX.Core.Content.FileProvider;
 
 namespace Bit.Droid
@@ -30,7 +32,7 @@ namespace Bit.Droid
     // LaunchMode defined in values/manifest.xml for Android 10- and values-v30/manifest.xml for Android 11+
     // See https://github.com/bitwarden/mobile/pull/1673 for details
     [Register("com.x8bit.bitwarden.MainActivity")]
-    public class MainActivity : Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+    public class MainActivity : MauiAppCompatActivity
     {
         private IDeviceActionService _deviceActionService;
         private IMessagingService _messagingService;
@@ -62,8 +64,9 @@ namespace Bit.Droid
             _eventService = ServiceContainer.Resolve<IEventService>("eventService");
             _logger = ServiceContainer.Resolve<ILogger>("logger");
 
-            TabLayoutResource = Resource.Layout.Tabbar;
-            ToolbarResource = Resource.Layout.Toolbar;
+            // TODO: [MAUI-Migration] [Critical] mm given that we migrated to AndroidX this shouldn't be here if I'm not mistaken
+            //TabLayoutResource = Resource.Layout.Tabbar;
+            //ToolbarResource = Resource.Layout.Toolbar;
 
             // this needs to be called here before base.OnCreate(...)
             Intent?.Validate();
@@ -83,10 +86,11 @@ namespace Bit.Droid
                 toplayout.FilterTouchesWhenObscured = true;
             }
 
-            Microsoft.Maui.Essentials.Platform.Init(this, savedInstanceState);
-            Microsoft.Maui.Init(this, savedInstanceState);
+            Microsoft.Maui.ApplicationModel.Platform.Init(this, savedInstanceState);
+            // TODO: [MAUI-Migration] clean
+            //Microsoft.Maui.Init(this, savedInstanceState);
             _appOptions = GetOptions();
-            LoadApplication(new App.App(_appOptions));
+            //LoadApplication(new App.App(_appOptions));
             DisableAndroidFontScale();
 
             _broadcasterService.Subscribe(_activityKey, (message) =>
@@ -101,7 +105,7 @@ namespace Bit.Droid
                 }
                 else if (message.Command == "finishMainActivity")
                 {
-                    Xamarin.Forms.Device.BeginInvokeOnMainThread(() => Finish());
+                    MainThread.BeginInvokeOnMainThread(() => Finish());
                 }
                 else if (message.Command == "listenYubiKeyOTP")
                 {
@@ -109,7 +113,7 @@ namespace Bit.Droid
                 }
                 else if (message.Command == "updatedTheme")
                 {
-                    Xamarin.Forms.Device.BeginInvokeOnMainThread(() => AppearanceAdjustments());
+                    MainThread.BeginInvokeOnMainThread(() => AppearanceAdjustments());
                 }
                 else if (message.Command == "exit")
                 {
@@ -127,7 +131,7 @@ namespace Bit.Droid
         protected override void OnResume()
         {
             base.OnResume();
-            Microsoft.Maui.Essentials.Platform.OnResume();
+            Microsoft.Maui.ApplicationModel.Platform.OnResume();
             AppearanceAdjustments();
 
             ThemeManager.UpdateThemeOnPagesAsync();
@@ -204,11 +208,15 @@ namespace Bit.Droid
                 }
                 await _deviceActionService.SelectFileAsync();
             }
-            else
-            {
-                Microsoft.Maui.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-                PermissionsHandler.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-            }
+            // TODO: [MAUI-Migration]
+            // the service handler should take care of this for us automatically as registered here
+            // https://github.com/dotnet/maui/blob/main/src/Core/src/Hosting/EssentialsMauiAppBuilderExtensions.cs#L39
+            // ZXing doesn't seem to need this call anymore
+            //else
+            //{
+            //    Microsoft.Maui.ApplicationModel.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            //    //PermissionsHandler.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            //}
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 

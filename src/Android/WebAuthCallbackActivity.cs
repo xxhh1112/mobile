@@ -2,6 +2,7 @@
 using Android.Content.PM;
 using Android.OS;
 using Bit.Droid.Utilities;
+using Microsoft.Maui.Authentication;
 
 namespace Bit.Droid
 {
@@ -12,7 +13,7 @@ namespace Bit.Droid
     [IntentFilter(new[] { Android.Content.Intent.ActionView },
         Categories = new[] { Android.Content.Intent.CategoryDefault, Android.Content.Intent.CategoryBrowsable },
         DataScheme = "bitwarden")]
-    public class WebAuthCallbackActivity : Microsoft.Maui.Essentials.WebAuthenticatorCallbackActivity
+    public class WebAuthCallbackActivity : WebAuthenticatorCallbackActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {

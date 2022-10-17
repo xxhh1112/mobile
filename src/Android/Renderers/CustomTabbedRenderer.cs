@@ -4,10 +4,10 @@ using Bit.App.Pages;
 using Bit.Droid.Renderers;
 using Google.Android.Material.BottomNavigation;
 using Google.Android.Material.Navigation;
-using Microsoft.Maui;
 using Microsoft.Maui.Controls;
-using Microsoft.Maui.Platform.Android;
-using Microsoft.Maui.Platform.Android.AppCompat;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls.Compatibility.Platform.Android.AppCompat;
+using Microsoft.Maui.Controls.Platform;
 
 [assembly: ExportRenderer(typeof(TabbedPage), typeof(CustomTabbedRenderer))]
 namespace Bit.Droid.Renderers
@@ -34,9 +34,11 @@ namespace Bit.Droid.Renderers
 
         private BottomNavigationView GetBottomNavigationView()
         {
-            for (var i = 0; i < ViewGroup.ChildCount; i++)
+            // TODO: [MAUI-Migration] check if this works
+            // ViewGroup.ChildCount     ViewGroup.GetChildAt(i)
+            for (var i = 0; i < ChildCount; i++)
             {
-                var childView = ViewGroup.GetChildAt(i);
+                var childView = GetChildAt(i);
                 if (childView is ViewGroup viewGroup)
                 {
                     for (var j = 0; j < viewGroup.ChildCount; j++)

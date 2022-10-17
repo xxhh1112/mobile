@@ -9,12 +9,11 @@ namespace Bit.App
     {
         public static MauiApp CreateMauiApp()
         {
-            var builder = MauiApp.CreateBuilder();
-            builder
+            return MauiApp.CreateBuilder()
                 .UseMauiApp<App>()
                 .UseMauiCommunityToolkit()
-                .UseBarcodeReader();
-            return builder.Build();
+                .UseBarcodeReader()
+                .Build();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using Android.Graphics;
 using Bit.App.Utilities;
-using Microsoft.Maui.Platform.Android;
+using Microsoft.Maui.Controls.Compatibility.Platform.Android;
 
 namespace Bit.Droid.Utilities
 {

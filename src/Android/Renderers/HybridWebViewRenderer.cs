@@ -1,14 +1,14 @@
 ﻿using System;
-using Bit.App.Controls;
-using Microsoft.Maui;
-using Microsoft.Maui.Controls;
-using Microsoft.Maui.Platform.Android;
-using Android.Webkit;
-using AWebkit = Android.Webkit;
-using Java.Interop;
-using Android.Content;
-using Bit.Droid.Renderers;
 using System.ComponentModel;
+using Android.Content;
+using Android.Webkit;
+using Bit.App.Controls;
+using Bit.Droid.Renderers;
+using Java.Interop;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls.Compatibility.Platform.Android;
+using Microsoft.Maui.Controls.Platform;
+using AWebkit = Android.Webkit;
 
 [assembly: ExportRenderer(typeof(HybridWebView), typeof(HybridWebViewRenderer))]
 namespace Bit.Droid.Renderers

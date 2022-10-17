@@ -4,9 +4,11 @@ using Android.Content;
 using AndroidX.AppCompat.Widget;
 using Bit.App.Resources;
 using Bit.Droid.Renderers;
-using Microsoft.Maui;
 using Microsoft.Maui.Controls;
-using Microsoft.Maui.Platform.Android;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls.Compatibility.Platform.Android;
+using Microsoft.Maui.Controls.Platform;
+using Microsoft.Maui.Platform;
 
 [assembly: ExportRenderer(typeof(ContentPage), typeof(CustomPageRenderer))]
 namespace Bit.Droid.Renderers
@@ -22,7 +24,7 @@ namespace Bit.Droid.Renderers
             base.OnElementChanged(e);
 
             Activity context = (Activity)this.Context;
-            var toolbar = context.FindViewById<Toolbar>(Resource.Id.toolbar);
+            var toolbar = context.FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.toolbar);
             if(toolbar != null)
             {
                 toolbar.NavigationContentDescription = AppResources.TapToGoBack;

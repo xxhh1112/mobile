@@ -4,9 +4,10 @@ using Android.Graphics;
 using Android.OS;
 using Bit.App.Controls;
 using Bit.Droid.Renderers;
-using Microsoft.Maui;
 using Microsoft.Maui.Controls;
-using Microsoft.Maui.Platform.Android;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls.Compatibility.Platform.Android;
+using Microsoft.Maui.Controls.Platform;
 
 [assembly: ExportRenderer(typeof(ExtendedStepper), typeof(ExtendedStepperRenderer))]
 namespace Bit.Droid.Renderers
@@ -45,9 +46,9 @@ namespace Bit.Droid.Renderers
                 if (Build.VERSION.SdkInt >= BuildVersionCodes.Q)
                 {
                     Control.GetChildAt(0)?.Background?.SetColorFilter(
-                        new BlendModeColorFilter(view.StepperBackgroundColor.ToAndroid(), BlendMode.Multiply));
+                        new BlendModeColorFilter(view.StepperBackgroundColor.ToAndroid(), Android.Graphics.BlendMode.Multiply));
                     Control.GetChildAt(1)?.Background?.SetColorFilter(
-                        new BlendModeColorFilter(view.StepperBackgroundColor.ToAndroid(), BlendMode.Multiply));
+                        new BlendModeColorFilter(view.StepperBackgroundColor.ToAndroid(), Android.Graphics.BlendMode.Multiply));
                 }
                 else
                 {
