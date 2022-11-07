@@ -1,150 +1,45 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <UseMaui>true</UseMaui>
     <TargetFramework>net6.0-ios</TargetFramework>
     <OutputType>Exe</OutputType>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{599E0201-420A-4C3E-A7BA-5349F72E0B15}</ProjectGuid>
-    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <TemplateGuid>{6143fdea-f3c2-4a09-aafa-6e230626515e}</TemplateGuid>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>true</ImplicitUsings>
+    <SupportedOSPlatformVersion>10.0</SupportedOSPlatformVersion>
+    <UseMaui>true</UseMaui>
     <OutputType>Exe</OutputType>
     <RootNamespace>Bit.iOS</RootNamespace>
-    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>BitwardeniOS</AssemblyName>
-    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-ios|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
     <DefineConstants>DEBUG;__UNIFIED__;__MOBILE__;__IOS__</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <MtouchArch>x86_64</MtouchArch>
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
     <OptimizePNGs>true</OptimizePNGs>
     <MtouchExtraArgs>--nodevcodeshare --http-message-handler=NSUrlSessionHandler</MtouchExtraArgs>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-ios|AnyCPU'">
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <MtouchLink>Full</MtouchLink>
-    <MtouchArch>x86_64</MtouchArch>
     <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchExtraArgs>--nodevcodeshare --http-message-handler=NSUrlSessionHandler --linkskip=BitwardeniOS --linkskip=BitwardeniOSCore --linkskip=BitwardeniOSAutofill --linkskip=BitwardeniOSExtension --linkskip=BitwardenApp --linkskip=BitwardenCore --linkskip=LiteDB --linkskip=CsvHelper --linkskip=BitwardeniOSShareExtension </MtouchExtraArgs>
     <OptimizePNGs>true</OptimizePNGs>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\iPhone\Debug</OutputPath>
-    <DefineConstants>DEBUG</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
-    <MtouchArch>ARM64</MtouchArch>
-    <CodesignKey>iPhone Developer</CodesignKey>
-    <MtouchDebug>true</MtouchDebug>
-    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <MtouchLink>None</MtouchLink>
-    <MtouchFloat32>false</MtouchFloat32>
-    <MtouchExtraArgs>--nodevcodeshare --http-message-handler=NSUrlSessionHandler</MtouchExtraArgs>
-    <OptimizePNGs>true</OptimizePNGs>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
-    <DebugType>none</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\iPhone\Release</OutputPath>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <MtouchArch>ARM64</MtouchArch>
-    <ConsolePause>false</ConsolePause>
-    <CodesignKey>iPhone Developer</CodesignKey>
-    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <MtouchLink>Full</MtouchLink>
-    <MtouchExtraArgs>--nodevcodeshare --http-message-handler=NSUrlSessionHandler --linkskip=BitwardeniOS --linkskip=BitwardeniOSCore --linkskip=BitwardeniOSAutofill --linkskip=BitwardeniOSExtension --linkskip=BitwardenApp --linkskip=BitwardenCore --linkskip=LiteDB --linkskip=CsvHelper --linkskip=BitwardeniOSShareExtension</MtouchExtraArgs>
-    <OptimizePNGs>true</OptimizePNGs>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
-    <DebugType>none</DebugType>
-    <Optimize>True</Optimize>
-    <OutputPath>bin\iPhone\Ad-Hoc</OutputPath>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <ConsolePause>False</ConsolePause>
-    <MtouchArch>ARM64</MtouchArch>
-    <BuildIpa>True</BuildIpa>
-    <CodesignKey>iPhone Distribution</CodesignKey>
-    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <MtouchLink>Full</MtouchLink>
-    <MtouchExtraArgs>--nodevcodeshare --http-message-handler=NSUrlSessionHandler --linkskip=BitwardeniOS --linkskip=BitwardeniOSCore --linkskip=BitwardeniOSAutofill --linkskip=BitwardeniOSExtension --linkskip=BitwardenApp --linkskip=BitwardenCore --linkskip=LiteDB --linkskip=CsvHelper --linkskip=BitwardeniOSShareExtension</MtouchExtraArgs>
-    <OptimizePNGs>true</OptimizePNGs>
-    <CodesignProvision>Automatic:AdHoc</CodesignProvision>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
-    <DebugType>none</DebugType>
-    <Optimize>True</Optimize>
-    <OutputPath>bin\iPhone\AppStore</OutputPath>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <ConsolePause>False</ConsolePause>
-    <MtouchArch>ARM64</MtouchArch>
-    <CodesignProvision>Automatic:AppStore</CodesignProvision>
-    <CodesignKey>iPhone Distribution</CodesignKey>
-    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <MtouchExtraArgs>--nodevcodeshare --http-message-handler=NSUrlSessionHandler --linkskip=BitwardeniOS --linkskip=BitwardeniOSCore --linkskip=BitwardeniOSAutofill --linkskip=BitwardeniOSExtension --linkskip=BitwardenApp --linkskip=BitwardenCore --linkskip=LiteDB --linkskip=CsvHelper --linkskip=BitwardeniOSShareExtension</MtouchExtraArgs>
-    <OptimizePNGs>true</OptimizePNGs>
-    <MtouchLink>Full</MtouchLink>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'FDroid|iPhoneSimulator'">
-    <OutputPath>bin\iPhoneSimulator\FDroid\</OutputPath>
-    <DefineConstants>__IOS__;__MOBILE__;__UNIFIED__;</DefineConstants>
-    <Optimize>true</Optimize>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <MtouchExtraArgs>--nodevcodeshare --http-message-handler=NSUrlSessionHandler --linkskip=BitwardeniOS --linkskip=BitwardeniOSCore --linkskip=BitwardeniOSAutofill --linkskip=BitwardeniOSExtension --linkskip=BitwardenApp --linkskip=BitwardenCore --linkskip=LiteDB --linkskip=CsvHelper</MtouchExtraArgs>
-    <OptimizePNGs>true</OptimizePNGs>
-    <MtouchLink>SdkOnly</MtouchLink>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'FDroid|iPhone'">
-    <OutputPath>bin\iPhone\FDroid\</OutputPath>
-    <DefineConstants>__IOS__;__MOBILE__;__UNIFIED__;</DefineConstants>
-    <Optimize>true</Optimize>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <MtouchLink>SdkOnly</MtouchLink>
-    <MtouchArch>ARMv7</MtouchArch>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
-    <AppExtensionDebugBundleId />
-  </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Main.cs" />
-    <Compile Include="AppDelegate.cs" />
-    <Compile Include="Services\iOSPushNotificationHandler.cs" />
-    <Compile Include="Services\iOSPushNotificationService.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <BundleResource Include="Resources\MaterialIcons_Regular.ttf" />
     <BundleResource Include="Resources\bwi-font.ttf" />
     <ImageAsset Include="Resources\Assets.xcassets\AppIcons.appiconset\Contents.json">
@@ -176,9 +71,6 @@
     <BundleResource Include="Resources\generate%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <InterfaceDefinition Include="LaunchScreen.storyboard" />
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -192,29 +84,30 @@
       <Project>{4b8a8c41-9820-4341-974c-41e65b7f4366}</Project>
       <Name>Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\iOS.Autofill\iOS.Autofill.csproj">
-      <Project>{8a3ecd75-3ec8-4cb3-b3a2-a73a724c279a}</Project>
-      <Name>iOS.Autofill</Name>
-      <IsAppExtension>true</IsAppExtension>
-      <IsWatchApp>false</IsWatchApp>
-    </ProjectReference>
     <ProjectReference Include="..\iOS.Core\iOS.Core.csproj">
       <Project>{e71f3053-056c-4381-9638-048ed73bdff6}</Project>
       <Name>iOS.Core</Name>
       <IsAppExtension>false</IsAppExtension>
       <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
-    <ProjectReference Include="..\iOS.Extension\iOS.Extension.csproj">
+    <!--TODO: [MAUI-Migration] [Critical]-->
+    <!--<ProjectReference Include="..\iOS.Autofill\iOS.Autofill.csproj">
+      <Project>{8a3ecd75-3ec8-4cb3-b3a2-a73a724c279a}</Project>
+      <Name>iOS.Autofill</Name>
+      <IsAppExtension>true</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
+    </ProjectReference>-->
+    <!--<ProjectReference Include="..\iOS.Extension\iOS.Extension.csproj">
       <Project>{324be76c-38fa-4f11-8bb1-95c7b3b1b545}</Project>
       <Name>iOS.Extension</Name>
       <IsAppExtension>true</IsAppExtension>
       <IsWatchApp>false</IsWatchApp>
-    </ProjectReference>
-    <ProjectReference Include="..\iOS.ShareExtension\iOS.ShareExtension.csproj">
+    </ProjectReference>-->
+    <!--<ProjectReference Include="..\iOS.ShareExtension\iOS.ShareExtension.csproj">
       <IsAppExtension>true</IsAppExtension>
       <Project>{F8C3F648-EA5A-4719-8005-85D1690B1655}</Project>
       <Name>iOS.ShareExtension</Name>
-    </ProjectReference>
+    </ProjectReference>-->
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\autofill-kb.png" />
