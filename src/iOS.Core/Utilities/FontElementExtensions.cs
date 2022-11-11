@@ -1,22 +1,26 @@
 ﻿using UIKit;
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
-using Microsoft.Maui.Internals;
-using Microsoft.Maui.Platform.iOS;
+using Microsoft.Maui.Controls.Internals;
+using Microsoft.Maui.Controls.Platform;
 
 namespace Bit.iOS.Core.Utilities
 {
     public static class FontElementExtensions
     {
-        public static UIFont ToUIFont(this IFontElement fontElement)
+
+        // TODO: [MAUI-Migration] [Critical] Compiling but big untested change
+
+        public static UIFont ToUIFont(this Font font)
         {
-            var fontSize = fontElement.FontSize;
-            var fontAttributes = fontElement.FontAttributes;
-            var fontFamily = fontElement.FontFamily;
+            var fontSize = font.Size;
+            var fontAttributes = font.GetFontAttributes();
+            var fontFamily = font.Family;
+            var fontWeight = fontAttributes == FontAttributes.Bold ? UIFontWeight.Bold : UIFontWeight.Regular;
 
             return fontFamily is null
-                ? Font.SystemFontOfSize(fontSize, fontAttributes).ToUIFont()
-                : Font.OfSize(fontFamily, fontSize).WithAttributes(fontAttributes).ToUIFont();
+                ? UIFont.SystemFontOfSize((nfloat)fontSize, fontWeight)
+                : UIFont.FromName(fontFamily, (nfloat)fontSize);
         }
     }
 }

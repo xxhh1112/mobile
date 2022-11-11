@@ -4,7 +4,9 @@ using System;
 using UIKit;
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
-using Microsoft.Maui.Platform.iOS;
+using Microsoft.Maui.Graphics;
+using Microsoft.Maui.Controls.Compatibility.Platform.iOS;
+using Microsoft.Maui.Platform;
 
 namespace Bit.iOS.Core.Views
 {
@@ -22,10 +24,10 @@ namespace Bit.iOS.Core.Views
             TranslatesAutoresizingMaskIntoConstraints = false;
             var bgColor = UIColor.DarkGray;
             var nordTheme = ThemeManager.Resources() != null &&
-                ThemeManager.GetResourceColor("BackgroundColor") == Color.FromHex("#3b4252");
+                ThemeManager.GetResourceColor("BackgroundColor") == Color.FromArgb("#3b4252");
             if (nordTheme)
             {
-                bgColor = Color.FromHex("#4c566a").ToUIColor();
+                bgColor = Color.FromArgb("#4c566a").ToPlatform();
             }
             BackgroundColor = bgColor.ColorWithAlpha(0.9f);
             Layer.CornerRadius = 18;

@@ -6,7 +6,8 @@ using Bit.Core.Utilities;
 using UIKit;
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
-using Microsoft.Maui.Platform.iOS;
+using Microsoft.Maui.Controls.Compatibility.Platform.iOS;
+using Microsoft.Maui.Graphics;
 
 namespace Bit.iOS.Core.Utilities
 {
@@ -68,6 +69,7 @@ namespace Bit.iOS.Core.Utilities
             overlay.BindingContext = vm;
             overlay.IsVisible = false;
 
+            // TODO: [MAUI-Migration] [Obsolete]
             var renderer = Platform.CreateRenderer(overlay.Content);
             renderer.SetElementSize(new Size(containerView.Frame.Size.Width, containerView.Frame.Size.Height));
 

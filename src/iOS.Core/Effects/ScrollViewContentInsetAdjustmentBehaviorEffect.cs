@@ -2,8 +2,10 @@
 using UIKit;
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
-using Microsoft.Maui.Platform.iOS;
+using Microsoft.Maui.Platform;
+using Microsoft.Maui.Controls.Platform;
 
+//TODO: [MAUI-Migration] TEST https://github.com/jsuarezruiz/xamarin-forms-to-net-maui/tree/main/Effects
 [assembly: ExportEffect(typeof(ScrollViewContentInsetAdjustmentBehaviorEffect), nameof(ScrollViewContentInsetAdjustmentBehaviorEffect))]
 namespace Bit.iOS.Core.Effects
 {

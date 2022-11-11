@@ -6,14 +6,17 @@ using Bit.iOS.Core.Utilities;
 using UIKit;
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
-using Microsoft.Maui.Platform.iOS;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls.Compatibility.Platform.iOS;
+using Microsoft.Maui.Controls.Platform;
 
 [assembly: ExportRenderer(typeof(Label), typeof(CustomLabelRenderer))]
 namespace Bit.iOS.Core.Renderers
 {
     public class CustomLabelRenderer : LabelRenderer
-	{
-		protected override void OnElementChanged(ElementChangedEventArgs<Label> e)
+    {
+        //TODO [MAUI-Migration] [Critical] https://github.com/dotnet/maui/wiki/Using-Custom-Renderers-in-.NET-MAUI
+        protected override void OnElementChanged(ElementChangedEventArgs<Label> e)
 		{
 			base.OnElementChanged(e);
 			if (Control != null && e.NewElement is Label)
@@ -26,7 +29,8 @@ namespace Bit.iOS.Core.Renderers
 		{
 			base.OnElementPropertyChanged(sender, e);
 
-			if (e.PropertyName == Label.FontProperty.PropertyName ||
+            //TODO MAUI
+            if (/*e.PropertyName == Label.FontProperty.PropertyName ||*/
 				e.PropertyName == Label.TextProperty.PropertyName ||
 				e.PropertyName == Label.FormattedTextProperty.PropertyName)
 			{

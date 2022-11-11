@@ -337,9 +337,11 @@ namespace Bit.iOS.Core.Controllers
             }
 
             var navigationPage = new NavigationPage(loginPage);
-            var loginController = navigationPage.CreateViewController();
-            loginController.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
-            PresentViewController(loginController, true, null);
+
+            //TODO: [MAUI-Migration] [Critical]
+            //var loginController = navigationPage.CreateViewController();
+            //loginController.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
+            //PresentViewController(loginController, true, null);
         }
 
         private async Task SetKeyAndContinueAsync(SymmetricCryptoKey key, bool masterPassword = false)

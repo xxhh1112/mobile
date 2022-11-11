@@ -2,8 +2,9 @@
 using UIKit;
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
-using Microsoft.Maui.Platform.iOS;
+using Microsoft.Maui.Controls.Platform;
 
+//TODO: [MAUI-Migration] TEST https://github.com/jsuarezruiz/xamarin-forms-to-net-maui/tree/main/Effects
 [assembly: ResolutionGroupName("Bitwarden")]
 [assembly: ExportEffect(typeof(ScrollEnabledEffect), "ScrollEnabledEffect")]
 namespace Bit.iOS.Core.Effects

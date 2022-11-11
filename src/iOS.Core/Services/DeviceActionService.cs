@@ -18,6 +18,7 @@ using Photos;
 using UIKit;
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
+using Microsoft.Maui.ApplicationModel;
 
 namespace Bit.iOS.Core.Services
 {
@@ -43,7 +44,8 @@ namespace Bit.iOS.Core.Services
             {
                 if (string.IsNullOrWhiteSpace(_userAgent))
                 {
-                    _userAgent = $"Bitwarden_Mobile/{Microsoft.Maui.Essentials.AppInfo.VersionString} " +
+                    // TODO: [MAUI-Migration] check it works
+                    _userAgent = $"Bitwarden_Mobile/{AppInfo.VersionString} " +
                         $"(iOS {UIDevice.CurrentDevice.SystemVersion}; Model {UIDevice.CurrentDevice.Model})";
                 }
                 return _userAgent;
@@ -261,7 +263,7 @@ namespace Bit.iOS.Core.Services
             {
                 uri = "itms-apps://itunes.apple.com/us/app/id1137397744?action=write-review";
             }
-            Device.OpenUri(new Uri(uri));
+            Launcher.OpenAsync(new Uri(uri));
         }
 
         public bool SupportsFaceBiometric()

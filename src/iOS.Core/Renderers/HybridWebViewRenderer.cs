@@ -1,15 +1,13 @@
-﻿using Foundation;
-using WebKit;
-using Microsoft.Maui;
-using Microsoft.Maui.Controls;
-using Microsoft.Maui.Platform.iOS;
+﻿using System.ComponentModel;
 using Bit.App.Controls;
-using Bit.iOS.Core.Renderers;
-using System.ComponentModel;
+using Foundation;
+using Microsoft.Maui.Controls.Handlers.Compatibility;
+using Microsoft.Maui.Controls.Platform;
+using WebKit;
 
-[assembly: ExportRenderer(typeof(HybridWebView), typeof(HybridWebViewRenderer))]
 namespace Bit.iOS.Core.Renderers
 {
+    //TODO [MAUI-Migration] [Critical] https://github.com/dotnet/maui/wiki/Using-Custom-Renderers-in-.NET-MAUI
     public class HybridWebViewRenderer : ViewRenderer<HybridWebView, WKWebView>, IWKScriptMessageHandler
     {
         private const string JSFunction =

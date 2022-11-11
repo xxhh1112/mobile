@@ -4,10 +4,12 @@ using Bit.Core.Services;
 using CoreGraphics;
 using Foundation;
 using UIKit;
-using Microsoft.Maui.Platform.iOS;
+using Microsoft.Maui.Platform;
+using Microsoft.Maui.Controls.Compatibility.Platform.iOS;
 
 namespace Bit.iOS.Core.Renderers.CollectionView
 {
+    //TODO [MAUI-Migration] [Deprecated]
     public class ExtendedGroupableItemsViewDelegator<TItemsView, TViewController> : GroupableItemsViewDelegator<TItemsView, TViewController>
         where TItemsView : ExtendedCollectionView
         where TViewController : GroupableItemsViewController<TItemsView>

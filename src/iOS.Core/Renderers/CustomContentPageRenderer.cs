@@ -5,11 +5,13 @@ using Bit.iOS.Core.Renderers;
 using UIKit;
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
-using Microsoft.Maui.Platform.iOS;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls.Compatibility.Platform.iOS;
 
 [assembly: ExportRenderer(typeof(ContentPage), typeof(CustomContentPageRenderer))]
 namespace Bit.iOS.Core.Renderers
 {
+    //TODO [MAUI-Migration] [Critical] https://github.com/dotnet/maui/wiki/Using-Custom-Renderers-in-.NET-MAUI
     public class CustomContentPageRenderer : PageRenderer
     {
         public override void ViewWillAppear(bool animated)
