@@ -19,7 +19,7 @@ using Foundation;
 using UIKit;
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
-using Microsoft.Maui.Platform.iOS;
+using Microsoft.Maui.Controls.Compatibility;
 
 namespace Bit.iOS.Autofill
 {
@@ -392,9 +392,6 @@ namespace Bit.iOS.Autofill
 
         private void InitApp()
         {
-            // Init Maui
-            Maui.Init();
-
             if (ServiceContainer.RegisteredServices.Count > 0)
             {
                 ServiceContainer.Reset();

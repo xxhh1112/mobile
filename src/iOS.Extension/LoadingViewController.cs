@@ -21,6 +21,7 @@ using Bit.App.Pages;
 using Bit.App.Models;
 using Bit.App.Utilities;
 using Bit.iOS.Core.Views;
+using Microsoft.Maui.Controls.Compatibility;
 
 namespace Bit.iOS.Extension
 {
@@ -396,9 +397,6 @@ namespace Bit.iOS.Extension
 
         private void InitApp()
         {
-            // Init Xamarin Forms
-            Forms.Init();
-
             if (ServiceContainer.RegisteredServices.Count > 0)
             {
                 ServiceContainer.Reset();

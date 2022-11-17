@@ -22,6 +22,7 @@ using MobileCoreServices;
 using UIKit;
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Compatibility;
 
 namespace Bit.iOS.ShareExtension
 {

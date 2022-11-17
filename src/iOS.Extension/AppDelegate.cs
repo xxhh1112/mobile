@@ -1,11 +1,16 @@
-﻿using Foundation;
+﻿using Bit.App;
+using Foundation;
+using Microsoft.Maui;
+using Microsoft.Maui.Hosting;
 using UIKit;
 
 namespace Bit.iOS.Extension
 {
     [Register("AppDelegate")]
-    public partial class AppDelegate : UIApplicationDelegate
+    public partial class AppDelegate : MauiUIApplicationDelegate
     {
+        protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp(null, null);
+
         public override UIWindow Window
         {
             get; set;
