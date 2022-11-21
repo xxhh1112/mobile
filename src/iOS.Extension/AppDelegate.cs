@@ -9,7 +9,7 @@ namespace Bit.iOS.Extension
     [Register("AppDelegate")]
     public partial class AppDelegate : MauiUIApplicationDelegate
     {
-        protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp(null, null);
+        protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp(null);
 
         public override UIWindow Window
         {

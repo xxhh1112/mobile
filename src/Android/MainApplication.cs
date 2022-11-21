@@ -94,7 +94,7 @@ namespace Bit.Droid
                 effects.Add<App.Effects.FixedSizeEffect, Droid.Effects.FixedSizeEffect>();
                 effects.Add<App.Effects.NoEmojiKeyboardEffect, Droid.Effects.NoEmojiKeyboardEffect>();
                 effects.Add<App.Effects.TabBarEffect, Droid.Effects.TabBarEffect>();
-            }, null);
+            });
         }
 
         public override void OnCreate()

@@ -31,8 +31,8 @@
     <PackageReference Include="CommunityToolkit.MVVM" Version="8.0.0" />
     <PackageReference Include="Plugin.Fingerprint" Version="3.0.0-beta.1" />
     <PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="2.88.2" />
-    <PackageReference Include="CommunityToolkit.Maui" Version="1.3.0" />
-    <PackageReference Include="CommunityToolkit.Maui.Core" Version="1.3.0" />
+    <PackageReference Include="CommunityToolkit.Maui" Version="2.0.0" />
+    <PackageReference Include="CommunityToolkit.Maui.Core" Version="2.0.0" />
     <PackageReference Include="ZXing.Net.Maui" Version="0.1.0-preview.7" />
     <!--<PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />-->
   </ItemGroup>
@@ -150,6 +150,11 @@
     <Folder Include="Controls\AccountSwitchingOverlay\" />
     <Folder Include="Utilities\AccountManagement\" />
     <Folder Include="Controls\DateTime\" />
+    <Folder Include="Platform\" />
+    <Folder Include="Platform\iOS\" />
+    <Folder Include="Platform\iOS\Renderers\" />
+    <Folder Include="Platform\Android\" />
+    <Folder Include="Platform\Android\Renderers\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -494,6 +499,11 @@
     <None Remove="Controls\AccountSwitchingOverlay\" />
     <None Remove="Utilities\AccountManagement\" />
     <None Remove="Controls\DateTime\" />
+    <None Remove="Platform\" />
+    <None Remove="Platform\iOS\" />
+    <None Remove="Platform\iOS\Renderers\" />
+    <None Remove="Platform\Android\" />
+    <None Remove="Platform\Android\Renderers\" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Condition="'$(_ResourcePrefix)' != ''" Update="Resources\AppResources.lv.resx">

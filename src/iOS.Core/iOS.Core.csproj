@@ -12,6 +12,8 @@
     <RootNamespace>Bit.iOS.Core</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>BitwardeniOSCore</AssemblyName>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <SupportedOSPlatformVersion>10.0</SupportedOSPlatformVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <Configurations>Debug;Release;FDroid;AppStore;Ad-Hoc</Configurations>

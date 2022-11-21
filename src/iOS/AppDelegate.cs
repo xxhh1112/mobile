@@ -46,11 +46,7 @@ namespace Bit.iOS
         private IStateService _stateService;
         private IEventService _eventService;
 
-        protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp(null,
-            (IMauiHandlersCollection handlers) =>
-            {
-                handlers.AddCompatibilityRenderer(typeof(App.Controls.HybridWebView), typeof(HybridWebViewRenderer));
-            });
+        protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp(null);
 
 
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)

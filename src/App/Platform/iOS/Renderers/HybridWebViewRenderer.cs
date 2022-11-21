@@ -1,11 +1,13 @@
-﻿using System.ComponentModel;
+﻿#if IOS
+using System.ComponentModel;
 using Bit.App.Controls;
 using Foundation;
-using Microsoft.Maui.Controls.Handlers.Compatibility;
-using Microsoft.Maui.Controls.Platform;
 using WebKit;
 
-namespace Bit.iOS.Core.Renderers
+using Microsoft.Maui.Controls.Platform;
+using Microsoft.Maui.Controls.Compatibility.Platform.iOS;
+
+namespace Bit.App.Platform.iOS.Renderers
 {
     //TODO [MAUI-Migration] [Critical] https://github.com/dotnet/maui/wiki/Using-Custom-Renderers-in-.NET-MAUI https://github.com/jsuarezruiz/mvpsummit2022-dotnet-maui#renderers
     public class HybridWebViewRenderer : ViewRenderer<HybridWebView, WKWebView>, IWKScriptMessageHandler
@@ -61,3 +63,4 @@ namespace Bit.iOS.Core.Renderers
         }
     }
 }
+#endif
