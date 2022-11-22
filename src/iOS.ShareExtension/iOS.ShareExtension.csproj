@@ -15,6 +15,7 @@
     <IsWatchExtension>false</IsWatchExtension>
     <SupportedOSPlatformVersion>10.0</SupportedOSPlatformVersion>
     <ApplicationId>com.8bit.bitwarden.share-extension</ApplicationId>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>

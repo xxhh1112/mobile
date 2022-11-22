@@ -19,7 +19,8 @@ namespace Bit.App.Pages
 
         public bool SubLabelTextEnabled => SubLabel == AppResources.On;
         public string LineBreakMode => SubLabel == null ? "TailTruncation" : "";
-        public bool ShowSubLabel => SubLabel.Length != 0;
+        //TODO [MAUI-Migration] Added null check that wasn't necessary on forms. Check cause
+        public bool ShowSubLabel => SubLabel?.Length != 0;
         public bool ShowTimeInput => Time != null;
         public Color SubLabelColor => SubLabelTextEnabled ?
             ThemeManager.GetResourceColor("SuccessColor") :

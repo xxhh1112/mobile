@@ -10,6 +10,7 @@
     <RootNamespace>Bit.iOS</RootNamespace>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-ios|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>

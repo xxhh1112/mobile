@@ -16,6 +16,7 @@ using Bit.App.Models;
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
 using Bit.Core;
+using Microsoft.Maui.Controls.Compatibility;
 
 namespace Bit.iOS.Core.Controllers
 {
@@ -338,10 +339,9 @@ namespace Bit.iOS.Core.Controllers
 
             var navigationPage = new NavigationPage(loginPage);
 
-            //TODO: [MAUI-Migration] [Critical]
-            //var loginController = navigationPage.CreateViewController();
-            //loginController.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
-            //PresentViewController(loginController, true, null);
+            var loginController = navigationPage.CreateViewController();
+            loginController.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
+            PresentViewController(loginController, true, null);
         }
 
         private async Task SetKeyAndContinueAsync(SymmetricCryptoKey key, bool masterPassword = false)

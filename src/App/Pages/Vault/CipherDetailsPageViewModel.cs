@@ -195,7 +195,8 @@ namespace Bit.App.Pages
                 });
                 fs.Spans.Add(new Span
                 {
-                    Text = string.Format(" {0}", Cipher.PasswordHistory.Count.ToString()),
+                    //TODO [MAUI-Migration] Added null check that wasn't necessary on forms. Check cause
+                    Text = string.Format(" {0}", Cipher.PasswordHistory?.Count.ToString()),
                     TextColor = ThemeManager.GetResourceColor("PrimaryColor")
                 });
                 return fs;

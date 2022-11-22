@@ -16,6 +16,7 @@
     <IsWatchExtension>false</IsWatchExtension>
     <SupportedOSPlatformVersion>12.0</SupportedOSPlatformVersion>
     <ApplicationId>com.8bit.bitwarden.autofill</ApplicationId>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
