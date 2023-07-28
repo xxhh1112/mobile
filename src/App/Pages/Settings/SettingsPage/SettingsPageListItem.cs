@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Bit.App.Resources;
 using Bit.App.Utilities;
-using Xamarin.Forms;
+using Microsoft.Maui.Graphics;
 
 namespace Bit.App.Pages
 {

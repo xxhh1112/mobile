@@ -4,8 +4,9 @@ using Android.Graphics.Drawables;
 using AndroidX.Core.Content.Resources;
 using Bit.App.Controls;
 using Bit.Droid.Renderers;
-using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
 
 [assembly: ExportRenderer(typeof(ExtendedSlider), typeof(ExtendedSliderRenderer))]
 namespace Bit.Droid.Renderers
@@ -39,9 +40,9 @@ namespace Bit.Droid.Renderers
                 var t = ResourcesCompat.GetDrawable(Resources, Resource.Drawable.slider_thumb, null);
                 if (t is GradientDrawable thumb)
                 {
-                    if (view.ThumbColor == Color.Default)
+                    if (view.ThumbColor == null)
                     {
-                        thumb.SetColor(Color.White.ToAndroid());
+                        thumb.SetColor(Microsoft.Maui.Graphics.Colors.White.ToAndroid());
                     }
                     else
                     {

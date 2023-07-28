@@ -10,8 +10,8 @@ using Bit.Core.Enums;
 using Bit.Core.Exceptions;
 using Bit.Core.Models.Domain;
 using Bit.Core.Utilities;
-using Xamarin.CommunityToolkit.ObjectModel;
-using Xamarin.Essentials;
+using Microsoft.Maui.Authentication;
+using Microsoft.Maui.Networking;
 
 namespace Bit.App.Pages
 {

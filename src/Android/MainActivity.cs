@@ -23,9 +23,9 @@ using Bit.Droid.Receivers;
 using Bit.Droid.Utilities;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Xamarin.Essentials;
 using ZXing.Net.Mobile.Android;
 using FileProvider = AndroidX.Core.Content.FileProvider;
+using Microsoft.Maui.Devices;
 
 namespace Bit.Droid
 {

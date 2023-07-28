@@ -4,7 +4,7 @@ using Bit.App.Controls;
 using Bit.App.Resources;
 using Bit.Core.Enums;
 using Bit.Core.Models.View;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
 
 namespace Bit.App.Pages
 {

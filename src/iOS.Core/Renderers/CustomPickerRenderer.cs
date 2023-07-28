@@ -1,8 +1,10 @@
 ﻿using Bit.iOS.Core.Renderers;
 using Bit.iOS.Core.Utilities;
 using UIKit;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.iOS;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls.Compatibility.Platform.iOS;
+using Microsoft.Maui.Controls.Platform;
 
 [assembly: ExportRenderer(typeof(Picker), typeof(CustomPickerRenderer))]
 namespace Bit.iOS.Core.Renderers

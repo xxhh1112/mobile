@@ -1,6 +1,5 @@
 ﻿using System;
 using Bit.App.Controls;
-using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Android.Webkit;
 using AWebkit = Android.Webkit;
@@ -8,6 +7,8 @@ using Java.Interop;
 using Android.Content;
 using Bit.Droid.Renderers;
 using System.ComponentModel;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
 
 [assembly: ExportRenderer(typeof(HybridWebView), typeof(HybridWebViewRenderer))]
 namespace Bit.Droid.Renderers

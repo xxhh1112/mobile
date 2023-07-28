@@ -13,9 +13,10 @@ using Bit.Core.Abstractions;
 using Bit.Droid.Receivers;
 using Bit.Droid.Utilities;
 using Newtonsoft.Json;
-using Xamarin.Forms;
 using static Xamarin.Essentials.Platform;
 using Intent = Android.Content.Intent;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
 
 namespace Bit.Droid.Services
 {

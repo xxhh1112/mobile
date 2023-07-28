@@ -17,7 +17,7 @@ using Bit.iOS.Core.Services;
 using CoreNFC;
 using Foundation;
 using UIKit;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
 
 namespace Bit.iOS.Core.Utilities
 {
@@ -36,7 +36,8 @@ namespace Bit.iOS.Core.Utilities
             out IAccountsManager accountsManager)
             where T : UIViewController, IAccountsManagerHost
         {
-            Forms.Init();
+            // TODO: [MAUI-Migration] [Critical] Need to check if this is necessary for extensions
+            //Forms.Init();
 
             if (ServiceContainer.RegisteredServices.Count > 0)
             {

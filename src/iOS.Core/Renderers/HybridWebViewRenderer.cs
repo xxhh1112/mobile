@@ -1,10 +1,11 @@
-﻿using Foundation;
-using WebKit;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.iOS;
+﻿using System.ComponentModel;
 using Bit.App.Controls;
 using Bit.iOS.Core.Renderers;
-using System.ComponentModel;
+using Foundation;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls.Compatibility.Platform.iOS;
+using Microsoft.Maui.Controls.Platform;
+using WebKit;
 
 [assembly: ExportRenderer(typeof(HybridWebView), typeof(HybridWebViewRenderer))]
 namespace Bit.iOS.Core.Renderers

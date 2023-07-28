@@ -10,7 +10,7 @@ using Foundation;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using UserNotifications;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
 
 namespace Bit.iOS.Services
 {

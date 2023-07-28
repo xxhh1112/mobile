@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Bit.Core.Models.Domain;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Graphics;
 
 namespace Bit.App.Controls
 {
@@ -22,13 +22,13 @@ namespace Bit.App.Controls
             nameof(ButtonCommand), typeof(ICommand), typeof(IconLabelButton));
 
         public static readonly BindableProperty IconLabelColorProperty = BindableProperty.Create(
-            nameof(IconLabelColor), typeof(Color), typeof(IconLabelButton), Color.White);
+            nameof(IconLabelColor), typeof(Color), typeof(IconLabelButton), Colors.White);
 
         public static readonly BindableProperty IconLabelBackgroundColorProperty = BindableProperty.Create(
-            nameof(IconLabelBackgroundColor), typeof(Color), typeof(IconLabelButton), Color.White);
+            nameof(IconLabelBackgroundColor), typeof(Color), typeof(IconLabelButton), Colors.White);
 
         public static readonly BindableProperty IconLabelBorderColorProperty = BindableProperty.Create(
-            nameof(IconLabelBorderColor), typeof(Color), typeof(IconLabelButton), Color.White);
+            nameof(IconLabelBorderColor), typeof(Color), typeof(IconLabelButton), Colors.White);
 
         public IconLabelButton()
         {

@@ -5,6 +5,7 @@ using Bit.App.Utilities;
 using Bit.Core.Abstractions;
 using Bit.Core.Exceptions;
 using Bit.Core.Utilities;
+using Microsoft.Maui.Networking;
 
 namespace Bit.App.Pages
 {
@@ -27,7 +28,7 @@ namespace Bit.App.Pages
         {
             try
             {
-                if (Xamarin.Essentials.Connectivity.NetworkAccess == Xamarin.Essentials.NetworkAccess.None)
+                if (Connectivity.NetworkAccess == NetworkAccess.None)
                 {
                     await _platformUtilsService.ShowDialogAsync(AppResources.InternetConnectionRequiredMessage,
                         AppResources.InternetConnectionRequiredTitle, AppResources.Ok);

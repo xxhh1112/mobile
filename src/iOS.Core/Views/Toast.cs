@@ -1,10 +1,10 @@
-﻿using Bit.App.Utilities;
-using Foundation;
-using System;
+﻿using System;
 using System.Diagnostics;
+using Bit.App.Utilities;
+using Foundation;
+using Microsoft.Maui.Graphics;
+using Microsoft.Maui.Platform;
 using UIKit;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.iOS;
 
 namespace Bit.iOS.Core.Views
 {
@@ -25,7 +25,7 @@ namespace Bit.iOS.Core.Views
                 ThemeManager.GetResourceColor("BackgroundColor") == Color.FromHex("#3b4252");
             if (nordTheme)
             {
-                bgColor = Color.FromHex("#4c566a").ToUIColor();
+                bgColor = Color.FromHex("#4c566a").ToPlatform();
             }
             BackgroundColor = bgColor.ColorWithAlpha(0.9f);
             Layer.CornerRadius = 18;

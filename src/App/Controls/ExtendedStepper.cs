@@ -1,14 +1,15 @@
-﻿using Xamarin.Forms;
+﻿using Microsoft.Maui.Controls;
+using Microsoft.Maui.Graphics;
 
 namespace Bit.App.Controls
 {
     public class ExtendedStepper : Stepper
     {
         public static readonly BindableProperty StepperBackgroundColorProperty = BindableProperty.Create(
-            nameof(StepperBackgroundColor), typeof(Color), typeof(ExtendedStepper), Color.White);
+            nameof(StepperBackgroundColor), typeof(Color), typeof(ExtendedStepper), Colors.White);
 
         public static readonly BindableProperty StepperForegroundColorProperty = BindableProperty.Create(
-            nameof(StepperForegroundColor), typeof(Color), typeof(ExtendedStepper), Color.Black);
+            nameof(StepperForegroundColor), typeof(Color), typeof(ExtendedStepper), Colors.Black);
 
         public Color StepperBackgroundColor
         {

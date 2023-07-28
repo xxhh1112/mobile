@@ -4,9 +4,10 @@ using Bit.App.Pages;
 using Bit.Droid.Renderers;
 using Google.Android.Material.BottomNavigation;
 using Google.Android.Material.Navigation;
-using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Xamarin.Forms.Platform.Android.AppCompat;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
 
 [assembly: ExportRenderer(typeof(TabbedPage), typeof(CustomTabbedRenderer))]
 namespace Bit.Droid.Renderers

@@ -18,13 +18,17 @@ using CoreNFC;
 using Foundation;
 using UIKit;
 using WatchConnectivity;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.iOS;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
+using Microsoft.Maui.Hosting;
+using Bit.App;
+using Microsoft.Maui.Platform;
+using Microsoft.Maui.ApplicationModel;
 
 namespace Bit.iOS
 {
     [Register("AppDelegate")]
-    public partial class AppDelegate : FormsApplicationDelegate
+    public partial class AppDelegate : MauiUIApplicationDelegate
     {
         const int SPLASH_VIEW_TAG = 4321;
 
@@ -43,11 +47,13 @@ namespace Bit.iOS
         private IStateService _stateService;
         private IEventService _eventService;
 
+        protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp(null);
+
         private LazyResolve<IDeepLinkContext> _deepLinkContext = new LazyResolve<IDeepLinkContext>();
 
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            Forms.Init();
+            //Forms.Init();
             InitApp();
 
             _deviceActionService = ServiceContainer.Resolve<IDeviceActionService>("deviceActionService");
@@ -57,9 +63,11 @@ namespace Bit.iOS
             _stateService = ServiceContainer.Resolve<IStateService>("stateService");
             _eventService = ServiceContainer.Resolve<IEventService>("eventService");
 
-            LoadApplication(new App.App(null));
+            // TODO: [MAUI-Migration] clean
+            //LoadApplication(new App.App(null));
             iOSCoreHelpers.AppearanceAdjustments();
-            ZXing.Net.Mobile.Forms.iOS.Platform.Init();
+            //TODO: [MAUI-Migration] [Critical]
+            //ZXing.Net.Mobile.Forms.iOS.Platform.Init();
 
             ConnectToWatchIfNeededAsync().FireAndForget();
 
@@ -194,7 +202,7 @@ namespace Bit.iOS
             };
             var backgroundView = new UIView(UIApplication.SharedApplication.KeyWindow.Frame)
             {
-                BackgroundColor = ThemeManager.GetResourceColor("SplashBackgroundColor").ToUIColor()
+                BackgroundColor = ThemeManager.GetResourceColor("SplashBackgroundColor").ToPlatform()
             };
             var logo = new UIImage(!ThemeManager.UsingLightTheme ? "logo_white.png" : "logo.png");
             var imageView = new UIImageView(logo)
@@ -233,50 +241,58 @@ namespace Bit.iOS
             base.WillEnterForeground(uiApplication);
         }
 
-        public override bool OpenUrl(UIApplication application, NSUrl url, string sourceApplication,
-            NSObject annotation)
+        [Export("application:openURL:sourceApplication:annotation:")]
+        public bool OpenUrl(UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
         {
             return true;
         }
+        //public override bool OpenUrl(UIApplication application, NSUrl url, string sourceApplication,
+        //    NSObject annotation)
+        //{
+        //    return true;
+        //}
 
         public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
         {
-            return _deepLinkContext.Value.OnNewUri(url) || Xamarin.Essentials.Platform.OpenUrl(app, url, options);
+            return _deepLinkContext.Value.OnNewUri(url) || Platform.OpenUrl(app, url, options);
         }
 
         public override bool ContinueUserActivity(UIApplication application, NSUserActivity userActivity,
             UIApplicationRestorationHandler completionHandler)
         {
-            if (Xamarin.Essentials.Platform.ContinueUserActivity(application, userActivity, completionHandler))
+            if (Platform.ContinueUserActivity(application, userActivity, completionHandler))
             {
                 return true;
             }
             return base.ContinueUserActivity(application, userActivity, completionHandler);
         }
 
-        public override void FailedToRegisterForRemoteNotifications(UIApplication application, NSError error)
+        [Export("application:didFailToRegisterForRemoteNotificationsWithError:")]
+        public void FailedToRegisterForRemoteNotifications(UIApplication application, NSError error)
         {
             _pushHandler?.OnErrorReceived(error);
         }
 
-        public override void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)
+        [Export("application:didRegisterForRemoteNotificationsWithDeviceToken:")]
+        public void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)
         {
             _pushHandler?.OnRegisteredSuccess(deviceToken);
         }
 
-        public override void DidRegisterUserNotificationSettings(UIApplication application,
-            UIUserNotificationSettings notificationSettings)
+        [Export("application:didRegisterUserNotificationSettings:")]
+        public void DidRegisterUserNotificationSettings(UIApplication application, UIUserNotificationSettings notificationSettings)
         {
             application.RegisterForRemoteNotifications();
         }
 
-        public override void DidReceiveRemoteNotification(UIApplication application, NSDictionary userInfo,
-            Action<UIBackgroundFetchResult> completionHandler)
+        [Export("application:didReceiveRemoteNotification:fetchCompletionHandler:")]
+        public void DidReceiveRemoteNotification(UIApplication application, NSDictionary userInfo, Action<UIBackgroundFetchResult> completionHandler)
         {
             _pushHandler?.OnMessageReceived(userInfo);
         }
 
-        public override void ReceivedRemoteNotification(UIApplication application, NSDictionary userInfo)
+        [Export("application:didReceiveRemoteNotification:")]
+        public void ReceivedRemoteNotification(UIApplication application, NSDictionary userInfo)
         {
             _pushHandler?.OnMessageReceived(userInfo);
         }
@@ -292,15 +308,16 @@ namespace Bit.iOS
             ServiceContainer.Register<INativeLogService>("nativeLogService", new ConsoleLogService());
 
             // Note: This might cause a race condition. Investigate more.
-            Task.Run(() =>
-            {
-                FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
-                FFImageLoading.ImageService.Instance.Initialize(new FFImageLoading.Config.Configuration
-                {
-                    FadeAnimationEnabled = false,
-                    FadeAnimationForCachedImages = false
-                });
-            });
+            //[MAUI-Migration] [Critical]
+            //Task.Run(() =>
+            //{
+            //    FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
+            //    FFImageLoading.ImageService.Instance.Initialize(new FFImageLoading.Config.Configuration
+            //    {
+            //        FadeAnimationEnabled = false,
+            //        FadeAnimationForCachedImages = false
+            //    });
+            //});
 
             iOSCoreHelpers.RegisterLocalServices();
             RegisterPush();

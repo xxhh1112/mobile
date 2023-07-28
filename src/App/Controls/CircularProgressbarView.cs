@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 using SkiaSharp;
-using SkiaSharp.Views.Forms;
-using Xamarin.Essentials;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
+using SkiaSharp.Views.Maui.Controls;
+using SkiaSharp.Views.Maui;
+using Microsoft.Maui.Graphics;
+using Microsoft.Maui.Devices;
 
 namespace Bit.App.Controls
 {
@@ -27,7 +29,7 @@ namespace Bit.App.Controls
             nameof(EndingProgressColor), typeof(Color), typeof(CircularProgressbarView), Color.FromHex("dd4b39"));
 
         public static readonly BindableProperty BackgroundProgressColorProperty = BindableProperty.Create(
-            nameof(BackgroundProgressColor), typeof(Color), typeof(CircularProgressbarView), Color.White);
+            nameof(BackgroundProgressColor), typeof(Color), typeof(CircularProgressbarView), Colors.White);
 
         public double Progress
         {

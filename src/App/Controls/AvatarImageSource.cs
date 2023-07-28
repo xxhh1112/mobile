@@ -5,7 +5,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using Bit.Core.Utilities;
 using SkiaSharp;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Graphics;
 
 namespace Bit.App.Controls
 {
@@ -47,10 +48,11 @@ namespace Bit.App.Controls
 
         private Task<Stream> GetStreamAsync(CancellationToken userToken = new CancellationToken())
         {
-            OnLoadingStarted();
-            userToken.Register(CancellationTokenSource.Cancel);
+            // TODO: [MAUI-Migration] [Critical] now methods are private protected so cannot be used here, figure out workaround
+            //OnLoadingStarted();
+            //userToken.Register(CancellationTokenSource.Cancel);
             var result = Draw();
-            OnLoadingCompleted(CancellationTokenSource.IsCancellationRequested);
+            //OnLoadingCompleted(CancellationTokenSource.IsCancellationRequested);
             return Task.FromResult(result);
         }
 

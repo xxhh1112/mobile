@@ -13,7 +13,7 @@ using Bit.Core.Exceptions;
 using Bit.Core.Models.Request;
 using Bit.Core.Services;
 using Bit.Core.Utilities;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
 
 namespace Bit.App.Pages
 {
@@ -118,7 +118,7 @@ namespace Bit.App.Pages
 
         public async Task SubmitAsync(bool showLoading = true)
         {
-            if (Xamarin.Essentials.Connectivity.NetworkAccess == Xamarin.Essentials.NetworkAccess.None)
+            if (Microsoft.Maui.Networking.Connectivity.NetworkAccess == Microsoft.Maui.Networking.NetworkAccess.None)
             {
                 await _platformUtilsService.ShowDialogAsync(AppResources.InternetConnectionRequiredMessage,
                     AppResources.InternetConnectionRequiredTitle, AppResources.Ok);

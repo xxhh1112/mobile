@@ -11,8 +11,8 @@ using Bit.Core;
 using Bit.Core.Abstractions;
 using Bit.Core.Models.View;
 using Bit.Core.Utilities;
-using Xamarin.CommunityToolkit.ObjectModel;
-using Xamarin.Forms;
+using Bit.App.Utilities;
+using Microsoft.Maui.Controls;
 
 namespace Bit.App.Pages
 {

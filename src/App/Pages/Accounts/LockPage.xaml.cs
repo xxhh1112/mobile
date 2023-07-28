@@ -6,7 +6,7 @@ using Bit.App.Utilities;
 using Bit.Core;
 using Bit.Core.Abstractions;
 using Bit.Core.Utilities;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
 
 namespace Bit.App.Pages
 {

@@ -4,8 +4,9 @@ using Android.Content;
 using AndroidX.AppCompat.Widget;
 using Bit.App.Resources;
 using Bit.Droid.Renderers;
-using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
 
 [assembly: ExportRenderer(typeof(ContentPage), typeof(CustomPageRenderer))]
 namespace Bit.Droid.Renderers

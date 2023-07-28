@@ -9,8 +9,8 @@ using Bit.Core.Abstractions;
 using Bit.Core.Enums;
 using Bit.Core.Exceptions;
 using Bit.Core.Utilities;
-using Xamarin.CommunityToolkit.ObjectModel;
-using Xamarin.Forms;
+using Bit.App.Utilities;
+using Microsoft.Maui.Controls;
 
 namespace Bit.App.Pages
 {
@@ -86,7 +86,7 @@ namespace Bit.App.Pages
         {
             try
             {
-                if (Xamarin.Essentials.Connectivity.NetworkAccess == Xamarin.Essentials.NetworkAccess.None)
+                if (Microsoft.Maui.Networking.Connectivity.NetworkAccess == Microsoft.Maui.Networking.NetworkAccess.None)
                 {
                     await _platformUtilsService.ShowDialogAsync(AppResources.InternetConnectionRequiredMessage,
                         AppResources.InternetConnectionRequiredTitle, AppResources.Ok);
@@ -133,7 +133,7 @@ namespace Bit.App.Pages
                     return;
                 }
 
-                if (Xamarin.Essentials.Connectivity.NetworkAccess == Xamarin.Essentials.NetworkAccess.None)
+                if (Microsoft.Maui.Networking.Connectivity.NetworkAccess == Microsoft.Maui.Networking.NetworkAccess.None)
                 {
                     await _platformUtilsService.ShowDialogAsync(AppResources.InternetConnectionRequiredMessage,
                         AppResources.InternetConnectionRequiredTitle, AppResources.Ok);

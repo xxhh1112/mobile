@@ -3,8 +3,9 @@ using System.Runtime.InteropServices;
 using Bit.App.Utilities;
 using Bit.Core.Services;
 using UIKit;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.iOS;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Compatibility.Platform.iOS;
+using Microsoft.Maui.Platform;
 
 namespace Bit.iOS.Core.Utilities
 {
@@ -93,7 +94,7 @@ namespace Bit.iOS.Core.Utilities
         {
             var borderLine = new UIView
             {
-                BackgroundColor = ThemeManager.GetResourceColor("BoxBorderColor").ToUIColor(),
+                BackgroundColor = ThemeManager.GetResourceColor("BoxBorderColor").ToPlatform(),
                 TranslatesAutoresizingMaskIntoConstraints = false
             };
             control.AddSubview(borderLine);

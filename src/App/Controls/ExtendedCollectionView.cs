@@ -1,6 +1,7 @@
-﻿using System.Linq;
-using Xamarin.CommunityToolkit.Converters;
-using Xamarin.Forms;
+﻿using System.Globalization;
+using System.Linq;
+using CommunityToolkit.Maui.Converters;
+using Microsoft.Maui.Controls;
 
 namespace Bit.App.Controls
 {
@@ -9,12 +10,13 @@ namespace Bit.App.Controls
         public string ExtraDataForLogging { get; set; }
     }
 
-    public class SelectionChangedEventArgsConverter : BaseNullableConverterOneWay<SelectionChangedEventArgs, object>
+    public class SelectionChangedEventArgsConverter : BaseConverterOneWay<SelectionChangedEventArgs, object>
     {
-        public override object? ConvertFrom(SelectionChangedEventArgs? value)
+        public override object DefaultConvertReturnValue { get; set; } = null;
+
+        public override object ConvertFrom(SelectionChangedEventArgs value, CultureInfo culture)
         {
             return value?.CurrentSelection.FirstOrDefault();
         }
     }
-
 }

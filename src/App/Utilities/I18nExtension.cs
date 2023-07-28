@@ -1,8 +1,8 @@
 ﻿using System;
 using Bit.Core.Abstractions;
 using Bit.Core.Utilities;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Xaml;
 
 namespace Bit.App.Utilities
 {

@@ -9,8 +9,10 @@ using Bit.Core.Enums;
 using Bit.Core.Utilities;
 using Plugin.Fingerprint;
 using Plugin.Fingerprint.Abstractions;
-using Xamarin.Essentials;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Devices;
+using Microsoft.Maui.ApplicationModel;
+using Microsoft.Maui.ApplicationModel.DataTransfer;
 
 namespace Bit.App.Services
 {

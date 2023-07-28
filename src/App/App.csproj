@@ -1,19 +1,37 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFrameworks>net7.0-android;net7.0-ios</TargetFrameworks>
+    <UseMaui>true</UseMaui>
+    <SingleProject>false</SingleProject>
+    <OutputType>Library</OutputType>
     <RootNamespace>Bit.App</RootNamespace>
     <AssemblyName>BitwardenApp</AssemblyName>
     <Configurations>Debug;Release;FDroid</Configurations>
+    <SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net7.0-ios'">13.0</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net7.0-android'">21.0</SupportedOSPlatformVersion>
+    <!--<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.19041.0</TargetFrameworks>-->
   </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebugType>pdbonly</DebugType>
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
-
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
+    <CreatePackage>false</CreatePackage>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-ios|AnyCPU'">
+    <CreatePackage>false</CreatePackage>
+  </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Plugin.Fingerprint" Version="2.1.5" />
+    <PackageReference Include="CommunityToolkit.MVVM" Version="8.2.0" />
+    <PackageReference Include="Plugin.Fingerprint" Version="3.0.0-beta.1" />
+    <PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="2.88.3" />
+    <PackageReference Include="CommunityToolkit.Maui" Version="5.2.0" />
+    <PackageReference Include="CommunityToolkit.Maui.Core" Version="5.2.0" />
+    <PackageReference Include="CommunityToolkit.Maui.Markup" Version="3.2.0" />
+    <PackageReference Include="AsyncAwaitBestPractices.MVVM" Version="6.0.6" />
+    <PackageReference Include="ZXing.Net.Maui" Version="0.1.0-preview.7" />
+    <!--<PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />-->
+    <!--<PackageReference Include="Plugin.Fingerprint" Version="2.1.5" />
     <PackageReference Include="SkiaSharp.Views.Forms" Version="2.88.3" />
     <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.6" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.5" />
@@ -21,13 +39,12 @@
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2578" />
     <PackageReference Include="ZXing.Net.Mobile" Version="2.4.1" />
     <PackageReference Include="ZXing.Net.Mobile.Forms" Version="2.4.1" />
-    <PackageReference Include="MessagePack" Version="2.4.59" />
+    <PackageReference Include="MessagePack" Version="2.4.59" />-->
+    <PackageReference Include="FFImageLoadingCompat.Maui" Version="0.1.1" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <Compile Update="Pages\Accounts\EnvironmentPage.xaml.cs">
       <DependentUpon>EnvironmentPage.xaml</DependentUpon>
@@ -130,7 +147,6 @@
       <DependentUpon>LoginPasswordlessRequestPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
-
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Behaviors\" />
@@ -145,12 +161,15 @@
     <Folder Include="Controls\DateTime\" />
     <Folder Include="Controls\IconLabelButton\" />
     <Folder Include="Controls\PasswordStrengthProgressBar\" />
+    <Folder Include="Platform\" />
+    <Folder Include="Platform\Android\" />
+    <Folder Include="Platform\iOS\" />
+    <Folder Include="Platform\Android\Renderers\" />
+    <Folder Include="Platform\iOS\Renderers\" />
   </ItemGroup>
-
   <ItemGroup>
     <EmbeddedResource Remove="Pages\Accounts\AccountsPopupPage.xaml" />
   </ItemGroup>
-
   <ItemGroup>
     <Compile Update="Styles\Black.xaml.cs">
       <DependentUpon>Black.xaml</DependentUpon>
@@ -174,7 +193,6 @@
       <DependentUpon>Android.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
-
   <ItemGroup>
     <Compile Update="Resources\AppResources.cs.Designer.cs">
       <DependentUpon>AppResources.cs.resx</DependentUpon>
@@ -312,7 +330,6 @@
       <AutoGen>True</AutoGen>
     </Compile>
   </ItemGroup>
-
   <ItemGroup>
     <EmbeddedResource Update="Resources\AppResources.cs.resx">
       <LastGenOutput>AppResources.cs.Designer.cs</LastGenOutput>
@@ -423,7 +440,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
   </ItemGroup>
-
   <ItemGroup>
     <None Remove="Behaviors\" />
     <None Remove="Xamarin.CommunityToolkit" />
@@ -440,5 +456,10 @@
     <None Remove="MessagePack" />
     <None Remove="MessagePack.MSBuild.Tasks" />
     <None Remove="Controls\PasswordStrengthProgressBar\" />
+    <None Remove="Platform\" />
+    <None Remove="Platform\Android\" />
+    <None Remove="Platform\iOS\" />
+    <None Remove="Platform\Android\Renderers\" />
+    <None Remove="Platform\iOS\Renderers\" />
   </ItemGroup>
 </Project>

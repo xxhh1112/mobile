@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Bit.Core.Abstractions;
 using Bit.Core.Utilities;
-using Xamarin.Forms;
+using Microsoft.Maui.Graphics;
 
 namespace Bit.App.Controls
 {

@@ -1,7 +1,6 @@
-﻿using UIKit;
-using Xamarin.Forms;
-using Xamarin.Forms.Internals;
-using Xamarin.Forms.Platform.iOS;
+﻿using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Internals;
+using UIKit;
 
 namespace Bit.iOS.Core.Utilities
 {
@@ -12,10 +11,15 @@ namespace Bit.iOS.Core.Utilities
             var fontSize = fontElement.FontSize;
             var fontAttributes = fontElement.FontAttributes;
             var fontFamily = fontElement.FontFamily;
+            var fontWeight = fontAttributes == FontAttributes.Bold ? UIFontWeight.Bold : UIFontWeight.Regular;
 
             return fontFamily is null
-                ? Font.SystemFontOfSize(fontSize, fontAttributes).ToUIFont()
-                : Font.OfSize(fontFamily, fontSize).WithAttributes(fontAttributes).ToUIFont();
+                ? UIFont.SystemFontOfSize((nfloat)fontSize, fontWeight)
+                : UIFont.FromName(fontFamily, (nfloat)fontSize);
+
+            //return fontFamily is null
+            //    ? Font.SystemFontOfSize(fontSize, fontAttributes).ToUIFont()
+            //    : Font.OfSize(fontFamily, fontSize).WithAttributes(fontAttributes).ToUIFont();
         }
     }
 }

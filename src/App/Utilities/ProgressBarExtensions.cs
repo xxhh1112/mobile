@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using Microsoft.Maui;
+using Microsoft.Maui.Controls;
 
 namespace Bit.App.Utilities
 {
@@ -17,7 +18,7 @@ namespace Bit.App.Utilities
 
         private static void ProgressBarProgressChanged(ProgressBar progressBar, double progress)
         {
-            ViewExtensions.CancelAnimations(progressBar);
+            Microsoft.Maui.Controls.ViewExtensions.CancelAnimations(progressBar);
             progressBar.ProgressTo(progress, 500, Easing.SinIn);
         }
     }

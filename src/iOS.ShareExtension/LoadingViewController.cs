@@ -20,7 +20,7 @@ using CoreNFC;
 using Foundation;
 using MobileCoreServices;
 using UIKit;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
 
 namespace Bit.iOS.ShareExtension
 {

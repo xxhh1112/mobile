@@ -1,7 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFrameworks>net7.0</TargetFrameworks>
+    <UseMaui>true</UseMaui>
+    <SingleProject>false</SingleProject>
     <RootNamespace>Bit.Core</RootNamespace>
     <AssemblyName>BitwardenCore</AssemblyName>
     <Configurations>Debug;Release;FDroid</Configurations>

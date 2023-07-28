@@ -7,9 +7,8 @@ using Bit.App.Utilities;
 using Bit.Core.Abstractions;
 using Bit.Core.Services;
 using Bit.Core.Utilities;
-using Xamarin.CommunityToolkit.ObjectModel;
-using Xamarin.Essentials;
-using Xamarin.Forms;
+using Microsoft.Maui.ApplicationModel;
+using Microsoft.Maui.Controls;
 
 namespace Bit.App.Pages
 {
@@ -34,7 +33,7 @@ namespace Bit.App.Pages
         {
             try
             {
-                await Device.InvokeOnMainThreadAsync(async () =>
+                await MainThread.InvokeOnMainThreadAsync(async () =>
                 {
                     var hasCameraPermission = await PermissionManager.CheckAndRequestPermissionAsync(new Permissions.Camera());
                     HasCameraPermission = hasCameraPermission == PermissionStatus.Granted;
@@ -118,7 +117,7 @@ namespace Bit.App.Pages
 
         private void HandleException(Exception ex)
         {
-            Xamarin.Essentials.MainThread.InvokeOnMainThreadAsync(async () =>
+            MainThread.InvokeOnMainThreadAsync(async () =>
             {
                 await _deviceActionService.HideLoadingAsync();
                 await _platformUtilsService.ShowDialogAsync(AppResources.GenericErrorMessage);

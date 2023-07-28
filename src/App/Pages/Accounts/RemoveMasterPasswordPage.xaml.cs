@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Bit.App.Resources;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
 
 namespace Bit.App.Pages
 {

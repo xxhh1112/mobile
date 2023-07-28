@@ -1,7 +1,7 @@
 ﻿using Bit.iOS.Core.Effects;
 using UIKit;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.iOS;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Platform;
 
 [assembly: ResolutionGroupName("Bitwarden")]
 [assembly: ExportEffect(typeof(ScrollEnabledEffect), "ScrollEnabledEffect")]

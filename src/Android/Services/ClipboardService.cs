@@ -6,7 +6,7 @@ using Android.OS;
 using Bit.Core.Abstractions;
 using Bit.Droid.Receivers;
 using Bit.Droid.Utilities;
-using Xamarin.Essentials;
+using Microsoft.Maui.ApplicationModel.DataTransfer;
 
 namespace Bit.Droid.Services
 {

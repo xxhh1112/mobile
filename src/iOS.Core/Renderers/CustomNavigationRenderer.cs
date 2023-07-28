@@ -4,9 +4,10 @@ using System.Linq;
 using Bit.App.Controls;
 using Bit.iOS.Core.Renderers;
 using CoreFoundation;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls.Compatibility.Platform.iOS;
 using UIKit;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.iOS;
 
 [assembly: ExportRenderer(typeof(NavigationPage), typeof(CustomNavigationRenderer))]
 namespace Bit.iOS.Core.Renderers

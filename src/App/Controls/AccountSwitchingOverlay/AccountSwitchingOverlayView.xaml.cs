@@ -3,8 +3,9 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Bit.Core.Abstractions;
 using Bit.Core.Utilities;
-using Xamarin.CommunityToolkit.ObjectModel;
-using Xamarin.Forms;
+using Bit.App.Utilities;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
 
 namespace Bit.App.Controls
 {

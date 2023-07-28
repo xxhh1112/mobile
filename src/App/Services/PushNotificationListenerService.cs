@@ -17,7 +17,7 @@ using Bit.Core.Services;
 using Bit.Core.Utilities;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
 
 namespace Bit.App.Services
 {

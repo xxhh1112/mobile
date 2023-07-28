@@ -8,7 +8,8 @@ using Bit.Core.Utilities;
 using Firebase.Messaging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
 
 namespace Bit.Droid.Push
 {

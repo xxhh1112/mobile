@@ -17,8 +17,8 @@ using CoreFoundation;
 using CoreNFC;
 using Foundation;
 using UIKit;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.iOS;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Compatibility;
 
 namespace Bit.iOS.Autofill
 {
@@ -392,7 +392,8 @@ namespace Bit.iOS.Autofill
         private void InitApp()
         {
             // Init Xamarin Forms
-            Forms.Init();
+            // [TODO][MAUI-Critical]
+            //Forms.Init();
 
             if (ServiceContainer.RegisteredServices.Count > 0)
             {

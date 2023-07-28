@@ -6,7 +6,8 @@ using Bit.Core.Abstractions;
 using Bit.Core.Exceptions;
 using Bit.Core.Services;
 using Bit.Core.Utilities;
-using Xamarin.Forms;
+using Microsoft.Maui.ApplicationModel;
+using Microsoft.Maui.Controls;
 
 namespace Bit.App.Pages
 {
@@ -39,7 +40,7 @@ namespace Bit.App.Pages
                 message = apiException.Error.GetSingleMessage();
             }
 
-            Xamarin.Essentials.MainThread.InvokeOnMainThreadAsync(async () =>
+            MainThread.InvokeOnMainThreadAsync(async () =>
             {
                 await _deviceActionService.Value.HideLoadingAsync();
                 await _platformUtilsService.Value.ShowDialogAsync(message ?? AppResources.GenericErrorMessage);

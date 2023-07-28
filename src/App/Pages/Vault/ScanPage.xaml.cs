@@ -7,11 +7,12 @@ using Bit.App.Utilities;
 using Bit.Core.Abstractions;
 using Bit.Core.Utilities;
 using SkiaSharp;
-using SkiaSharp.Views.Forms;
-using Xamarin.CommunityToolkit.ObjectModel;
-using Xamarin.Essentials;
-using Xamarin.Forms;
-using ZXing.Net.Mobile.Forms;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Devices;
+using Microsoft.Maui.Graphics;
+using SkiaSharp.Views.Maui;
+using ZXing.Net.Maui;
+using System.Linq;
 
 namespace Bit.App.Pages
 {
@@ -28,7 +29,6 @@ namespace Bit.App.Pages
         private bool _pageIsActive;
         private bool _qrcodeFound;
         private float _scale;
-        private ZXingScannerView _zxing;
         private readonly LazyResolve<ILogger> _logger = new LazyResolve<ILogger>("logger");
 
         public ScanPage(Action<string> callback)
@@ -71,17 +71,18 @@ namespace Bit.App.Pages
                     return;
                 }
 
-                _zxing = new ZXingScannerView();
-                _zxing.Options = new ZXing.Mobile.MobileBarcodeScanningOptions
+                //_zxing = new ZXingScannerView();
+                _zxing.Options = new BarcodeReaderOptions
                 {
-                    UseNativeScanning = true,
-                    PossibleFormats = new List<ZXing.BarcodeFormat> { ZXing.BarcodeFormat.QR_CODE },
+                    //UseNativeScanning = true,
+                    //PossibleFormats = new List<ZXing.BarcodeFormat> { ZXing.BarcodeFormat.QR_CODE },
+                    Formats = BarcodeFormat.QrCode,
                     AutoRotate = false,
                     TryInverted = true,
-                    DelayBetweenAnalyzingFrames = 5,
-                    DelayBetweenContinuousScans = 5
+                    //DelayBetweenAnalyzingFrames = 5,
+                    //DelayBetweenContinuousScans = 5
                 };
-                _scannerContainer.Content = _zxing;
+                //_scannerContainer.Content = _zxing;
                 StartScanner();
             }
             catch (Exception ex)
@@ -97,9 +98,8 @@ namespace Bit.App.Pages
                 return;
             }
 
-            _zxing.OnScanResult -= OnScanResult;
-            _zxing.OnScanResult += OnScanResult;
-            _zxing.IsScanning = true;
+            // TODO: [MAUI-Migration] [Critical]
+            //_zxing.IsScanning = true;
 
             // Fix for Autofocus, now it's done every 2 seconds so that the user does't have to do it
             // https://github.com/Redth/ZXing.Net.Mobile/issues/414
@@ -154,18 +154,28 @@ namespace Bit.App.Pages
             {
                 await _continuousAutofocusTask;
             }
-            _zxing.IsScanning = false;
-            _zxing.OnScanResult -= OnScanResult;
+
+            // TODO: [MAUI-Migration] [Critical]
+            //_zxing.IsScanning = false;
             _pageIsActive = false;
         }
 
-        private async void OnScanResult(ZXing.Result result)
+        // TODO: [MAUI-Migration] [Critical]
+        private async void _zxing_BarcodesDetected(System.Object sender, ZXing.Net.Maui.BarcodeDetectionEventArgs e)
         {
             try
             {
+                if (!e.Results.Any())
+                {
+                    return;
+                }
+                var result = e.Results[0];
+
                 // Stop analysis until we navigate away so we don't keep reading barcodes
-                _zxing.IsAnalyzing = false;
-                var text = result?.Text;
+                // Stop analysis until we navigate away so we don't keep reading barcodes
+                // TODO: [MAUI-Migration] [Critical]
+                //_zxing.IsAnalyzing = false;
+                var text = result?.Value;
                 if (!string.IsNullOrWhiteSpace(text))
                 {
                     if (text.StartsWith("otpauth://totp"))
@@ -206,7 +216,8 @@ namespace Bit.App.Pages
             _qrcodeFound = true;
             Vibration.Vibrate();
             await Task.Delay(1000);
-            _zxing.IsScanning = false;
+            // TODO: [MAUI-Migration] [Critical]
+            //_zxing.IsScanning = false;
         }
 
         private async void Close_Clicked(object sender, System.EventArgs e)

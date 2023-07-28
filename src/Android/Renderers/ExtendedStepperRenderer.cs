@@ -4,8 +4,9 @@ using Android.Graphics;
 using Android.OS;
 using Bit.App.Controls;
 using Bit.Droid.Renderers;
-using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
 
 [assembly: ExportRenderer(typeof(ExtendedStepper), typeof(ExtendedStepperRenderer))]
 namespace Bit.Droid.Renderers

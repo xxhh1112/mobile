@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using AsyncAwaitBestPractices;
 using Bit.App.Abstractions;
 using Bit.App.Controls;
 using Bit.App.Resources;
@@ -11,8 +12,8 @@ using Bit.Core.Models.Domain;
 using Bit.Core.Models.Request;
 using Bit.Core.Services;
 using Bit.Core.Utilities;
-using Xamarin.CommunityToolkit.Helpers;
-using Xamarin.Forms;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
 
 namespace Bit.App.Pages
 {

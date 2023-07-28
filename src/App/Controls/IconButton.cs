@@ -1,5 +1,5 @@
 ﻿using Bit.App.Effects;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
 
 namespace Bit.App.Controls
 {

@@ -1,52 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <UseMaui>true</UseMaui>
+    <TargetFramework>net7.0-ios</TargetFramework>
+    <!-- <OutputType>Library</OutputType> -->
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}</ProjectGuid>
     <ProjectTypeGuids>{EE2C853D-36AF-4FDB-B1AD-8E90477E2198};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <RootNamespace>Bit.iOS.Autofill</RootNamespace>
     <AssemblyName>BitwardeniOSAutofill</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AppDesignerFolder>Properties</AppDesignerFolder>
+    <Configurations>Debug;Release;AppStore;Ad-Hoc;FDroid</Configurations>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net7.0-ios'">12.0</SupportedOSPlatformVersion>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <IsAppExtension>true</IsAppExtension>
+    <IsWatchExtension>false</IsWatchExtension>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
-    <DefineConstants>DEBUG</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
-    <MtouchArch>x86_64</MtouchArch>
-    <MtouchLink>None</MtouchLink>
-    <MtouchDebug>true</MtouchDebug>
-    <MtouchExtraArgs>--nodevcodeshare --http-message-handler=NSUrlSessionHandler -gcc_flags "-L${ProjectDir}/../../lib/ios -largon2 -force_load ${ProjectDir}/../../lib/ios/libargon2.a"</MtouchExtraArgs>
-    <OptimizePNGs>true</OptimizePNGs>
-    <MtouchFastDev>false</MtouchFastDev>
-    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
-    <MtouchSdkVersion>12.0</MtouchSdkVersion>
-    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
-    <DebugType>none</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <MtouchLink>Full</MtouchLink>
-    <MtouchArch>x86_64</MtouchArch>
-    <ConsolePause>false</ConsolePause>
-    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
-    <MtouchExtraArgs>--http-message-handler=NSUrlSessionHandler --linkskip=BitwardeniOS --linkskip=BitwardeniOSCore --linkskip=BitwardeniOSAutofill --linkskip=BitwardenApp --linkskip=BitwardenCore --linkskip=LiteDB --linkskip=BitwardeniOSShareExtension -gcc_flags "-L${ProjectDir}/../../lib/ios -largon2 -force_load ${ProjectDir}/../../lib/ios/libargon2.a"</MtouchExtraArgs>
-    <OptimizePNGs>true</OptimizePNGs>
-    <CodesignKey>iPhone Distribution</CodesignKey>
-    <CodesignProvision>Dist: Autofill</CodesignProvision>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -54,6 +32,8 @@
     <DefineConstants>DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors></TreatWarningsAsErrors>
+    <DocumentationFile></DocumentationFile>
     <ConsolePause>false</ConsolePause>
     <MtouchArch>ARM64</MtouchArch>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
@@ -65,13 +45,68 @@
     <OptimizePNGs>true</OptimizePNGs>
     <MtouchSdkVersion>
     </MtouchSdkVersion>
+    <IntermediateOutputPath></IntermediateOutputPath>
+    <ExternalConsole>false</ExternalConsole>
+    <Commandlineparameters></Commandlineparameters>
+    <RunWithWarnings>true</RunWithWarnings>
+    <CreatePackage>false</CreatePackage>
+    <PackagingExtraArgs></PackagingExtraArgs>
+    <EnablePackageSigning></EnablePackageSigning>
+    <UseHardenedRuntime>false</UseHardenedRuntime>
+    <CodesignProvision></CodesignProvision>
+    <PackageSigningKey></PackageSigningKey>
+    <CodesignExtraArgs></CodesignExtraArgs>
+    <DeviceSpecificBuild></DeviceSpecificBuild>
+    <_BundlerDebug></_BundlerDebug>
+    <MtouchNoSymbolStrip>false</MtouchNoSymbolStrip>
+    <IOSDebugOverWiFi></IOSDebugOverWiFi>
+    <MtouchFastDev></MtouchFastDev>
+    <MtouchProfiling></MtouchProfiling>
+    <MtouchVerbosity></MtouchVerbosity>
+    <MtouchUseLlvm></MtouchUseLlvm>
+    <MtouchUseThumb></MtouchUseThumb>
+    <MtouchFloat32>false</MtouchFloat32>
+    <MtouchEnableBitcode></MtouchEnableBitcode>
+    <MtouchEnableSGenConc>false</MtouchEnableSGenConc>
+    <MtouchInterpreter></MtouchInterpreter>
+    <BuildIpa>false</BuildIpa>
+    <IpaIncludeArtwork></IpaIncludeArtwork>
+    <IpaMetadata></IpaMetadata>
+    <IpaPackageName></IpaPackageName>
+    <CrashReportingApiKey></CrashReportingApiKey>
+    <CrashReportingEnabled>false</CrashReportingEnabled>
+    <ProductDefinition></ProductDefinition>
+    <EnableCodeSigning></EnableCodeSigning>
+    <CodesignResourceRules></CodesignResourceRules>
+    <IOSDebuggerPort></IOSDebuggerPort>
+    <MtouchI18n></MtouchI18n>
+    <CrashReportingDelay>-1</CrashReportingDelay>
+    <OnDemandResourcesInitialInstallTags></OnDemandResourcesInitialInstallTags>
+    <OnDemandResourcesPrefetchOrder></OnDemandResourcesPrefetchOrder>
+    <AssemblyName></AssemblyName>
+    <SignAssembly></SignAssembly>
+    <DelaySign>false</DelaySign>
+    <PublicSign>false</PublicSign>
+    <AssemblyOriginatorKeyFile></AssemblyOriginatorKeyFile>
+    <NoWarn></NoWarn>
+    <AllowUnsafeBlocks></AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow></CheckForOverflowUnderflow>
+    <LangVersion>Default</LangVersion>
+    <NoStdLib></NoStdLib>
+    <PlatformTarget></PlatformTarget>
+    <WarningsNotAsErrors></WarningsNotAsErrors>
+    <Nullable></Nullable>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols></DebugSymbols>
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\iPhone\Release</OutputPath>
+    <DefineConstants></DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors></TreatWarningsAsErrors>
+    <DocumentationFile></DocumentationFile>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchArch>ARM64</MtouchArch>
     <ConsolePause>false</ConsolePause>
@@ -81,12 +116,64 @@
     <OptimizePNGs>true</OptimizePNGs>
     <MtouchExtraArgs>--http-message-handler=NSUrlSessionHandler --linkskip=BitwardeniOS --linkskip=BitwardeniOSCore --linkskip=BitwardeniOSAutofill --linkskip=BitwardenApp --linkskip=BitwardenCore --linkskip=LiteDB --linkskip=BitwardeniOSShareExtension -gcc_flags "-L${ProjectDir}/../../lib/ios -largon2 -force_load ${ProjectDir}/../../lib/ios/libargon2.a"</MtouchExtraArgs>
     <CodesignProvision>Dist: Autofill</CodesignProvision>
+    <IntermediateOutputPath></IntermediateOutputPath>
+    <ExternalConsole>false</ExternalConsole>
+    <Commandlineparameters></Commandlineparameters>
+    <RunWithWarnings>true</RunWithWarnings>
+    <CreatePackage>false</CreatePackage>
+    <PackagingExtraArgs></PackagingExtraArgs>
+    <EnablePackageSigning></EnablePackageSigning>
+    <UseHardenedRuntime>false</UseHardenedRuntime>
+    <PackageSigningKey></PackageSigningKey>
+    <CodesignExtraArgs></CodesignExtraArgs>
+    <DeviceSpecificBuild></DeviceSpecificBuild>
+    <MtouchDebug>false</MtouchDebug>
+    <_BundlerDebug></_BundlerDebug>
+    <MtouchNoSymbolStrip>false</MtouchNoSymbolStrip>
+    <IOSDebugOverWiFi></IOSDebugOverWiFi>
+    <MtouchFastDev></MtouchFastDev>
+    <MtouchProfiling></MtouchProfiling>
+    <MtouchSdkVersion></MtouchSdkVersion>
+    <MtouchVerbosity></MtouchVerbosity>
+    <MtouchUseLlvm></MtouchUseLlvm>
+    <MtouchUseThumb></MtouchUseThumb>
+    <MtouchFloat32>false</MtouchFloat32>
+    <MtouchEnableBitcode></MtouchEnableBitcode>
+    <MtouchEnableSGenConc>false</MtouchEnableSGenConc>
+    <MtouchInterpreter></MtouchInterpreter>
+    <BuildIpa>false</BuildIpa>
+    <IpaIncludeArtwork></IpaIncludeArtwork>
+    <IpaMetadata></IpaMetadata>
+    <IpaPackageName></IpaPackageName>
+    <CrashReportingApiKey></CrashReportingApiKey>
+    <CrashReportingEnabled>false</CrashReportingEnabled>
+    <ProductDefinition></ProductDefinition>
+    <EnableCodeSigning></EnableCodeSigning>
+    <CodesignResourceRules></CodesignResourceRules>
+    <IOSDebuggerPort></IOSDebuggerPort>
+    <MtouchI18n></MtouchI18n>
+    <CrashReportingDelay>-1</CrashReportingDelay>
+    <OnDemandResourcesInitialInstallTags></OnDemandResourcesInitialInstallTags>
+    <OnDemandResourcesPrefetchOrder></OnDemandResourcesPrefetchOrder>
+    <AssemblyName></AssemblyName>
+    <SignAssembly></SignAssembly>
+    <DelaySign>false</DelaySign>
+    <PublicSign>false</PublicSign>
+    <AssemblyOriginatorKeyFile></AssemblyOriginatorKeyFile>
+    <NoWarn></NoWarn>
+    <AllowUnsafeBlocks></AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow></CheckForOverflowUnderflow>
+    <LangVersion>Default</LangVersion>
+    <NoStdLib></NoStdLib>
+    <PlatformTarget></PlatformTarget>
+    <WarningsNotAsErrors></WarningsNotAsErrors>
+    <Nullable></Nullable>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
     <AppExtensionDebugBundleId />
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'AppStore|iPhoneSimulator'">
-    <OutputPath>bin\iPhoneSimulator\AppStore\</OutputPath>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|AnyCPU' ">
+    <OutputPath>bin\iPhone\AppStore\</OutputPath>
     <DefineConstants>__IOS__;__MOBILE__;__UNIFIED__;</DefineConstants>
     <Optimize>true</Optimize>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -95,21 +182,25 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <MtouchExtraArgs>--http-message-handler=NSUrlSessionHandler --linkskip=BitwardeniOS --linkskip=BitwardeniOSCore --linkskip=BitwardeniOSAutofill --linkskip=BitwardenApp --linkskip=BitwardenCore --linkskip=LiteDB --linkskip=BitwardeniOSShareExtension -gcc_flags "-L${ProjectDir}/../../lib/ios -largon2 -force_load ${ProjectDir}/../../lib/ios/libargon2.a"</MtouchExtraArgs>
     <OptimizePNGs>true</OptimizePNGs>
-    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
     <MtouchLink>Full</MtouchLink>
-    <MtouchSdkVersion>9.3</MtouchSdkVersion>
+    <MtouchSdkVersion>10.2</MtouchSdkVersion>
     <CodesignKey>iPhone Distribution</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <CodesignProvision>Dist: Autofill</CodesignProvision>
-    <MtouchArch>x86_64</MtouchArch>
+    <CodesignProvision>Automatic:AppStore</CodesignProvision>
+    <MtouchArch>ARM64</MtouchArch>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'AppStore|iPhone'">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|AnyCPU' ">
     <OutputPath>bin\iPhone\AppStore\</OutputPath>
     <DefineConstants>__IOS__;__MOBILE__;__UNIFIED__;</DefineConstants>
+    <DebugSymbols></DebugSymbols>
+    <DebugType></DebugType>
     <Optimize>true</Optimize>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
+    <WarningLevel></WarningLevel>
+    <TreatWarningsAsErrors></TreatWarningsAsErrors>
+    <DocumentationFile></DocumentationFile>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <MtouchLink>Full</MtouchLink>
     <MtouchExtraArgs>--http-message-handler=NSUrlSessionHandler --linkskip=BitwardeniOS --linkskip=BitwardeniOSCore --linkskip=BitwardeniOSAutofill --linkskip=BitwardenApp --linkskip=BitwardenCore --linkskip=LiteDB --linkskip=BitwardeniOSShareExtension -gcc_flags "-L${ProjectDir}/../../lib/ios -largon2 -force_load ${ProjectDir}/../../lib/ios/libargon2.a"</MtouchExtraArgs>
@@ -119,9 +210,57 @@
     <CodesignKey>iPhone Distribution</CodesignKey>
     <CodesignProvision>Automatic:AppStore</CodesignProvision>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <IntermediateOutputPath></IntermediateOutputPath>
+    <ConsolePause>true</ConsolePause>
+    <ExternalConsole>false</ExternalConsole>
+    <Commandlineparameters></Commandlineparameters>
+    <RunWithWarnings>true</RunWithWarnings>
+    <CreatePackage>false</CreatePackage>
+    <PackagingExtraArgs></PackagingExtraArgs>
+    <EnablePackageSigning></EnablePackageSigning>
+    <UseHardenedRuntime>false</UseHardenedRuntime>
+    <PackageSigningKey></PackageSigningKey>
+    <CodesignExtraArgs></CodesignExtraArgs>
+    <DeviceSpecificBuild></DeviceSpecificBuild>
+    <MtouchDebug>false</MtouchDebug>
+    <_BundlerDebug></_BundlerDebug>
+    <MtouchNoSymbolStrip>false</MtouchNoSymbolStrip>
+    <IOSDebugOverWiFi></IOSDebugOverWiFi>
+    <MtouchFastDev></MtouchFastDev>
+    <MtouchProfiling></MtouchProfiling>
+    <MtouchVerbosity></MtouchVerbosity>
+    <MtouchUseLlvm></MtouchUseLlvm>
+    <MtouchUseThumb></MtouchUseThumb>
+    <MtouchFloat32>false</MtouchFloat32>
+    <MtouchEnableBitcode></MtouchEnableBitcode>
+    <MtouchEnableSGenConc>false</MtouchEnableSGenConc>
+    <MtouchInterpreter></MtouchInterpreter>
+    <BuildIpa>false</BuildIpa>
+    <IpaIncludeArtwork></IpaIncludeArtwork>
+    <IpaMetadata></IpaMetadata>
+    <IpaPackageName></IpaPackageName>
+    <CrashReportingApiKey></CrashReportingApiKey>
+    <CrashReportingEnabled>false</CrashReportingEnabled>
+    <ProductDefinition></ProductDefinition>
+    <EnableCodeSigning></EnableCodeSigning>
+    <CodesignResourceRules></CodesignResourceRules>
+    <IOSDebuggerPort></IOSDebuggerPort>
+    <MtouchI18n></MtouchI18n>
+    <MtouchHttpClientHandler></MtouchHttpClientHandler>
+    <CrashReportingDelay>-1</CrashReportingDelay>
+    <OnDemandResourcesInitialInstallTags></OnDemandResourcesInitialInstallTags>
+    <OnDemandResourcesPrefetchOrder></OnDemandResourcesPrefetchOrder>
+    <AssemblyName></AssemblyName>
+    <NoWarn></NoWarn>
+    <AllowUnsafeBlocks></AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow></CheckForOverflowUnderflow>
+    <LangVersion>Default</LangVersion>
+    <NoStdLib></NoStdLib>
+    <WarningsNotAsErrors></WarningsNotAsErrors>
+    <Nullable></Nullable>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhoneSimulator'">
-    <OutputPath>bin\iPhoneSimulator\Ad-Hoc\</OutputPath>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|AnyCPU' ">
+    <OutputPath>bin\iPhone\Ad-Hoc\</OutputPath>
     <DefineConstants>__IOS__;__MOBILE__;__UNIFIED__;</DefineConstants>
     <Optimize>true</Optimize>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -132,19 +271,23 @@
     <OptimizePNGs>true</OptimizePNGs>
     <MtouchLink>Full</MtouchLink>
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
-    <MtouchSdkVersion>9.3</MtouchSdkVersion>
     <CodesignKey>iPhone Distribution</CodesignKey>
-    <CodesignProvision>Adhoc: Autofill</CodesignProvision>
+    <CodesignProvision>Automatic:AdHoc</CodesignProvision>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <MtouchArch>x86_64</MtouchArch>
+    <MtouchArch>ARM64</MtouchArch>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone'">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|AnyCPU' ">
     <OutputPath>bin\iPhone\Ad-Hoc\</OutputPath>
     <DefineConstants>__IOS__;__MOBILE__;__UNIFIED__;</DefineConstants>
+    <DebugSymbols></DebugSymbols>
+    <DebugType></DebugType>
     <Optimize>true</Optimize>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
+    <WarningLevel></WarningLevel>
+    <TreatWarningsAsErrors></TreatWarningsAsErrors>
+    <DocumentationFile></DocumentationFile>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <MtouchArch>ARM64</MtouchArch>
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
@@ -154,6 +297,191 @@
     <CodesignKey>iPhone Distribution</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <CodesignProvision>Automatic:AdHoc</CodesignProvision>
+    <IntermediateOutputPath></IntermediateOutputPath>
+    <ConsolePause>true</ConsolePause>
+    <ExternalConsole>false</ExternalConsole>
+    <Commandlineparameters></Commandlineparameters>
+    <RunWithWarnings>true</RunWithWarnings>
+    <CreatePackage>false</CreatePackage>
+    <PackagingExtraArgs></PackagingExtraArgs>
+    <EnablePackageSigning></EnablePackageSigning>
+    <UseHardenedRuntime>false</UseHardenedRuntime>
+    <PackageSigningKey></PackageSigningKey>
+    <CodesignExtraArgs></CodesignExtraArgs>
+    <DeviceSpecificBuild></DeviceSpecificBuild>
+    <MtouchDebug>false</MtouchDebug>
+    <_BundlerDebug></_BundlerDebug>
+    <MtouchNoSymbolStrip>false</MtouchNoSymbolStrip>
+    <IOSDebugOverWiFi></IOSDebugOverWiFi>
+    <MtouchFastDev></MtouchFastDev>
+    <MtouchProfiling></MtouchProfiling>
+    <MtouchSdkVersion></MtouchSdkVersion>
+    <MtouchVerbosity></MtouchVerbosity>
+    <MtouchUseLlvm></MtouchUseLlvm>
+    <MtouchUseThumb></MtouchUseThumb>
+    <MtouchFloat32>false</MtouchFloat32>
+    <MtouchEnableBitcode></MtouchEnableBitcode>
+    <MtouchEnableSGenConc>false</MtouchEnableSGenConc>
+    <MtouchInterpreter></MtouchInterpreter>
+    <BuildIpa>false</BuildIpa>
+    <IpaIncludeArtwork></IpaIncludeArtwork>
+    <IpaMetadata></IpaMetadata>
+    <IpaPackageName></IpaPackageName>
+    <CrashReportingApiKey></CrashReportingApiKey>
+    <CrashReportingEnabled>false</CrashReportingEnabled>
+    <ProductDefinition></ProductDefinition>
+    <EnableCodeSigning></EnableCodeSigning>
+    <CodesignResourceRules></CodesignResourceRules>
+    <IOSDebuggerPort></IOSDebuggerPort>
+    <MtouchI18n></MtouchI18n>
+    <CrashReportingDelay>-1</CrashReportingDelay>
+    <OnDemandResourcesInitialInstallTags></OnDemandResourcesInitialInstallTags>
+    <OnDemandResourcesPrefetchOrder></OnDemandResourcesPrefetchOrder>
+    <AssemblyName></AssemblyName>
+    <NoWarn></NoWarn>
+    <AllowUnsafeBlocks></AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow></CheckForOverflowUnderflow>
+    <LangVersion>Default</LangVersion>
+    <NoStdLib></NoStdLib>
+    <WarningsNotAsErrors></WarningsNotAsErrors>
+    <Nullable></Nullable>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <IntermediateOutputPath></IntermediateOutputPath>
+    <DebugSymbols></DebugSymbols>
+    <DebugType></DebugType>
+    <Optimize></Optimize>
+    <OutputPath></OutputPath>
+    <DefineConstants></DefineConstants>
+    <WarningLevel></WarningLevel>
+    <TreatWarningsAsErrors></TreatWarningsAsErrors>
+    <DocumentationFile></DocumentationFile>
+    <ConsolePause>true</ConsolePause>
+    <ExternalConsole>false</ExternalConsole>
+    <Commandlineparameters></Commandlineparameters>
+    <RunWithWarnings>true</RunWithWarnings>
+    <CreatePackage>false</CreatePackage>
+    <PackagingExtraArgs></PackagingExtraArgs>
+    <EnablePackageSigning></EnablePackageSigning>
+    <UseHardenedRuntime>false</UseHardenedRuntime>
+    <CodesignProvision></CodesignProvision>
+    <CodesignKey></CodesignKey>
+    <PackageSigningKey></PackageSigningKey>
+    <CodesignExtraArgs></CodesignExtraArgs>
+    <DeviceSpecificBuild></DeviceSpecificBuild>
+    <MtouchDebug>false</MtouchDebug>
+    <_BundlerDebug></_BundlerDebug>
+    <MtouchNoSymbolStrip>false</MtouchNoSymbolStrip>
+    <IOSDebugOverWiFi></IOSDebugOverWiFi>
+    <MtouchFastDev></MtouchFastDev>
+    <MtouchProfiling></MtouchProfiling>
+    <MtouchSdkVersion></MtouchSdkVersion>
+    <MtouchExtraArgs></MtouchExtraArgs>
+    <MtouchVerbosity></MtouchVerbosity>
+    <MtouchUseLlvm></MtouchUseLlvm>
+    <MtouchUseThumb></MtouchUseThumb>
+    <MtouchFloat32>false</MtouchFloat32>
+    <MtouchEnableBitcode></MtouchEnableBitcode>
+    <MtouchEnableSGenConc>false</MtouchEnableSGenConc>
+    <MtouchInterpreter></MtouchInterpreter>
+    <BuildIpa>false</BuildIpa>
+    <IpaIncludeArtwork></IpaIncludeArtwork>
+    <IpaMetadata></IpaMetadata>
+    <IpaPackageName></IpaPackageName>
+    <CrashReportingApiKey></CrashReportingApiKey>
+    <CrashReportingEnabled>false</CrashReportingEnabled>
+    <ProductDefinition></ProductDefinition>
+    <EnableCodeSigning></EnableCodeSigning>
+    <CodesignEntitlements></CodesignEntitlements>
+    <CodesignResourceRules></CodesignResourceRules>
+    <IOSDebuggerPort></IOSDebuggerPort>
+    <MtouchLink></MtouchLink>
+    <MtouchI18n></MtouchI18n>
+    <MtouchArch></MtouchArch>
+    <MtouchHttpClientHandler></MtouchHttpClientHandler>
+    <CrashReportingDelay>-1</CrashReportingDelay>
+    <OptimizePNGs></OptimizePNGs>
+    <OnDemandResourcesInitialInstallTags></OnDemandResourcesInitialInstallTags>
+    <OnDemandResourcesPrefetchOrder></OnDemandResourcesPrefetchOrder>
+    <AssemblyName></AssemblyName>
+    <NoWarn></NoWarn>
+    <AllowUnsafeBlocks></AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow></CheckForOverflowUnderflow>
+    <LangVersion>Default</LangVersion>
+    <NoStdLib></NoStdLib>
+    <PlatformTarget></PlatformTarget>
+    <WarningsNotAsErrors></WarningsNotAsErrors>
+    <Nullable></Nullable>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <IntermediateOutputPath></IntermediateOutputPath>
+    <DebugSymbols></DebugSymbols>
+    <DebugType></DebugType>
+    <Optimize></Optimize>
+    <OutputPath></OutputPath>
+    <DefineConstants></DefineConstants>
+    <WarningLevel></WarningLevel>
+    <TreatWarningsAsErrors></TreatWarningsAsErrors>
+    <DocumentationFile></DocumentationFile>
+    <ConsolePause>true</ConsolePause>
+    <ExternalConsole>false</ExternalConsole>
+    <Commandlineparameters></Commandlineparameters>
+    <RunWithWarnings>true</RunWithWarnings>
+    <CreatePackage>false</CreatePackage>
+    <PackagingExtraArgs></PackagingExtraArgs>
+    <EnablePackageSigning></EnablePackageSigning>
+    <UseHardenedRuntime>false</UseHardenedRuntime>
+    <CodesignProvision></CodesignProvision>
+    <CodesignKey></CodesignKey>
+    <PackageSigningKey></PackageSigningKey>
+    <CodesignExtraArgs></CodesignExtraArgs>
+    <DeviceSpecificBuild></DeviceSpecificBuild>
+    <MtouchDebug>false</MtouchDebug>
+    <_BundlerDebug></_BundlerDebug>
+    <MtouchNoSymbolStrip>false</MtouchNoSymbolStrip>
+    <IOSDebugOverWiFi></IOSDebugOverWiFi>
+    <MtouchFastDev></MtouchFastDev>
+    <MtouchProfiling></MtouchProfiling>
+    <MtouchSdkVersion></MtouchSdkVersion>
+    <MtouchExtraArgs></MtouchExtraArgs>
+    <MtouchVerbosity></MtouchVerbosity>
+    <MtouchUseLlvm></MtouchUseLlvm>
+    <MtouchUseThumb></MtouchUseThumb>
+    <MtouchFloat32>false</MtouchFloat32>
+    <MtouchEnableBitcode></MtouchEnableBitcode>
+    <MtouchEnableSGenConc>false</MtouchEnableSGenConc>
+    <MtouchInterpreter></MtouchInterpreter>
+    <BuildIpa>false</BuildIpa>
+    <IpaIncludeArtwork></IpaIncludeArtwork>
+    <IpaMetadata></IpaMetadata>
+    <IpaPackageName></IpaPackageName>
+    <CrashReportingApiKey></CrashReportingApiKey>
+    <CrashReportingEnabled>false</CrashReportingEnabled>
+    <ProductDefinition></ProductDefinition>
+    <EnableCodeSigning></EnableCodeSigning>
+    <CodesignEntitlements></CodesignEntitlements>
+    <CodesignResourceRules></CodesignResourceRules>
+    <IOSDebuggerPort></IOSDebuggerPort>
+    <MtouchLink></MtouchLink>
+    <MtouchI18n></MtouchI18n>
+    <MtouchArch></MtouchArch>
+    <MtouchHttpClientHandler></MtouchHttpClientHandler>
+    <CrashReportingDelay>-1</CrashReportingDelay>
+    <OptimizePNGs></OptimizePNGs>
+    <OnDemandResourcesInitialInstallTags></OnDemandResourcesInitialInstallTags>
+    <OnDemandResourcesPrefetchOrder></OnDemandResourcesPrefetchOrder>
+    <AssemblyName></AssemblyName>
+    <NoWarn></NoWarn>
+    <AllowUnsafeBlocks></AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow></CheckForOverflowUnderflow>
+    <LangVersion>Default</LangVersion>
+    <NoStdLib></NoStdLib>
+    <PlatformTarget></PlatformTarget>
+    <WarningsNotAsErrors></WarningsNotAsErrors>
+    <Nullable></Nullable>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'FDroid|AnyCPU' ">
+    <CreatePackage>false</CreatePackage>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="CredentialProviderViewController.cs" />
@@ -199,20 +527,14 @@
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
-    <Reference Include="Xamarin.iOS" />
+    <!-- <Reference Include="Xamarin.iOS" /> -->
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\App\App.csproj">
-      <Project>{ee44c6a1-2a85-45fe-8d9b-bf1d5f88809c}</Project>
-      <Name>App</Name>
     </ProjectReference>
     <ProjectReference Include="..\Core\Core.csproj">
-      <Project>{4b8a8c41-9820-4341-974c-41e65b7f4366}</Project>
-      <Name>Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\iOS.Core\iOS.Core.csproj">
-      <Project>{e71f3053-056c-4381-9638-048ed73bdff6}</Project>
-      <Name>iOS.Core</Name>
       <IsAppExtension>false</IsAppExtension>
       <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
@@ -265,8 +587,7 @@
     </BundleResource>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.AppCenter.Crashes">
-      <Version>5.0.1</Version>
+    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="5.0.1">
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
@@ -278,5 +599,37 @@
   <ItemGroup>
     <BundleResource Include="Resources\yubikey%403x.png" />
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.AppExtension.CSharp.targets" />
+  <!-- <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.AppExtension.CSharp.targets" /> -->
+  <ItemGroup>
+    <BundleResource Update="Resources\yubikey%403x.png">
+      <Link>Resources\yubikey%403x.png</Link>
+    </BundleResource>
+    <BundleResource Update="Resources\yubikey%402x.png">
+      <Link>Resources\yubikey%402x.png</Link>
+    </BundleResource>
+    <BundleResource Update="Resources\Icon%402x.png">
+      <Link>Resources\Icon%402x.png</Link>
+    </BundleResource>
+    <BundleResource Update="Resources\logo%403x.png">
+      <Link>Resources\logo%403x.png</Link>
+    </BundleResource>
+    <BundleResource Update="Resources\check%402x.png">
+      <Link>Resources\check%402x.png</Link>
+    </BundleResource>
+    <BundleResource Update="Resources\check%403x.png">
+      <Link>Resources\check%403x.png</Link>
+    </BundleResource>
+    <BundleResource Update="Resources\logo%402x.png">
+      <Link>Resources\logo%402x.png</Link>
+    </BundleResource>
+    <BundleResource Update="Resources\Icon%403x.png">
+      <Link>Resources\Icon%403x.png</Link>
+    </BundleResource>
+    <BundleResource Update="Resources\logo_white%403x.png">
+      <Link>Resources\logo_white%403x.png</Link>
+    </BundleResource>
+    <BundleResource Update="Resources\logo_white%402x.png">
+      <Link>Resources\logo_white%402x.png</Link>
+    </BundleResource>
+  </ItemGroup>
 </Project>

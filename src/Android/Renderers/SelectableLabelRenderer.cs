@@ -2,8 +2,9 @@
 using Android.Content;
 using Bit.App.Controls;
 using Bit.Droid.Renderers;
-using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
 
 [assembly: ExportRenderer(typeof(SelectableLabel), typeof(SelectableLabelRenderer))]
 namespace Bit.Droid.Renderers

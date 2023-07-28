@@ -5,7 +5,7 @@ using Bit.App.Resources;
 using Bit.Core.Abstractions;
 using Bit.Core.Models.Data;
 using Bit.Core.Utilities;
-using Xamarin.CommunityToolkit.ObjectModel;
+using Bit.App.Utilities;
 
 namespace Bit.App.Pages
 {

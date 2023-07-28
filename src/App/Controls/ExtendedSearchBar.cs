@@ -1,5 +1,6 @@
 ﻿using Bit.App.Utilities;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Graphics;
 
 namespace Bit.App.Controls
 {
@@ -11,7 +12,7 @@ namespace Bit.App.Controls
             {
                 if (ThemeManager.UsingLightTheme)
                 {
-                    TextColor = Color.Black;
+                    TextColor = Colors.Black;
                 }
             }
         }

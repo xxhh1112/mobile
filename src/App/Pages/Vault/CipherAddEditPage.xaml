@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <pages:BaseContentPage 
-    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="Bit.App.Pages.CipherAddEditPage"
     xmlns:pages="clr-namespace:Bit.App.Pages"
@@ -40,7 +40,7 @@
                          x:Name="_shareItem"
                          Clicked="Share_Clicked"
                          Order="Secondary" />
-            <ToolbarItem Icon="more_vert.png" Clicked="More_Clicked" Order="Primary" x:Name="_moreItem"
+            <ToolbarItem IconImageSource="more_vert.png" Clicked="More_Clicked" Order="Primary" x:Name="_moreItem"
                          x:Key="moreItem"
                          AutomationProperties.IsInAccessibleTree="True"
                          AutomationProperties.Name="{u:I18n Options}" />

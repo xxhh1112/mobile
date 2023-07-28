@@ -1,5 +1,5 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using Microsoft.Maui.Controls;
+using Microsoft.Maui.Graphics;
 
 namespace Bit.App.Controls
 {
@@ -100,7 +100,7 @@ namespace Bit.App.Controls
                 case Controls.PasswordStrengthLevel.Strong:
                     return StrongColor;
                 default:
-                    return Color.Transparent;
+                    return Colors.Transparent;
             }
         }
     }

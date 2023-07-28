@@ -4,8 +4,9 @@ using Android.Content.Res;
 using Android.Views.InputMethods;
 using Bit.Droid.Renderers;
 using Bit.Droid.Utilities;
-using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
 
 [assembly: ExportRenderer(typeof(Editor), typeof(CustomEditorRenderer))]
 namespace Bit.Droid.Renderers

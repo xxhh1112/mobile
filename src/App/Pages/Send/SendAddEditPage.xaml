@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <pages:BaseContentPage
-    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
     x:Class="Bit.App.Pages.SendAddEditPage"
@@ -18,8 +18,7 @@
     </ContentPage.BindingContext>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="{u:I18n Save}" Clicked="Save_Clicked" Order="Primary"
-                     x:Key="saveItem" x:Name="_saveItem"/>
+        <ToolbarItem Text="{u:I18n Save}" Clicked="Save_Clicked" Order="Primary" x:Name="_saveItem"/>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Resources>
@@ -29,7 +28,7 @@
             <u:IsNotNullConverter x:Key="notNull" />
             <ToolbarItem Text="{u:I18n Cancel}" Clicked="Close_Clicked" Order="Primary" Priority="-1"
                          x:Key="closeItem" x:Name="_closeItem" />
-            <ToolbarItem Icon="more_vert.png" Clicked="More_Clicked" Order="Primary" x:Name="_moreItem"
+            <ToolbarItem IconImageSource="more_vert.png" Clicked="More_Clicked" Order="Primary" x:Name="_moreItem"
                          x:Key="moreItem"
                          AutomationProperties.IsInAccessibleTree="True"
                          AutomationProperties.Name="{u:I18n Options}" />
@@ -251,12 +250,18 @@
                                 HorizontalOptions="End"
                                 Margin="10,0,0,0" />
                         </StackLayout>
+
+                        <!-- TODO: [MAUI-Migration] Check touch command works
+                        xct:TouchEffect.Command="{Binding ToggleOptionsCommand}"
+                        -->
                         <StackLayout
                             Orientation="Horizontal"
                             Spacing="0"
-                            xct:TouchEffect.Command="{Binding ToggleOptionsCommand}"
                             AutomationProperties.IsInAccessibleTree="True"
                             AutomationProperties.Name="{Binding OptionsAccessilibityText}">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ToggleOptionsCommand}" />
+                            </StackLayout.GestureRecognizers>
                             <Button
                                 Text="{u:I18n Options}"
                                 x:Name="_btnOptions"

@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Bit.Core.Abstractions;
+using Microsoft.Maui.Storage;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
@@ -16,7 +17,7 @@ namespace Bit.App.Services
         public async Task<T> GetAsync<T>(string key)
         {
             var formattedKey = string.Format(_keyFormat, key);
-            var val = await Xamarin.Essentials.SecureStorage.GetAsync(formattedKey);
+            var val = await SecureStorage.GetAsync(formattedKey);
             if (typeof(T) == typeof(string))
             {
                 return (T)(object)val;
@@ -37,11 +38,11 @@ namespace Bit.App.Services
             var formattedKey = string.Format(_keyFormat, key);
             if (typeof(T) == typeof(string))
             {
-                await Xamarin.Essentials.SecureStorage.SetAsync(formattedKey, obj as string);
+                await SecureStorage.SetAsync(formattedKey, obj as string);
             }
             else
             {
-                await Xamarin.Essentials.SecureStorage.SetAsync(formattedKey,
+                await SecureStorage.SetAsync(formattedKey,
                     JsonConvert.SerializeObject(obj, _jsonSettings));
             }
         }
@@ -49,7 +50,7 @@ namespace Bit.App.Services
         public Task RemoveAsync(string key)
         {
             var formattedKey = string.Format(_keyFormat, key);
-            Xamarin.Essentials.SecureStorage.Remove(formattedKey);
+            SecureStorage.Remove(formattedKey);
             return Task.FromResult(0);
         }
     }

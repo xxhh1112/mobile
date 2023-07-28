@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <pages:BaseContentPage 
-    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+	xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     x:Class="Bit.App.Pages.GeneratorPage"
     xmlns:pages="clr-namespace:Bit.App.Pages"
     xmlns:controls="clr-namespace:Bit.App.Controls"
@@ -21,7 +21,7 @@
             <u:InverseBoolConverter x:Key="inverseBool" />
             <u:LocalizableEnumConverter x:Key="localizableEnum" />
             <u:IconGlyphConverter x:Key="iconGlyphConverter" />
-            <xct:EnumToBoolConverter x:Key="enumToBool"/>
+            <mct:EnumToBoolConverter x:Key="enumToBool"/>
             <ToolbarItem Text="{u:I18n Cancel}" Command="{Binding CloseCommand}" Order="Primary" Priority="-1"
                          x:Name="_closeItem" x:Key="closeItem" />
             <ToolbarItem Text="{u:I18n Select}"
@@ -34,7 +34,7 @@
                      Order="Secondary"
                      x:Name="_historyItem"
                      x:Key="historyItem" />
-            <ToolbarItem Icon="more_vert.png"
+            <ToolbarItem IconImageSource="more_vert.png"
                          AutomationProperties.IsInAccessibleTree="True"
                          AutomationProperties.Name="{u:I18n Options}"
                          Clicked="More_Clicked"

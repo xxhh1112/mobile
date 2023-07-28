@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using Bit.Core.Models.View;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
 
 namespace Bit.App.Utilities
 {

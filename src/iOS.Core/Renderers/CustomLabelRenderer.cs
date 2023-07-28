@@ -1,11 +1,12 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using Bit.App.Controls;
 using Bit.iOS.Core.Renderers;
 using Bit.iOS.Core.Utilities;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls.Compatibility.Platform.iOS;
+using Microsoft.Maui.Controls.Platform;
 using UIKit;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.iOS;
 
 [assembly: ExportRenderer(typeof(Label), typeof(CustomLabelRenderer))]
 namespace Bit.iOS.Core.Renderers
@@ -25,9 +26,11 @@ namespace Bit.iOS.Core.Renderers
 		{
 			base.OnElementPropertyChanged(sender, e);
 
-			if (e.PropertyName == Label.FontProperty.PropertyName ||
-				e.PropertyName == Label.TextProperty.PropertyName ||
-				e.PropertyName == Label.FormattedTextProperty.PropertyName)
+			if (e.PropertyName == Label.FontFamilyProperty.PropertyName ||
+                e.PropertyName == Label.FontAttributesProperty.PropertyName ||
+                e.PropertyName == Label.FontSizeProperty.PropertyName ||
+                e.PropertyName == Label.TextProperty.PropertyName ||
+                e.PropertyName == Label.FormattedTextProperty.PropertyName)
 			{
 				UpdateFont();
 			}

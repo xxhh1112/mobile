@@ -1,5 +1,6 @@
-﻿using Xamarin.Essentials;
-using Xamarin.Forms;
+﻿using Microsoft.Maui.Controls;
+using Microsoft.Maui.Devices;
+using Microsoft.Maui.Graphics;
 
 namespace Bit.App.Behaviors
 {

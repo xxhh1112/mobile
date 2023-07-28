@@ -6,8 +6,9 @@ using Android.OS;
 using AndroidX.Core.Content.Resources;
 using Bit.Droid.Renderers;
 using Bit.Droid.Utilities;
-using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
 
 [assembly: ExportRenderer(typeof(Switch), typeof(CustomSwitchRenderer))]
 namespace Bit.Droid.Renderers

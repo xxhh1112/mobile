@@ -7,8 +7,8 @@ using Bit.Core.Exceptions;
 using Bit.Core.Models.Domain;
 using Bit.Core.Models.Request;
 using Bit.Core.Utilities;
-using Xamarin.CommunityToolkit.ObjectModel;
-using Xamarin.Forms;
+using Bit.App.Utilities;
+using Microsoft.Maui.Controls;
 
 namespace Bit.App.Pages
 {

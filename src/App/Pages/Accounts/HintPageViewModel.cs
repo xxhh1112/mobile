@@ -5,7 +5,8 @@ using Bit.App.Resources;
 using Bit.Core.Abstractions;
 using Bit.Core.Exceptions;
 using Bit.Core.Utilities;
-using Xamarin.CommunityToolkit.ObjectModel;
+using Bit.App.Utilities;
+using Microsoft.Maui.Networking;
 
 namespace Bit.App.Pages
 {
@@ -44,7 +45,7 @@ namespace Bit.App.Pages
 
         public async Task SubmitAsync()
         {
-            if (Xamarin.Essentials.Connectivity.NetworkAccess == Xamarin.Essentials.NetworkAccess.None)
+            if (Connectivity.NetworkAccess == NetworkAccess.None)
             {
                 await _platformUtilsService.ShowDialogAsync(AppResources.InternetConnectionRequiredMessage,
                     AppResources.InternetConnectionRequiredTitle);

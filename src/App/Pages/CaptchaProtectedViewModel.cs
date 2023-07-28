@@ -4,7 +4,7 @@ using Bit.App.Abstractions;
 using Bit.App.Resources;
 using Bit.App.Utilities;
 using Bit.Core.Abstractions;
-using Xamarin.Essentials;
+using Microsoft.Maui.Authentication;
 
 namespace Bit.App.Pages
 {

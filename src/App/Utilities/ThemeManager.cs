@@ -6,7 +6,8 @@ using Bit.App.Styles;
 using Bit.Core.Abstractions;
 using Bit.Core.Services;
 using Bit.Core.Utilities;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Graphics;
 
 namespace Bit.App.Utilities
 {
@@ -62,11 +63,11 @@ namespace Bit.App.Utilities
                 // Platform styles
                 if (Device.RuntimePlatform == Device.Android)
                 {
-                    resources.MergedDictionaries.Add(new Android());
+                    resources.MergedDictionaries.Add(new Styles.Android());
                 }
                 else if (Device.RuntimePlatform == Device.iOS)
                 {
-                    resources.MergedDictionaries.Add(new iOS());
+                    resources.MergedDictionaries.Add(new Styles.iOS());
                 }
             }
             catch (InvalidOperationException ioex) when (ioex.Message != null && ioex.Message.StartsWith("Collection was modified"))
@@ -147,9 +148,9 @@ namespace Bit.App.Utilities
             {
                 // called from iOS extension
                 var app = new App(new AppOptions { IosExtension = true });
-                return app.RequestedTheme == OSAppTheme.Dark;
+                return app.RequestedTheme == Microsoft.Maui.ApplicationModel.AppTheme.Dark;
             }
-            return Application.Current.RequestedTheme == OSAppTheme.Dark;
+            return Application.Current.RequestedTheme == Microsoft.Maui.ApplicationModel.AppTheme.Dark;
         }
 
         public static void ApplyResourcesTo(VisualElement element)

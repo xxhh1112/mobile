@@ -1,6 +1,6 @@
 ﻿using System.Windows.Input;
 using Bit.Core.Models.View;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
 
 namespace Bit.App.Lists.ItemViewModels.CustomFields
 {

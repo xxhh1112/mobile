@@ -7,10 +7,10 @@ using Bit.App.Utilities;
 using Bit.Core.Abstractions;
 using Bit.Core.Enums;
 using Bit.Core.Utilities;
-using Xamarin.Essentials;
-using Xamarin.Forms;
-using Xamarin.Forms.PlatformConfiguration;
-using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.PlatformConfiguration;
+using Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;
 
 namespace Bit.App.Pages
 {
@@ -188,7 +188,7 @@ namespace Bit.App.Pages
         {
             if (FromAutofillFramework)
             {
-                Xamarin.Forms.Application.Current.MainPage = new TabsPage();
+                Microsoft.Maui.Controls.Application.Current.MainPage = new TabsPage();
                 return true;
             }
             return base.OnBackButtonPressed();
@@ -199,7 +199,7 @@ namespace Bit.App.Pages
             if (DoOnce())
             {
                 await Navigation.PushModalAsync(
-                    new Xamarin.Forms.NavigationPage(new PasswordHistoryPage(_vm.CipherId)));
+                    new Microsoft.Maui.Controls.NavigationPage(new PasswordHistoryPage(_vm.CipherId)));
             }
         }
 
@@ -226,7 +226,7 @@ namespace Bit.App.Pages
             if (DoOnce())
             {
                 var page = new AttachmentsPage(_vm.CipherId);
-                await Navigation.PushModalAsync(new Xamarin.Forms.NavigationPage(page));
+                await Navigation.PushModalAsync(new Microsoft.Maui.Controls.NavigationPage(page));
             }
         }
 
@@ -235,7 +235,7 @@ namespace Bit.App.Pages
             if (DoOnce())
             {
                 var page = new SharePage(_vm.CipherId);
-                await Navigation.PushModalAsync(new Xamarin.Forms.NavigationPage(page));
+                await Navigation.PushModalAsync(new Microsoft.Maui.Controls.NavigationPage(page));
             }
         }
 
@@ -255,7 +255,7 @@ namespace Bit.App.Pages
             if (DoOnce())
             {
                 var page = new CollectionsPage(_vm.CipherId);
-                await Navigation.PushModalAsync(new Xamarin.Forms.NavigationPage(page));
+                await Navigation.PushModalAsync(new Microsoft.Maui.Controls.NavigationPage(page));
             }
         }
 
@@ -272,7 +272,7 @@ namespace Bit.App.Pages
                     });
                 });
 
-                await Navigation.PushModalAsync(new Xamarin.Forms.NavigationPage(page));
+                await Navigation.PushModalAsync(new Microsoft.Maui.Controls.NavigationPage(page));
             }
         }
 
@@ -299,17 +299,17 @@ namespace Bit.App.Pages
             else if (selection == AppResources.Attachments)
             {
                 var page = new AttachmentsPage(_vm.CipherId);
-                await Navigation.PushModalAsync(new Xamarin.Forms.NavigationPage(page));
+                await Navigation.PushModalAsync(new Microsoft.Maui.Controls.NavigationPage(page));
             }
             else if (selection == AppResources.Collections)
             {
                 var page = new CollectionsPage(_vm.CipherId);
-                await Navigation.PushModalAsync(new Xamarin.Forms.NavigationPage(page));
+                await Navigation.PushModalAsync(new Microsoft.Maui.Controls.NavigationPage(page));
             }
             else if (selection == AppResources.MoveToOrganization)
             {
                 var page = new SharePage(_vm.CipherId);
-                await Navigation.PushModalAsync(new Xamarin.Forms.NavigationPage(page));
+                await Navigation.PushModalAsync(new Microsoft.Maui.Controls.NavigationPage(page));
             }
         }
 

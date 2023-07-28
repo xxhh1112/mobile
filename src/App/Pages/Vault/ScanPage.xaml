@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <pages:BaseContentPage
-    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="Bit.App.Pages.ScanPage"
     xmlns:pages="clr-namespace:Bit.App.Pages"
     xmlns:u="clr-namespace:Bit.App.Utilities"
     xmlns:controls="clr-namespace:Bit.App.Controls"
-    xmlns:forms="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
     xmlns:core="clr-namespace:Bit.Core;assembly=BitwardenCore"
-    xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+    xmlns:skia="clr-namespace:SkiaSharp.Views.Maui.Controls;assembly=SkiaSharp.Views.Maui.Controls"
+    xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI"
     x:Name="_page"
     Title="{Binding ScanQrPageTitle}">
 
@@ -34,13 +34,18 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <ContentView 
-            x:Name="_scannerContainer"
+        <!-- TODO: [MAUI-Migration]
+            OnScanResult="OnScanResult"-->
+        <zxing:CameraBarcodeReaderView
+            x:Name="_zxing"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
             AutomationId="zxingScannerView"
             IsVisible="{Binding ShowScanner}"
             Grid.Column="0"
             Grid.Row="0"
-            Grid.RowSpan="3"/>
+            Grid.RowSpan="3"
+            BarcodesDetected="_zxing_BarcodesDetected"/>
         <StackLayout
             VerticalOptions="Center"
             HorizontalOptions="FillAndExpand"
@@ -50,7 +55,7 @@
             Grid.RowSpan="2"
             Margin="30,0">
 
-            <forms:SKCanvasView
+            <skia:SKCanvasView
                 x:Name="SkCanvasView" 
                 Margin="0,50,0,0"
                 WidthRequest="250"

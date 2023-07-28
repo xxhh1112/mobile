@@ -10,9 +10,7 @@ using Bit.Core.Models.Data;
 using Bit.Core.Models.Response;
 using Bit.Core.Services;
 using Bit.Core.Utilities;
-using Xamarin.CommunityToolkit.ObjectModel;
-using Xamarin.Essentials;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
 
 namespace Bit.App.Pages
 {

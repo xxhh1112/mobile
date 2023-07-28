@@ -5,8 +5,8 @@ using Bit.App.Resources;
 using Bit.App.Styles;
 using Bit.Core.Abstractions;
 using Bit.Core.Utilities;
-using Xamarin.Forms;
-using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;
 
 namespace Bit.App.Pages
 {
@@ -53,12 +53,12 @@ namespace Bit.App.Pages
                     ToolbarItems.Add(_historyItem);
                 }
             }
-            _typePicker.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUpdateMode(UpdateMode.WhenFinished);
-            _passwordTypePicker.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUpdateMode(UpdateMode.WhenFinished);
-            _usernameTypePicker.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUpdateMode(UpdateMode.WhenFinished);
-            _serviceTypePicker.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUpdateMode(UpdateMode.WhenFinished);
-            _plusAddressedEmailTypePicker.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUpdateMode(UpdateMode.WhenFinished);
-            _catchallEmailTypePicker.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUpdateMode(UpdateMode.WhenFinished);
+            _typePicker.On<Microsoft.Maui.Controls.PlatformConfiguration.iOS>().SetUpdateMode(UpdateMode.WhenFinished);
+            _passwordTypePicker.On<Microsoft.Maui.Controls.PlatformConfiguration.iOS>().SetUpdateMode(UpdateMode.WhenFinished);
+            _usernameTypePicker.On<Microsoft.Maui.Controls.PlatformConfiguration.iOS>().SetUpdateMode(UpdateMode.WhenFinished);
+            _serviceTypePicker.On<Microsoft.Maui.Controls.PlatformConfiguration.iOS>().SetUpdateMode(UpdateMode.WhenFinished);
+            _plusAddressedEmailTypePicker.On<Microsoft.Maui.Controls.PlatformConfiguration.iOS>().SetUpdateMode(UpdateMode.WhenFinished);
+            _catchallEmailTypePicker.On<Microsoft.Maui.Controls.PlatformConfiguration.iOS>().SetUpdateMode(UpdateMode.WhenFinished);
         }
 
         public async Task InitAsync()
@@ -116,7 +116,7 @@ namespace Bit.App.Pages
             if (selection == AppResources.PasswordHistory)
             {
                 var page = new GeneratorHistoryPage();
-                await Navigation.PushModalAsync(new Xamarin.Forms.NavigationPage(page));
+                await Navigation.PushModalAsync(new Microsoft.Maui.Controls.NavigationPage(page));
             }
         }
 
@@ -128,7 +128,7 @@ namespace Bit.App.Pages
         private async void History_Clicked(object sender, EventArgs e)
         {
             var page = new GeneratorHistoryPage();
-            await Navigation.PushModalAsync(new Xamarin.Forms.NavigationPage(page));
+            await Navigation.PushModalAsync(new Microsoft.Maui.Controls.NavigationPage(page));
         }
 
         private async void LengthSlider_DragCompleted(object sender, EventArgs e)

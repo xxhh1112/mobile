@@ -1,8 +1,10 @@
 ﻿using Bit.iOS.Core.Renderers;
 using System.ComponentModel;
 using UIKit;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.iOS;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls.Compatibility.Platform.iOS;
+using Microsoft.Maui.Controls.Platform;
 
 [assembly: ExportRenderer(typeof(Editor), typeof(CustomEditorRenderer))]
 namespace Bit.iOS.Core.Renderers

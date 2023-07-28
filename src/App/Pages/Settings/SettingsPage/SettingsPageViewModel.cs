@@ -10,8 +10,8 @@ using Bit.Core.Enums;
 using Bit.Core.Models.Domain;
 using Bit.Core.Services;
 using Bit.Core.Utilities;
-using Xamarin.CommunityToolkit.ObjectModel;
-using Xamarin.Forms;
+using Bit.App.Utilities;
+using Microsoft.Maui.Controls;
 
 namespace Bit.App.Pages
 {
@@ -97,12 +97,12 @@ namespace Bit.App.Pages
             GroupedItems = new ObservableRangeCollection<ISettingsPageListItem>();
             PageTitle = AppResources.Settings;
 
-            ExecuteSettingItemCommand = new AsyncCommand<SettingsPageListItem>(item => item.ExecuteAsync(), onException: _loggerService.Exception, allowsMultipleExecutions: false);
+            ExecuteSettingItemCommand = new Utilities.AsyncCommand<SettingsPageListItem>(item => item.ExecuteAsync(), onException: _loggerService.Exception, allowsMultipleExecutions: false);
         }
 
         public ObservableRangeCollection<ISettingsPageListItem> GroupedItems { get; set; }
 
-        public IAsyncCommand<SettingsPageListItem> ExecuteSettingItemCommand { get; }
+        public AsyncCommand<SettingsPageListItem> ExecuteSettingItemCommand { get; }
 
         public async Task InitAsync()
         {

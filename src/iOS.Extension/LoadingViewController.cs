@@ -15,7 +15,7 @@ using Bit.Core.Utilities;
 using Bit.Core.Abstractions;
 using Bit.App.Abstractions;
 using CoreNFC;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
 using Bit.App.Pages;
 using Bit.App.Models;
 using Bit.App.Utilities;

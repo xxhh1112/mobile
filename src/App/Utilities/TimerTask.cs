@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Bit.Core.Abstractions;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
 
 namespace Bit.App.Utilities
 {
