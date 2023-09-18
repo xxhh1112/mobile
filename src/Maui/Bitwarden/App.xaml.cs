@@ -23,7 +23,7 @@ using Bit.App.Handlers;
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Bit.App
 {
-    public partial class App : Application, IAccountsManagerHost
+    public partial class App : Application, IAccountsManagerHost, IApp
     {
         public const string POP_ALL_AND_GO_TO_TAB_GENERATOR_MESSAGE = "popAllAndGoToTabGenerator";
         public const string POP_ALL_AND_GO_TO_TAB_MYVAULT_MESSAGE = "popAllAndGoToTabMyVault";
@@ -562,6 +562,10 @@ namespace Bit.App
                     Current.MainPage = new NavigationPage(new SendAddEditPage(Options));
                     break;
             }
+        }
+        public Task<string> DisplayActionSheetAsync(string title, string cancel, string destruction, params string[] buttons)
+        {
+            return MainPage.DisplayActionSheet(title, cancel, destruction, buttons);
         }
     }
 }

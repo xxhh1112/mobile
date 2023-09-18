@@ -5,6 +5,10 @@ VisualStudioVersion = 25.0.1706.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bitwarden", "Bitwarden.csproj", "{58FBB5C6-CBD6-470D-90A6-00E89C0CD817}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iOS.Core", "..\iOS.Core\iOS.Core.csproj", "{67C1E61C-6C74-4FC0-8B37-1CBACEE807B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bit.Core", "..\Bit.Core\Bit.Core.csproj", "{E9E46B0F-B7F4-402D-A3A4-645F25BA0B5D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,6 +22,18 @@ Global
 		{58FBB5C6-CBD6-470D-90A6-00E89C0CD817}.Release|Any CPU.Build.0 = Release|Any CPU
 		{58FBB5C6-CBD6-470D-90A6-00E89C0CD817}.FDroid|Any CPU.ActiveCfg = Debug|Any CPU
 		{58FBB5C6-CBD6-470D-90A6-00E89C0CD817}.FDroid|Any CPU.Build.0 = Debug|Any CPU
+		{67C1E61C-6C74-4FC0-8B37-1CBACEE807B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67C1E61C-6C74-4FC0-8B37-1CBACEE807B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67C1E61C-6C74-4FC0-8B37-1CBACEE807B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67C1E61C-6C74-4FC0-8B37-1CBACEE807B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67C1E61C-6C74-4FC0-8B37-1CBACEE807B7}.FDroid|Any CPU.ActiveCfg = Debug|Any CPU
+		{67C1E61C-6C74-4FC0-8B37-1CBACEE807B7}.FDroid|Any CPU.Build.0 = Debug|Any CPU
+		{E9E46B0F-B7F4-402D-A3A4-645F25BA0B5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9E46B0F-B7F4-402D-A3A4-645F25BA0B5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9E46B0F-B7F4-402D-A3A4-645F25BA0B5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9E46B0F-B7F4-402D-A3A4-645F25BA0B5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9E46B0F-B7F4-402D-A3A4-645F25BA0B5D}.FDroid|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9E46B0F-B7F4-402D-A3A4-645F25BA0B5D}.FDroid|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

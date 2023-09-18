@@ -31,4 +31,35 @@ namespace Bit.App.Effects
         {
         }
     }
+
+#if IOS
+    public class ScrollViewContentInsetAdjustmentBehaviorPlatformEffect : PlatformEffect
+    {
+        protected override void OnAttached()
+        {
+            if (Element != null && Control is UIScrollView scrollView)
+            {
+                switch (App.Effects.ScrollViewContentInsetAdjustmentBehaviorEffect.GetContentInsetAdjustmentBehavior(Element))
+                {
+                    case App.Effects.ScrollContentInsetAdjustmentBehavior.Automatic:
+                        scrollView.ContentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentBehavior.Automatic;
+                        break;
+                    case App.Effects.ScrollContentInsetAdjustmentBehavior.ScrollableAxes:
+                        scrollView.ContentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentBehavior.ScrollableAxes;
+                        break;
+                    case App.Effects.ScrollContentInsetAdjustmentBehavior.Never:
+                        scrollView.ContentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentBehavior.Never;
+                        break;
+                    case App.Effects.ScrollContentInsetAdjustmentBehavior.Always:
+                        scrollView.ContentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentBehavior.Always;
+                        break;
+                }
+            }
+        }
+
+        protected override void OnDetached()
+        {
+        }
+    }
+#endif
 }

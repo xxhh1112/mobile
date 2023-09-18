@@ -23,4 +23,22 @@ namespace Bit.App.Effects
         {
         }
     }
+
+#if IOS
+    public class ScrollEnabledPlatformEffect : PlatformEffect
+    {
+        protected override void OnAttached()
+        {
+            // this can be for any view that inherits from UIScrollView like UITextView.
+            if (Element != null && Control is UIScrollView scrollView)
+            {
+                scrollView.ScrollEnabled = App.Effects.ScrollEnabledEffect.GetIsScrollEnabled(Element);
+            }
+        }
+
+        protected override void OnDetached()
+        {
+        }
+    }
+#endif
 }

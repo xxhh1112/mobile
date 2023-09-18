@@ -32,6 +32,10 @@ public static class MauiProgram
                 effects.Add<Effects.NoEmojiKeyboardEffect, Effects.NoEmojiKeyboardPlatformEffect>();
                 effects.Add<Effects.TabBarEffect, Effects.TabBarPlatformEffect>();
                 effects.Add<Effects.RemoveFontPaddingEffect, Effects.RemoveFontPaddingPlatformEffect>();
+#else
+                effects.Add<Effects.NoEmojiKeyboardEffect, Bit.iOS.Core.Effects.NoEmojiKeyboardEffect>();
+                effects.Add<Effects.ScrollEnabledEffect, Effects.ScrollEnabledPlatformEffect>();
+                effects.Add<Effects.ScrollViewContentInsetAdjustmentBehaviorEffect, Bit.iOS.Core.Effects.ScrollViewContentInsetAdjustmentBehaviorPlatformEffect>();
 #endif
             })
             .ConfigureFonts(fonts =>

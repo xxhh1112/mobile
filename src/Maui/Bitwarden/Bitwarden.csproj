@@ -33,6 +33,9 @@
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
 	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-ios|AnyCPU'">
+	  <CreatePackage>false</CreatePackage>
+	</PropertyGroup>
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
@@ -94,9 +97,6 @@
 	    <SubType></SubType>
 	  </MauiXaml>
 	  <MauiXaml Update="Controls\CipherViewCell\CipherViewCell.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Controls\AccountSwitchingOverlay\AccountSwitchingOverlayView.xaml">
 	    <SubType></SubType>
 	  </MauiXaml>
 	  <MauiXaml Update="Lists\ItemLayouts\CustomFields\TextCustomFieldItemLayout.xaml">
@@ -269,17 +269,6 @@
 	  </MauiXaml>
 	</ItemGroup>
 	<ItemGroup>
-	  <None Remove="Core\" />
-	  <None Remove="Core\Abstractions\" />
-	  <None Remove="Core\Attributes\" />
-	  <None Remove="Core\Enums\" />
-	  <None Remove="Core\Exceptions\" />
-	  <None Remove="Core\Models\" />
-	  <None Remove="Core\Resources\eff_long_word_list.txt" />
-	  <None Remove="Core\Resources\public_suffix_list.dat" />
-	  <None Remove="Core\Resources\" />
-	  <None Remove="Core\Services\" />
-	  <None Remove="Core\Utilities\" />
 	  <None Remove="Platforms\Android\Resources\mipmap-mdpi\ic_launcher.png" />
 	  <None Remove="Platforms\Android\Resources\mipmap-mdpi\ic_launcher_round.png" />
 	  <None Remove="Platforms\Android\Resources\mipmap-xxhdpi\ic_launcher.png" />
@@ -308,22 +297,9 @@
 	  <None Remove="Platforms\Android\Handlers\" />
 	</ItemGroup>
 	<ItemGroup>
-	  <Folder Include="Core\" />
-	  <Folder Include="Core\Abstractions\" />
-	  <Folder Include="Core\Attributes\" />
-	  <Folder Include="Core\Enums\" />
-	  <Folder Include="Core\Exceptions\" />
-	  <Folder Include="Core\Models\" />
-	  <Folder Include="Core\Resources\" />
-	  <Folder Include="Core\Services\" />
-	  <Folder Include="Core\Utilities\" />
 	  <Folder Include="Resources\Fonts\" />
 	  <Folder Include="Handlers\" />
 	  <Folder Include="Platforms\Android\Handlers\" />
-	</ItemGroup>
-	<ItemGroup>
-	  <EmbeddedResource Include="Core\Resources\eff_long_word_list.txt" />
-	  <EmbeddedResource Include="Core\Resources\public_suffix_list.dat" />
 	</ItemGroup>
 	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0-android'">
 	  <PackageReference Include="Xamarin.GooglePlayServices.SafetyNet" Version="118.0.1.5" />
@@ -361,5 +337,9 @@
 	  <BundleResource Include="Platforms\Android\Resources\mipmap-xhdpi\ic_launcher.png" />
 	  <BundleResource Include="Platforms\Android\Resources\mipmap-xhdpi\ic_launcher_round.png" />
 	  <BundleResource Include="Platforms\Android\google-services.json" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\iOS.Core\iOS.Core.csproj" Condition="'$(TargetFramework)' == 'net7.0-ios'" />
+	  <ProjectReference Include="..\Bit.Core\Bit.Core.csproj" />
 	</ItemGroup>
 </Project>
