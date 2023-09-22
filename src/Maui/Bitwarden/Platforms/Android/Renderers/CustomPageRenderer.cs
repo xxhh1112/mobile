@@ -2,7 +2,7 @@
 using Android.App;
 using Android.Content;
 using AndroidX.AppCompat.Widget;
-using Bit.App.Resources;
+using Bit.Core.Resources;
 using Bit.App.Droid.Renderers;
 using Microsoft.Maui.Controls.Compatibility.Platform.Android;
 using Microsoft.Maui.Controls.Platform;

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using AuthenticationServices;
 using Bit.App.Models;
 using Bit.App.Pages;
-using Bit.App.Resources;
+using Bit.Core.Resources;
 using Bit.App.Utilities;
 using Bit.Core;
 using Bit.Core.Abstractions;
@@ -17,7 +17,6 @@ using Bit.iOS.Core.Utilities;
 using Bit.iOS.Core.Views;
 using Foundation;
 using UIKit;
-using Xamarin.Forms;
 
 namespace Bit.iOS.Core.Controllers
 {
@@ -239,9 +238,10 @@ namespace Bit.iOS.Core.Controllers
             ThemeManager.ApplyResourcesTo(generatorPage);
 
             var navigationPage = new NavigationPage(generatorPage);
-            var generatorController = navigationPage.CreateViewController();
-            generatorController.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
-            PresentViewController(generatorController, true, null);
+            // TODO: [MAUI-Migration] [Critical]
+            //var generatorController = navigationPage.CreateViewController();
+            //generatorController.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
+            //PresentViewController(generatorController, true, null);
         }
 
         public class TableSource : ExtendedUITableViewSource

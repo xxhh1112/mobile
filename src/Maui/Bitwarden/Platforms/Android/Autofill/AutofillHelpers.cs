@@ -12,7 +12,7 @@ using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Runtime;
 using Android.Widget.Inline;
-using Bit.App.Resources;
+using Bit.Core.Resources;
 using Bit.Core.Enums;
 using Android.Views.Autofill;
 using AndroidX.AutoFill.Inline;

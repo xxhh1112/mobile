@@ -10,7 +10,7 @@ using Android.Provider;
 using Android.Webkit;
 using AndroidX.Core.App;
 using AndroidX.Core.Content;
-using Bit.App.Resources;
+using Bit.Core.Resources;
 using Bit.Core;
 using Bit.Core.Abstractions;
 using Plugin.CurrentActivity;

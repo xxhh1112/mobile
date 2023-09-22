@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Bit.App.Abstractions;
 using Bit.App.Models;
 using Bit.App.Pages;
-using Bit.App.Resources;
+using Bit.Core.Resources;
 using Bit.App.Utilities;
 using Bit.Core.Abstractions;
 using Bit.Core.Enums;
@@ -13,7 +13,6 @@ using Bit.iOS.Core.Utilities;
 using Bit.iOS.Core.Views;
 using Foundation;
 using UIKit;
-using Xamarin.Forms;
 
 namespace Bit.iOS.Core.Controllers
 {
@@ -366,9 +365,10 @@ namespace Bit.iOS.Core.Controllers
             }
 
             var navigationPage = new NavigationPage(loginPage);
-            var loginController = navigationPage.CreateViewController();
-            loginController.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
-            PresentViewController(loginController, true, null);
+            // TODO: [MAUI-Migration] [Critical]
+            //var loginController = navigationPage.CreateViewController();
+            //loginController.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
+            //PresentViewController(loginController, true, null);
         }
 
         private async Task SetKeyAndContinueAsync(SymmetricCryptoKey key, bool masterPassword = false)

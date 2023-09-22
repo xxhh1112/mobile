@@ -6,7 +6,7 @@ using Android.Content;
 using Android.OS;
 using Android.Provider;
 using Android.Views.Autofill;
-using Bit.App.Resources;
+using Bit.Core.Resources;
 using Bit.Core.Abstractions;
 using Bit.Core.Enums;
 using Bit.Core.Models.View;

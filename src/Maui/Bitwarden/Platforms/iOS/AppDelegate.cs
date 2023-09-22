@@ -32,7 +32,7 @@ public class AppDelegate : MauiUIApplicationDelegate
 
     private NFCNdefReaderSession _nfcSession = null;
     private iOSPushNotificationHandler _pushHandler = null;
-    private Core.NFCReaderDelegate _nfcDelegate = null;
+    private Bit.iOS.Core.NFCReaderDelegate _nfcDelegate = null;
     private NSTimer _clipboardTimer = null;
     private nint _clipboardBackgroundTaskId;
     private NSTimer _eventTimer = null;
@@ -60,7 +60,8 @@ public class AppDelegate : MauiUIApplicationDelegate
         _eventService = ServiceContainer.Resolve<IEventService>("eventService");
 
         //LoadApplication(new App.App(null));
-        iOSCoreHelpers.AppearanceAdjustments();
+        //ThemeManager.SetTheme(Microsoft.Maui.Controls.Application.Current.Resources);
+        //iOSCoreHelpers.AppearanceAdjustments();
         //ZXing.Net.Mobile.Forms.iOS.Platform.Init();
 
         ConnectToWatchIfNeededAsync().FireAndForget();
@@ -91,7 +92,7 @@ public class AppDelegate : MauiUIApplicationDelegate
                 else if (message.Command == "unlocked")
                 {
                     var needsAutofillReplacement = await _storageService.GetAsync<bool?>(
-                        Core.Constants.AutofillNeedsIdentityReplacementKey);
+                        Bit.iOS.Core.Constants.AutofillNeedsIdentityReplacementKey);
                     if (needsAutofillReplacement.GetValueOrDefault())
                     {
                         await ASHelpers.ReplaceAllIdentities();
@@ -185,7 +186,12 @@ public class AppDelegate : MauiUIApplicationDelegate
             }
         });
 
-        return base.FinishedLaunching(app, options);
+        var finishedLaunching = base.FinishedLaunching(app, options);
+
+        ThemeManager.SetTheme(Microsoft.Maui.Controls.Application.Current.Resources);
+        iOSCoreHelpers.AppearanceAdjustments();
+
+        return finishedLaunching;
     }
 
     public override void OnResignActivation(UIApplication uiApplication)
@@ -235,18 +241,20 @@ public class AppDelegate : MauiUIApplicationDelegate
         base.WillEnterForeground(uiApplication);
     }
 
-    public override bool OpenUrl(UIApplication application, NSUrl url, string sourceApplication,
+    [Export("application:openURL:sourceApplication:annotation:")]
+    public bool OpenUrl(UIApplication application, NSUrl url, string sourceApplication,
         NSObject annotation)
     {
         return true;
-    }
+    } 
 
     public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
     {
-        return _deepLinkContext.Value.OnNewUri(url) || Xamarin.Essentials.Platform.OpenUrl(app, url, options);
+        return _deepLinkContext.Value.OnNewUri(url) || base.OpenUrl(app, url, options);
     }
 
-    public override bool ContinueUserActivity(UIApplication application, NSUserActivity userActivity,
+    // TODO: [MAUI-Migration] Check if this works given that the baes will call the invoke the service lifecycle.
+    /* public override bool ContinueUserActivity(UIApplication application, NSUserActivity userActivity,
         UIApplicationRestorationHandler completionHandler)
     {
         if (Xamarin.Essentials.Platform.ContinueUserActivity(application, userActivity, completionHandler))
@@ -254,31 +262,36 @@ public class AppDelegate : MauiUIApplicationDelegate
             return true;
         }
         return base.ContinueUserActivity(application, userActivity, completionHandler);
-    }
+    } */
 
-    public override void FailedToRegisterForRemoteNotifications(UIApplication application, NSError error)
+    [Export("application:didFailToRegisterForRemoteNotificationsWithError:")]
+    public void FailedToRegisterForRemoteNotifications(UIApplication application, NSError error)
     {
         _pushHandler?.OnErrorReceived(error);
     }
 
-    public override void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)
+    [Export("application:didRegisterForRemoteNotificationsWithDeviceToken:")]
+    public void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)
     {
         _pushHandler?.OnRegisteredSuccess(deviceToken);
     }
 
-    public override void DidRegisterUserNotificationSettings(UIApplication application,
+    [Export("application:didRegisterUserNotificationSettings:")]
+    public void DidRegisterUserNotificationSettings(UIApplication application,
         UIUserNotificationSettings notificationSettings)
     {
         application.RegisterForRemoteNotifications();
     }
 
-    public override void DidReceiveRemoteNotification(UIApplication application, NSDictionary userInfo,
+    [Export("application:didReceiveRemoteNotification:fetchCompletionHandler:")]
+    public void DidReceiveRemoteNotification(UIApplication application, NSDictionary userInfo,
         Action<UIBackgroundFetchResult> completionHandler)
     {
         _pushHandler?.OnMessageReceived(userInfo);
     }
 
-    public override void ReceivedRemoteNotification(UIApplication application, NSDictionary userInfo)
+    [Export("application:didReceiveRemoteNotification:")]
+    public void ReceivedRemoteNotification(UIApplication application, NSDictionary userInfo)
     {
         _pushHandler?.OnMessageReceived(userInfo);
     }
@@ -314,7 +327,7 @@ public class AppDelegate : MauiUIApplicationDelegate
 
         _pushHandler = new iOSPushNotificationHandler(
             ServiceContainer.Resolve<IPushNotificationListenerService>("pushNotificationListenerService"));
-        _nfcDelegate = new Core.NFCReaderDelegate((success, message) =>
+        _nfcDelegate = new Bit.iOS.Core.NFCReaderDelegate((success, message) =>
             _messagingService.Send("gotYubiKeyOTP", message));
 
         iOSCoreHelpers.Bootstrap(async () => await ApplyManagedSettingsAsync());
@@ -332,7 +345,7 @@ public class AppDelegate : MauiUIApplicationDelegate
 
     private void ShowAppExtension(ExtensionPageViewModel extensionPageViewModel)
     {
-        var itemProvider = new NSItemProvider(new NSDictionary(), Core.Constants.UTTypeAppExtensionSetup);
+        var itemProvider = new NSItemProvider(new NSDictionary(), Bit.iOS.Core.Constants.UTTypeAppExtensionSetup);
         var extensionItem = new NSExtensionItem
         {
             Attachments = new NSItemProvider[] { itemProvider }

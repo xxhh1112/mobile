@@ -30,28 +30,18 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 	</PropertyGroup>
 
+	<PropertyGroup Condition="$(TargetFramework.Contains('-ios'))">
+      <!--<RuntimeIdentifier>ios-arm64</RuntimeIdentifier>-->
+		<RuntimeIdentifier>iossimulator-x64</RuntimeIdentifier>
+		<PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-ios|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
 	</PropertyGroup>
-	<ItemGroup>
-		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
-
-		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
-
-		<!-- Images -->
-		<MauiImage Include="Resources\Images\*" />
-		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
-
-		<!-- Custom Fonts -->
-		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
-		<MauiFont Include="Resources\Fonts\*" />
-	</ItemGroup>
-
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 		<PackageReference Include="CsvHelper" Version="30.0.1" />
@@ -78,197 +68,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Controls\AccountViewCell\AccountViewCell.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Controls\DateTime\DateTimePicker.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Controls\AuthenticatorViewCell\AuthenticatorViewCell.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Controls\PasswordStrengthProgressBar\PasswordStrengthProgressBar.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Controls\SendViewCell\SendViewCell.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Controls\IconLabelButton\IconLabelButton.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Controls\CipherViewCell\CipherViewCell.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Lists\ItemLayouts\CustomFields\TextCustomFieldItemLayout.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Lists\ItemLayouts\CustomFields\LinkedCustomFieldItemLayout.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Lists\ItemLayouts\CustomFields\BooleanCustomFieldItemLayout.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Lists\ItemLayouts\CustomFields\HiddenCustomFieldItemLayout.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Settings\FolderAddEditPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Settings\AutofillServicesPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Settings\ExtensionPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Settings\FoldersPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Settings\OptionsPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Settings\BlockAutofillUrisPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Settings\LoginPasswordlessRequestsListPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Settings\ExportVaultPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Settings\AutofillPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Settings\SyncPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Settings\SettingsPage\SettingsPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Generator\GeneratorHistoryPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Generator\GeneratorPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Accounts\LoginPasswordlessPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Accounts\LoginPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Accounts\HintPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Accounts\LockPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Accounts\VerificationCodePage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Accounts\LoginPasswordlessRequestPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Accounts\DeleteAccountPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Accounts\UpdateTempPasswordPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Accounts\SetPasswordPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Accounts\TwoFactorPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Accounts\EnvironmentPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Accounts\LoginSsoPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Accounts\RegisterPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Accounts\HomePage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Accounts\RemoveMasterPasswordPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Send\SendAddOnlyPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Send\SendsPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Send\SendAddOnlyOptionsView.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Send\SendAddEditPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Send\SendGroupingsPage\SendGroupingsPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Vault\CollectionsPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Vault\CipherSelectionPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Vault\AttachmentsPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Vault\ScanPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Vault\CiphersPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Vault\CipherAddEditPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Vault\CipherDetailsPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Vault\SharePage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Vault\PasswordHistoryPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Vault\GroupingsPage\GroupingsPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Styles\Android.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Styles\Black.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Styles\Nord.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Styles\iOS.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Styles\Light.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Styles\Variables.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Styles\Base.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Styles\SolarizedDark.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Styles\Dark.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	</ItemGroup>
-	<ItemGroup>
 	  <None Remove="Platforms\Android\Resources\mipmap-mdpi\ic_launcher.png" />
 	  <None Remove="Platforms\Android\Resources\mipmap-mdpi\ic_launcher_round.png" />
 	  <None Remove="Platforms\Android\Resources\mipmap-xxhdpi\ic_launcher.png" />
@@ -289,17 +88,22 @@
 	  <None Remove="Platforms\Android\Resources\mipmap-xhdpi\ic_launcher.png" />
 	  <None Remove="Platforms\Android\Resources\mipmap-xhdpi\ic_launcher_round.png" />
 	  <None Remove="Platforms\Android\google-services.json" />
-	  <None Remove="Resources\Fonts\" />
-	  <None Remove="Resources\Fonts\bwi-font.ttf" />
-	  <None Remove="Resources\Fonts\MaterialIcons_Regular.ttf" />
-	  <None Remove="Resources\Fonts\RobotoMono_Regular.ttf" />
-	  <None Remove="Handlers\" />
+	  <None Remove="Effects\" />
 	  <None Remove="Platforms\Android\Handlers\" />
+	  <None Remove="Platforms\Android\Utilities\" />
+	  <None Remove="Handlers\" />
+	  <None Remove="Resources\" />
+	  <None Remove="Resources\Splash\splash.svg" />
+	  <None Remove="Resources\Splash\" />
 	</ItemGroup>
 	<ItemGroup>
-	  <Folder Include="Resources\Fonts\" />
-	  <Folder Include="Handlers\" />
+	  <Folder Include="Effects\" />
 	  <Folder Include="Platforms\Android\Handlers\" />
+	  <Folder Include="Platforms\Android\Utilities\" />
+	  <Folder Include="Handlers\" />
+	  <Folder Include="Resources\" />
+	  <Folder Include="Resources\AppIcon\" />
+	  <Folder Include="Resources\Splash\" />
 	</ItemGroup>
 	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0-android'">
 	  <PackageReference Include="Xamarin.GooglePlayServices.SafetyNet" Version="118.0.1.5" />
@@ -341,5 +145,15 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\iOS.Core\iOS.Core.csproj" Condition="'$(TargetFramework)' == 'net7.0-ios'" />
 	  <ProjectReference Include="..\Bit.Core\Bit.Core.csproj" />
+	  <ProjectReference Include="..\iOS.Core\iOS.Core.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+				<!-- App Icon -->
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+
+	  <MauiSplashScreen Include="Resources\Splash\splash.svg">
+	    <Color>#512BD4</Color>
+	    <BaseSize>128,128</BaseSize>
+	  </MauiSplashScreen>
 	</ItemGroup>
 </Project>

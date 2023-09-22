@@ -3,7 +3,7 @@ using Android.App;
 using Android.Content;
 using Android.Runtime;
 using Android.Service.QuickSettings;
-using Bit.App.Resources;
+using Bit.Core.Resources;
 using Bit.Core.Abstractions;
 using Bit.Core.Utilities;
 using Bit.App.Droid.Accessibility;

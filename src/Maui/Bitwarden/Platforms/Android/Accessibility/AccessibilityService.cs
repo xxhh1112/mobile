@@ -9,7 +9,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Views.Accessibility;
 using Android.Widget;
-using Bit.App.Resources;
+using Bit.Core.Resources;
 using Bit.Core.Abstractions;
 using Bit.Core.Utilities;
 using View = Android.Views.View;

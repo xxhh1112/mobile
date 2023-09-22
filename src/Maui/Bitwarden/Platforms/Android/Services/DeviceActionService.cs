@@ -12,7 +12,7 @@ using Android.Views;
 using Android.Views.InputMethods;
 using Android.Widget;
 using Bit.App.Abstractions;
-using Bit.App.Resources;
+using Bit.Core.Resources;
 using Bit.App.Utilities;
 using Bit.App.Utilities.Prompts;
 using Bit.Core.Abstractions;

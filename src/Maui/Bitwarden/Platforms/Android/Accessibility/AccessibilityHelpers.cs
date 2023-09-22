@@ -7,7 +7,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Views.Accessibility;
 using Android.Widget;
-using Bit.App.Resources;
+using Bit.Core.Resources;
 using Application = Android.App.Application;
 using Point = Android.Graphics.Point;
 using Rect = Android.Graphics.Rect;

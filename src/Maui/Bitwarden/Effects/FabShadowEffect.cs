@@ -9,10 +9,6 @@ using Bit.App.Droid.Utilities;
 
 namespace Bit.App.Effects
 {
-    public class FabShadowEffect : RoutingEffect
-    {
-    }
-
 #if ANDROID
     public class FabShadowPlatformEffect : PlatformEffect
     {

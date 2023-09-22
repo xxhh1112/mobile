@@ -12,7 +12,7 @@ using Android.Runtime;
 using Android.Views;
 using Bit.App.Abstractions;
 using Bit.App.Models;
-using Bit.App.Resources;
+using Bit.Core.Resources;
 using Bit.App.Utilities;
 using Bit.Core;
 using Bit.Core.Abstractions;

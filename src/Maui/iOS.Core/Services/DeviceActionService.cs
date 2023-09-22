@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Bit.App.Abstractions;
-using Bit.App.Resources;
+using Bit.Core.Resources;
 using Bit.App.Utilities.Prompts;
 using Bit.Core.Abstractions;
 using Bit.Core.Enums;

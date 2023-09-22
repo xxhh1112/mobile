@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Bit.App.Resources {
+namespace Bit.Core.Resources {
     using System;
     
     
@@ -36,7 +36,7 @@ namespace Bit.App.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Bit.App.Resources.AppResources", typeof(AppResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Bit.Core.Resources.AppResources", typeof(AppResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -6269,10 +6269,10 @@ namespace Bit.App.Resources {
         public static string ThePasskeyWillNotBeCopiedToTheClonedItemDoYouWantToContinueCloningThisItem {
             get {
                 return ResourceManager.GetString("ThePasskeyWillNotBeCopiedToTheClonedItemDoYouWantToContinueCloningThisItem", resourceCulture);
-        
             }
         }
         
+        /// <summary>
         ///   Looks up a localized string similar to There are no blocked URIs.
         /// </summary>
         public static string ThereAreNoBlockedURIs {
