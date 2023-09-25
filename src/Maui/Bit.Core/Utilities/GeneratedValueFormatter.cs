@@ -32,19 +32,20 @@ namespace Bit.App.Utilities
 
             // First two digits of returned hex code contains the alpha,
             // which is not supported in HTML color, so we need to cut those out.
-            var normalColor = $"<span style=\"color:#{ThemeManager.GetResourceColor("TextColor").ToHex().Substring(3)}\">";
-            var numberColor = $"<span style=\"color:#{ThemeManager.GetResourceColor("PasswordNumberColor").ToHex().Substring(3)}\">";
-            var specialColor = $"<span style=\"color:#{ThemeManager.GetResourceColor("PasswordSpecialColor").ToHex().Substring(3)}\">";
+
+            var normalColor = $"<span style=\"color:#{ThemeManager.GetResourceColor("TextColor").ToHex().Substring(1)}\">";
+            var numberColor = $"<span style=\"color:#{ThemeManager.GetResourceColor("PasswordNumberColor").ToHex().Substring(1)}\">";
+            var specialColor = $"<span style=\"color:#{ThemeManager.GetResourceColor("PasswordSpecialColor").ToHex().Substring(1)}\">";
             var result = string.Empty;
 
             // iOS won't hide the zero-width space char without these div attrs, but Android won't respect
             // display:inline-block and adds a newline after the password/username.  Hence, only iOS gets the div.
             // TODO Xamarin.Forms.Device.RuntimePlatform is no longer supported. Use Microsoft.Maui.Devices.DeviceInfo.Platform instead. For more details see https://learn.microsoft.com/en-us/dotnet/maui/migration/forms-projects#device-changes
-                                    if (Device.RuntimePlatform == Device.iOS)
-            {
-                result += "<div style=\"display:inline-block; align-items:center; justify-content:center; text-align:center; word-break:break-all; white-space:pre-wrap; min-width:0\">";
-            }
-
+            
+#if IOS
+            result += "<div style=\"display:inline-block; align-items:center; justify-content:center; text-align:center; word-break:break-all; font-size:1.5em; white-space:pre-wrap; min-width:0\">";
+#endif
+            
             // Start with an otherwise uncovered case so we will definitely enter the "something changed"
             // state.
             var currentType = CharType.None;

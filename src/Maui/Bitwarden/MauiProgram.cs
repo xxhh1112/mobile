@@ -19,6 +19,7 @@ namespace Bit.App
                 },
                 handlers =>
                 {
+#if ANDROID
                     new EntryHandlerMappings().Setup();
                     new EditorHandlerMappings().Setup();
                     new LabelHandlerMappings().Setup();
@@ -30,6 +31,17 @@ namespace Bit.App
                     new StepperHandlerMappings().Setup();
                     new TimePickerHandlerMappings().Setup();
                     new ButtonHandlerMappings().Setup();
+#else
+                    iOS.Core.Handlers.ButtonHandlerMappings.Setup();
+                    iOS.Core.Handlers.DatePickerHandlerMappings.Setup();
+                    iOS.Core.Handlers.EditorHandlerMappings.Setup();
+                    iOS.Core.Handlers.EntryHandlerMappings.Setup();
+                    //iOS.Core.Handlers.LabelHandlerMappings.Setup();
+                    iOS.Core.Handlers.PickerHandlerMappings.Setup();
+                    iOS.Core.Handlers.SearchBarHandlerMappings.Setup();
+                    iOS.Core.Handlers.StepperHandlerMappings.Setup();
+                    iOS.Core.Handlers.TimePickerHandlerMappings.Setup();
+#endif
                 }
             ).Build();
         }

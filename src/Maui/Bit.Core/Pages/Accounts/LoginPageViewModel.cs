@@ -155,7 +155,9 @@ namespace Bit.App.Pages
         {
             try
             {
-                await _deviceActionService.ShowLoadingAsync(AppResources.Loading);
+                // TODO: [MAUI-Migration] added delay or the modal navigation doesn't happen because of modal-loading is shown
+                await Task.Delay(500);
+                await  _deviceActionService.ShowLoadingAsync(AppResources.Loading);
                 await _stateService.SetPreLoginEmailAsync(Email);
                 await AccountSwitchingOverlayViewModel.RefreshAccountViewsAsync();
                 if (string.IsNullOrWhiteSpace(Email))

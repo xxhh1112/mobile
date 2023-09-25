@@ -72,9 +72,9 @@
         <image name="wrench.png" width="22" height="22"/>
         <image name="camera.png" width="22" height="22"/>
         <image name="download.png" width="18" height="18"/>
-        <image name="ext-act.png" width="290" height="252"/>
-        <image name="ext-more.png" width="290" height="252"/>
-        <image name="ext-use.png" width="290" height="252"/>
+        <image name="ext_act.png" width="290" height="252"/>
+        <image name="ext_more.png" width="290" height="252"/>
+        <image name="ext_use.png" width="290" height="252"/>
         <image name="fa_lock.png" width="25" height="25"/>
         <image name="fingerprint.png" width="91" height="92"/>
         <image name="folder.png" width="18" height="18"/>

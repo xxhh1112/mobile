@@ -15,7 +15,8 @@
 		<ApplicationTitle>Bitwarden</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.x8bit.bitwarden</ApplicationId>
+		<ApplicationId Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">com.8bit.bitwarden</ApplicationId>
+		<ApplicationId Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">com.x8bit.bitwarden</ApplicationId>
 		<ApplicationIdGuid>ccf4766c-a36c-4647-900c-0ea7d323ccc6</ApplicationIdGuid>
 
 		<!-- Versions -->
@@ -30,14 +31,18 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 	</PropertyGroup>
 
-	<PropertyGroup Condition="$(TargetFramework.Contains('-ios'))">
-      <!--<RuntimeIdentifier>ios-arm64</RuntimeIdentifier>-->
+	<!--<PropertyGroup Condition="$(TargetFramework.Contains('-ios'))">
+      <RuntimeIdentifier>ios-arm64</RuntimeIdentifier>
 		<RuntimeIdentifier>iossimulator-x64</RuntimeIdentifier>
 		<PlatformTarget>x64</PlatformTarget>
-  </PropertyGroup>
+  </PropertyGroup>-->
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
+		<RuntimeIdentifier>iossimulator-x64</RuntimeIdentifier>
+	  <CodesignProvision>Automatic</CodesignProvision>
+	  <CodesignKey>iPhone Developer</CodesignKey>
+	  <CodesignEntitlements>Platforms\iOS\Entitlements.plist</CodesignEntitlements>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-ios|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
@@ -152,8 +157,46 @@
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
 
 	  <MauiSplashScreen Include="Resources\Splash\splash.svg">
-	    <Color>#512BD4</Color>
+	    <Color>#175DDC</Color>
 	    <BaseSize>128,128</BaseSize>
 	  </MauiSplashScreen>
+	</ItemGroup>
+	<ItemGroup>
+	  <MauiImage Include="Resources\cog_settings.svg">
+	    <BaseSize>24,24</BaseSize>
+	  </MauiImage>
+	  <MauiImage Include="Resources\ext_act.png" />
+	  <MauiImage Include="Resources\ext_more.png" />
+	  <MauiImage Include="Resources\ext_use.png" />
+	  <MauiImage Include="Resources\generate.svg">
+	    <BaseSize>24,24</BaseSize>
+	  </MauiImage>
+	  <MauiImage Include="Resources\info.svg">
+	    <BaseSize>24,24</BaseSize>
+	  </MauiImage>
+	  <MauiImage Include="Resources\lock.svg">
+	    <BaseSize>24,24</BaseSize>
+	  </MauiImage>
+	  <MauiImage Include="Resources\login.svg">
+	    <BaseSize>24,24</BaseSize>
+	  </MauiImage>
+	  <MauiImage Include="Resources\logo_white.png" />
+	  <MauiImage Include="Resources\logo.png" />
+	  <MauiImage Include="Resources\more_vert.svg">
+	    <BaseSize>24,24</BaseSize>
+	  </MauiImage>
+	  <MauiImage Include="Resources\more.svg">
+	    <BaseSize>24,24</BaseSize>
+	  </MauiImage>
+	  <MauiImage Include="Resources\plus.svg">
+	    <BaseSize>24,24</BaseSize>
+	  </MauiImage>
+	  <MauiImage Include="Resources\search.svg">
+	    <BaseSize>24,24</BaseSize>
+	  </MauiImage>
+	  <MauiImage Include="Resources\send.svg">
+	    <BaseSize>24,24</BaseSize>
+	  </MauiImage>
+	  <MauiImage Include="Resources\yubikey.png" />
 	</ItemGroup>
 </Project>
