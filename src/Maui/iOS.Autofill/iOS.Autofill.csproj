@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+      <TargetFrameworks>net7.0-ios</TargetFrameworks>
+      <UseMaui>True</UseMaui>
+      <OutputType>Library</OutputType>
+      <ApplicationId>com.8bit.bitwarden.autofill</ApplicationId>
+      <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+      <ApplicationVersion>1</ApplicationVersion>
+
+      <EnableDefaultCompileItems>False</EnableDefaultCompileItems>
+  </PropertyGroup>
+
+  <PropertyGroup>
+      <IsAppExtension>true</IsAppExtension>
+      <IsWatchExtension>false</IsWatchExtension>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <CreatePackage>false</CreatePackage>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <CreatePackage>false</CreatePackage>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="CredentialProviderViewController.cs" />
+    <Compile Include="CredentialProviderViewController.designer.cs">
+      <DependentUpon>CredentialProviderViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LockPasswordViewController.cs" />
+    <Compile Include="LockPasswordViewController.designer.cs">
+      <DependentUpon>LockPasswordViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginAddViewController.cs" />
+    <Compile Include="LoginAddViewController.designer.cs">
+      <DependentUpon>LoginAddViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginListViewController.cs" />
+    <Compile Include="LoginListViewController.designer.cs">
+      <DependentUpon>LoginListViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginSearchViewController.cs" />
+    <Compile Include="LoginSearchViewController.designer.cs">
+      <DependentUpon>LoginSearchViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="PasswordGeneratorViewController.cs" />
+    <Compile Include="PasswordGeneratorViewController.designer.cs">
+      <DependentUpon>PasswordGeneratorViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SetupViewController.cs" />
+    <Compile Include="SetupViewController.designer.cs">
+      <DependentUpon>SetupViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\AutofillHelpers.cs" />
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+    <Compile Include="Models\Context.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <InterfaceDefinition Include="MainInterface.storyboard" />
+    <BundleResource Include="Resources\MaterialIcons_Regular.ttf" />
+    <BundleResource Include="Resources\bwi-font.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\check%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\check%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logo%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logo%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logo_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logo_white%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logo_white%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="..\iOS\Resources\more_vert.png">
+      <Link>Resources\more_vert.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\iOS\Resources\more_vert%402x.png">
+      <Link>Resources\more_vert%402x.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\iOS\Resources\more_vert%403x.png">
+      <Link>Resources\more_vert%403x.png</Link>
+    </BundleResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="5.0.2">
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\yubikey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\yubikey%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\yubikey%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Condition="'$(_ResourcePrefix)' != ''" Update="Resources\yubikey%403x.png">
+      <Link>Resources\yubikey%403x.png</Link>
+    </BundleResource>
+    <BundleResource Condition="'$(_ResourcePrefix)' != ''" Update="Resources\yubikey%402x.png">
+      <Link>Resources\yubikey%402x.png</Link>
+    </BundleResource>
+    <BundleResource Condition="'$(_ResourcePrefix)' != ''" Update="Resources\Icon%402x.png">
+      <Link>Resources\Icon%402x.png</Link>
+    </BundleResource>
+    <BundleResource Condition="'$(_ResourcePrefix)' != ''" Update="Resources\logo%403x.png">
+      <Link>Resources\logo%403x.png</Link>
+    </BundleResource>
+    <BundleResource Condition="'$(_ResourcePrefix)' != ''" Update="Resources\check%402x.png">
+      <Link>Resources\check%402x.png</Link>
+    </BundleResource>
+    <BundleResource Condition="'$(_ResourcePrefix)' != ''" Update="Resources\check%403x.png">
+      <Link>Resources\check%403x.png</Link>
+    </BundleResource>
+    <BundleResource Condition="'$(_ResourcePrefix)' != ''" Update="Resources\logo%402x.png">
+      <Link>Resources\logo%402x.png</Link>
+    </BundleResource>
+    <BundleResource Condition="'$(_ResourcePrefix)' != ''" Update="Resources\Icon%403x.png">
+      <Link>Resources\Icon%403x.png</Link>
+    </BundleResource>
+    <BundleResource Condition="'$(_ResourcePrefix)' != ''" Update="Resources\logo_white%403x.png">
+      <Link>Resources\logo_white%403x.png</Link>
+    </BundleResource>
+    <BundleResource Condition="'$(_ResourcePrefix)' != ''" Update="Resources\logo_white%402x.png">
+      <Link>Resources\logo_white%402x.png</Link>
+    </BundleResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bit.Core\Bit.Core.csproj" />
+    <ProjectReference Include="..\iOS.Core\iOS.Core.csproj" />
+  </ItemGroup>
+</Project>
