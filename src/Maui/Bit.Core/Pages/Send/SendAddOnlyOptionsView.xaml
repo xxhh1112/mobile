@@ -31,7 +31,7 @@
                     ItemDisplayBinding="{Binding Key}"
                     ios:Picker.UpdateMode="WhenFinished"
                     AutomationProperties.IsInAccessibleTree="True"
-                    AutomationProperties.Name="{u:I18n DeletionTime}" />
+                    SemanticProperties.Description="{u:I18n DeletionTime}" />
                 <controls:LazyDateTimePicker
                     x:Name="_lazyDeletionDateTimePicker"
                     BindingContext="{Binding DeletionDateTimeViewModel}"
@@ -55,7 +55,7 @@
                     IsEnabled="{Binding SendEnabled}"
                     StyleClass="box-value"
                     AutomationProperties.IsInAccessibleTree="True"
-                    AutomationProperties.Name="{u:I18n ExpirationTime}" />
+                    SemanticProperties.Description="{u:I18n ExpirationTime}" />
                 <controls:LazyDateTimePicker
                     x:Name="_lazyExpirationDateTimePicker"
                     BindingContext="{Binding ExpirationDateTimeViewModel}"
@@ -117,7 +117,7 @@
                         Command="{Binding TogglePasswordCommand}"
                         Margin="10,0,0,0"
                         AutomationProperties.IsInAccessibleTree="True"
-                        AutomationProperties.Name="{u:I18n ToggleVisibility}"
+                        SemanticProperties.Description="{u:I18n ToggleVisibility}"
                         AutomationProperties.HelpText="{Binding PasswordVisibilityAccessibilityText}" />
                 </StackLayout>
                 <Label

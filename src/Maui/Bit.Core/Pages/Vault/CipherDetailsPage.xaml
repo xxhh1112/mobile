@@ -40,7 +40,7 @@
             <ToolbarItem IconImageSource="more_vert.png" Clicked="More_Clicked" Order="Primary"
                          x:Name="_moreItem" x:Key="moreItem"
                          AutomationProperties.IsInAccessibleTree="True"
-                         AutomationProperties.Name="{u:I18n Options}" />
+                         SemanticProperties.Description="{u:I18n Options}" />
             <ToolbarItem Text="{u:I18n Attachments}" Clicked="Attachments_Clicked" Order="Secondary"
                          x:Name="_attachmentsItem" x:Key="attachmentsItem" />
             <ToolbarItem Text="{u:I18n Delete}" Clicked="Delete_Clicked" Order="Secondary" IsDestructive="True"
@@ -118,7 +118,7 @@
                                     Grid.Column="1"
                                     Grid.RowSpan="2"
                                     AutomationProperties.IsInAccessibleTree="True"
-                                    AutomationProperties.Name="{u:I18n CopyUsername}"
+                                    SemanticProperties.Description="{u:I18n CopyUsername}"
                                     AutomationId="CopyValueButton" />
                             </Grid>
                             <BoxView StyleClass="box-row-separator"
@@ -165,7 +165,7 @@
                                     Grid.Column="1"
                                     Grid.RowSpan="2"
                                     AutomationProperties.IsInAccessibleTree="True"
-                                    AutomationProperties.Name="{u:I18n CheckPassword}"
+                                    SemanticProperties.Description="{u:I18n CheckPassword}"
                                     IsVisible="{Binding Cipher.ViewPassword}"
                                     AutomationId="CheckPasswordButton" />
                                 <controls:IconButton
@@ -176,7 +176,7 @@
                                     Grid.Column="2"
                                     Grid.RowSpan="2"
                                     AutomationProperties.IsInAccessibleTree="True"
-                                    AutomationProperties.Name="{u:I18n ToggleVisibility}"
+                                    SemanticProperties.Description="{u:I18n ToggleVisibility}"
                                     AutomationProperties.HelpText="{Binding PasswordVisibilityAccessibilityText}"
                                     IsVisible="{Binding Cipher.ViewPassword}"
                                     AutomationId="ShowValueButton" />
@@ -189,7 +189,7 @@
                                     Grid.Column="3"
                                     Grid.RowSpan="2"
                                     AutomationProperties.IsInAccessibleTree="True"
-                                    AutomationProperties.Name="{u:I18n CopyPassword}"
+                                    SemanticProperties.Description="{u:I18n CopyPassword}"
                                     IsVisible="{Binding Cipher.ViewPassword}"
                                     AutomationId="CopyValueButton" />
                             </Grid>
@@ -262,7 +262,7 @@
                                     Grid.Column="2"
                                     Grid.RowSpan="2"
                                     AutomationProperties.IsInAccessibleTree="True"
-                                    AutomationProperties.Name="{u:I18n CopyTotp}"
+                                    SemanticProperties.Description="{u:I18n CopyTotp}"
                                     AutomationId="CopyValueButton" />
                                 <Label
                                     Text="{u:I18n PremiumSubscriptionRequired}"
@@ -331,7 +331,7 @@
                                     Grid.Column="1"
                                     Grid.RowSpan="2"
                                     AutomationProperties.IsInAccessibleTree="True"
-                                    AutomationProperties.Name="{u:I18n ToggleVisibility}"
+                                    SemanticProperties.Description="{u:I18n ToggleVisibility}"
                                     AutomationId="ShowValueButton" />
                                 <controls:IconButton
                                     StyleClass="box-row-button, box-row-button-platform"
@@ -342,7 +342,7 @@
                                     Grid.Column="2"
                                     Grid.RowSpan="2"
                                     AutomationProperties.IsInAccessibleTree="True"
-                                    AutomationProperties.Name="{u:I18n CopyNumber}"
+                                    SemanticProperties.Description="{u:I18n CopyNumber}"
                                     AutomationId="CopyValueButton" />
                             </Grid>
                             <BoxView StyleClass="box-row-separator"
@@ -415,7 +415,7 @@
                                     Grid.Column="1"
                                     Grid.RowSpan="2"
                                     AutomationProperties.IsInAccessibleTree="True"
-                                    AutomationProperties.Name="{u:I18n ToggleVisibility}"
+                                    SemanticProperties.Description="{u:I18n ToggleVisibility}"
                                     AutomationId="ShowValueButton" />
                                 <controls:IconButton
                                     StyleClass="box-row-button, box-row-button-platform"
@@ -426,7 +426,7 @@
                                     Grid.Column="2"
                                     Grid.RowSpan="2"
                                     AutomationProperties.IsInAccessibleTree="True"
-                                    AutomationProperties.Name="{u:I18n CopySecurityCode}"
+                                    SemanticProperties.Description="{u:I18n CopySecurityCode}"
                                     AutomationId="CopyValueButton" />
                             </Grid>
                             <BoxView StyleClass="box-row-separator"
@@ -620,7 +620,7 @@
                                     VerticalOptions="End"
                                     IsVisible="{Binding Cipher.Fido2Key.CanLaunch, Mode=OneWay}"
                                     AutomationProperties.IsInAccessibleTree="True"
-                                    AutomationProperties.Name="{u:I18n Launch}" />
+                                    SemanticProperties.Description="{u:I18n Launch}" />
                                 <controls:IconButton
                                     StyleClass="box-row-button, box-row-button-platform"
                                     Text="{Binding Source={x:Static core:BitwardenIcons.Clone}}"
@@ -629,7 +629,7 @@
                                     Grid.Column="2"
                                     Grid.RowSpan="2"
                                     AutomationProperties.IsInAccessibleTree="True"
-                                    AutomationProperties.Name="{u:I18n CopyApplication}" />
+                                    SemanticProperties.Description="{u:I18n CopyApplication}" />
                                 <BoxView
                                     StyleClass="box-row-separator"
                                     Margin="0,3,0,0"
@@ -685,7 +685,7 @@
                                                 Grid.RowSpan="2"
                                                 IsVisible="{Binding CanLaunch, Mode=OneWay}"
                                                 AutomationProperties.IsInAccessibleTree="True"
-                                                AutomationProperties.Name="{u:I18n Launch}"
+                                                SemanticProperties.Description="{u:I18n Launch}"
                                                 AutomationId="LaunchUriButton" />
                                             <controls:IconButton
                                                 StyleClass="box-row-button, box-row-button-platform"
@@ -696,7 +696,7 @@
                                                 Grid.Column="2"
                                                 Grid.RowSpan="2"
                                                 AutomationProperties.IsInAccessibleTree="True"
-                                                AutomationProperties.Name="{u:I18n Copy}"
+                                                SemanticProperties.Description="{u:I18n Copy}"
                                                 AutomationId="CopyUriButton" />
                                         </Grid>
                                         <BoxView StyleClass="box-row-separator" />
@@ -758,7 +758,7 @@
                                                 CommandParameter="{Binding .}"
                                                 VerticalOptions="Center"
                                                 AutomationProperties.IsInAccessibleTree="True"
-                                                AutomationProperties.Name="{u:I18n Download}"
+                                                SemanticProperties.Description="{u:I18n Download}"
                                                 AutomationId="CipherAttachmentDownloadButton" />
                                         </StackLayout>
                                         <BoxView StyleClass="box-row-separator" />
@@ -811,7 +811,7 @@
             AbsoluteLayout.LayoutFlags="PositionProportional"
             AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize"
             AutomationProperties.IsInAccessibleTree="True"
-            AutomationProperties.Name="{u:I18n EditItem}"
+            SemanticProperties.Description="{u:I18n EditItem}"
             AutomationId="CipherEditButton"
             IsVisible="{Binding CanEdit}">
             <Button.Effects>

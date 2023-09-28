@@ -29,7 +29,7 @@
                 Order="Primary"
                 Command="{Binding MoreCommand}"
                 AutomationProperties.IsInAccessibleTree="True"
-                AutomationProperties.Name="{u:I18n Options}" />
+                SemanticProperties.Description="{u:I18n Options}" />
             <ToolbarItem Text="{u:I18n UseAnotherTwoStepMethod}" 
                 Clicked="Methods_Clicked" 
                 Order="Secondary"

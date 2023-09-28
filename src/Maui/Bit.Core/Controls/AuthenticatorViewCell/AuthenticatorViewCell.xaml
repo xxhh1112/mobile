@@ -123,5 +123,5 @@
         HorizontalOptions="Center"
         VerticalOptions="Center"
         AutomationProperties.IsInAccessibleTree="True"
-        AutomationProperties.Name="{u:I18n CopyTotp}" />
+        SemanticProperties.Description="{u:I18n CopyTotp}" />
 </controls:ExtendedGrid>

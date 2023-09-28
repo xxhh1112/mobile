@@ -74,7 +74,7 @@
             Text="{Binding Source={x:Static core:BitwardenIcons.ExclamationTriangle}}"
             IsVisible="{Binding Send.Disabled, Mode=OneTime}"
             AutomationProperties.IsInAccessibleTree="True"
-            AutomationProperties.Name="{u:I18n Disabled}"
+            SemanticProperties.Description="{u:I18n Disabled}"
             AutomationId="DisabledSendLabel" />
         <controls:IconLabel
             Grid.Column="2"
@@ -86,7 +86,7 @@
             Text="{Binding Source={x:Static core:BitwardenIcons.Key}}"
             IsVisible="{Binding Send.HasPassword, Mode=OneTime}"
             AutomationProperties.IsInAccessibleTree="True"
-            AutomationProperties.Name="{u:I18n Password}"
+            SemanticProperties.Description="{u:I18n Password}"
             AutomationId="PasswordProtectedSendLabel" />
         <controls:IconLabel
             Grid.Column="3"
@@ -98,7 +98,7 @@
             Text="{Binding Source={x:Static core:BitwardenIcons.Ban}}"
             IsVisible="{Binding Send.MaxAccessCountReached, Mode=OneTime}"
             AutomationProperties.IsInAccessibleTree="True"
-            AutomationProperties.Name="{u:I18n MaxAccessCountReached}"
+            SemanticProperties.Description="{u:I18n MaxAccessCountReached}"
             AutomationId="SendMaxAccessCountReachedLabel" />
         <controls:IconLabel
             Grid.Column="4"
@@ -110,7 +110,7 @@
             Text="{Binding Source={x:Static core:BitwardenIcons.Clock}}"
             IsVisible="{Binding Send.Expired, Mode=OneTime}"
             AutomationProperties.IsInAccessibleTree="True"
-            AutomationProperties.Name="{u:I18n Expired}"
+            SemanticProperties.Description="{u:I18n Expired}"
             AutomationId="ExpiredSendLabel" />
         <controls:IconLabel
             Grid.Column="5"
@@ -122,7 +122,7 @@
             Text="{Binding Source={x:Static core:BitwardenIcons.Trash}}"
             IsVisible="{Binding Send.PendingDelete, Mode=OneTime}"
             AutomationProperties.IsInAccessibleTree="True"
-            AutomationProperties.Name="{u:I18n PendingDelete}"
+            SemanticProperties.Description="{u:I18n PendingDelete}"
             AutomationId="SendWithPendingDeletionLabel" />
     </Grid>
 
@@ -136,7 +136,7 @@
         VerticalOptions="CenterAndExpand"
         HorizontalOptions="EndAndExpand"
         AutomationProperties.IsInAccessibleTree="True"
-        AutomationProperties.Name="{u:I18n Options}"
+        SemanticProperties.Description="{u:I18n Options}"
         AutomationId="SendOptionsButton" />
 
 </controls:ExtendedGrid>

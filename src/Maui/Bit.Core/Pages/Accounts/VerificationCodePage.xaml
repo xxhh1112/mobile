@@ -69,7 +69,7 @@
                         Grid.Row="1"
                         Grid.Column="1"
                         AutomationProperties.IsInAccessibleTree="True"
-                        AutomationProperties.Name="{u:I18n ToggleVisibility}"/>
+                        SemanticProperties.Description="{u:I18n ToggleVisibility}"/>
                     <Label
                         Text="{u:I18n ConfirmYourIdentity}"
                         StyleClass="box-footer-label"

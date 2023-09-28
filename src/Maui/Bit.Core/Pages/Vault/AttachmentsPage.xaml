@@ -59,7 +59,7 @@
                                         CommandParameter="{Binding .}"
                                         VerticalOptions="Center"
                                         AutomationProperties.IsInAccessibleTree="True"
-                                        AutomationProperties.Name="{u:I18n Delete}"
+                                        SemanticProperties.Description="{u:I18n Delete}"
                                         AutomationId="AttachmentDeleteButton" />
                                 </StackLayout>
                                 <BoxView StyleClass="box-row-separator" />

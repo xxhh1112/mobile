@@ -58,7 +58,7 @@
             IsSpellCheckEnabled="False"
             IsTextPredictionEnabled="False"
             AutomationProperties.IsInAccessibleTree="True"
-            AutomationProperties.Name="{Binding Field.Name}"
+            SemanticProperties.Description="{Binding Field.Name}"
             AutomationId="HiddenCustomFieldValueEntry">
             <Entry.Keyboard>
                 <Keyboard x:FactoryMethod="Create">
@@ -77,7 +77,7 @@
             Grid.Column="1"
             Grid.RowSpan="2"
             AutomationProperties.IsInAccessibleTree="True"
-            AutomationProperties.Name="{u:I18n ToggleVisibility}"
+            SemanticProperties.Description="{u:I18n ToggleVisibility}"
             AutomationId="HiddenCustomFieldShowValueButton" />
         <controls:IconButton
             StyleClass="box-row-button, box-row-button-platform"
@@ -88,7 +88,7 @@
             Grid.Column="2"
             Grid.RowSpan="2"
             AutomationProperties.IsInAccessibleTree="True"
-            AutomationProperties.Name="{u:I18n Copy}" />
+            SemanticProperties.Description="{u:I18n Copy}" />
         <controls:IconButton 
             StyleClass="box-row-button, box-row-button-platform"
             Text="{Binding Source={x:Static core:BitwardenIcons.Cog}}"
@@ -98,7 +98,7 @@
             Grid.Column="2"
             Grid.RowSpan="2"
             AutomationProperties.IsInAccessibleTree="True"
-            AutomationProperties.Name="{u:I18n Options}" />
+            SemanticProperties.Description="{u:I18n Options}" />
     </Grid>
     <BoxView StyleClass="box-row-separator" IsVisible="{Binding IsEditing, Mode=OneWay, Converter={StaticResource inverseBool}}" />
 </StackLayout>

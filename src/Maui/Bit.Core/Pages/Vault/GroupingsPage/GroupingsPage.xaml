@@ -25,11 +25,11 @@
             Priority="-1"
             UseOriginalImage="True"
             AutomationProperties.IsInAccessibleTree="True"
-            AutomationProperties.Name="{u:I18n Account}"
+            SemanticProperties.Description="{u:I18n Account}"
             AutomationId="AccountIconButton" />
         <ToolbarItem IconImageSource="search.png" Clicked="Search_Clicked"
                      AutomationProperties.IsInAccessibleTree="True"
-                     AutomationProperties.Name="{u:I18n Search}" />
+                     SemanticProperties.Description="{u:I18n Search}" />
     </ContentPage.ToolbarItems>
 
     <ContentPage.Resources>
@@ -45,7 +45,7 @@
             <ToolbarItem x:Name="_addItem" x:Key="addItem" IconImageSource="plus.png"
                          Clicked="AddButton_Clicked" Order="Primary"
                          AutomationProperties.IsInAccessibleTree="True"
-                         AutomationProperties.Name="{u:I18n AddItem}" />
+                         SemanticProperties.Description="{u:I18n AddItem}" />
 
             <DataTemplate x:Key="cipherTemplate"
                           x:DataType="pages:GroupingsPageListItem">
@@ -136,7 +136,7 @@
                         VerticalOptions="Center"
                         HorizontalOptions="StartAndExpand"
                         AutomationProperties.IsInAccessibleTree="True"
-                        AutomationProperties.Name="{u:I18n Filter}" />
+                        SemanticProperties.Description="{u:I18n Filter}" />
                     <controls:MiButton
                         Text="{Binding Source={x:Static core:BitwardenIcons.ViewCellMenu}}"
                         StyleClass="list-row-button-text, list-row-button-platform"
@@ -144,7 +144,7 @@
                         VerticalOptions="Center"
                         HorizontalOptions="End"
                         AutomationProperties.IsInAccessibleTree="True"
-                        AutomationProperties.Name="{u:I18n Filter}" />
+                        SemanticProperties.Description="{u:I18n Filter}" />
                 </StackLayout>
                 <StackLayout
                     VerticalOptions="CenterAndExpand"
@@ -197,7 +197,7 @@
             AbsoluteLayout.LayoutFlags="PositionProportional"
             AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize"
             AutomationProperties.IsInAccessibleTree="True"
-            AutomationProperties.Name="{u:I18n AddItem}">
+            SemanticProperties.Description="{u:I18n AddItem}">
             <Button.Effects>
                 <effects:FabShadowEffect />
             </Button.Effects>

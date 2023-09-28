@@ -33,7 +33,7 @@ namespace Bit.App.Lists.ItemViewModels.CustomFields
             ToggleHiddenValueCommand = new AsyncCommand(ToggleHiddenValueAsync, ex =>
             {
 #if !FDROID
-                Microsoft.AppCenter.Crashes.Crashes.TrackError(ex);
+                // Microsoft.AppCenter.Crashes.Crashes.TrackError(ex);
 #endif
             });
         }

@@ -36,7 +36,7 @@
                      x:Key="historyItem" />
             <ToolbarItem IconImageSource="more_vert.png"
                          AutomationProperties.IsInAccessibleTree="True"
-                         AutomationProperties.Name="{u:I18n Options}"
+                         SemanticProperties.Description="{u:I18n Options}"
                          Clicked="More_Clicked"
                          x:Name="_moreItem"
                          x:Key="moreItem" />
@@ -91,7 +91,7 @@
                         Command="{Binding CopyCommand}"
                         Grid.Column="1"
                         AutomationProperties.IsInAccessibleTree="True"
-                        AutomationProperties.Name="{u:I18n CopyPassword}"
+                        SemanticProperties.Description="{u:I18n CopyPassword}"
                         AutomationId="CopyValueButton" />
                     <controls:IconButton 
                         StyleClass="box-row-button, box-row-button-platform"
@@ -99,7 +99,7 @@
                         Command="{Binding RegenerateCommand}"
                         Grid.Column="2"
                         AutomationProperties.IsInAccessibleTree="True"
-                        AutomationProperties.Name="{u:I18n GeneratePassword}"
+                        SemanticProperties.Description="{u:I18n GeneratePassword}"
                         AutomationId="RegenerateValueButton" />
                 </Grid>
                 <Grid IsVisible="{Binding IsUsername}"
@@ -119,7 +119,7 @@
                         Command="{Binding CopyCommand}"
                         Grid.Column="1"
                         AutomationProperties.IsInAccessibleTree="True"
-                        AutomationProperties.Name="{u:I18n CopyUsername}"
+                        SemanticProperties.Description="{u:I18n CopyUsername}"
                         AutomationId="CopyValueButton" />
                     <controls:IconButton 
                         StyleClass="box-row-button, box-row-button-platform"
@@ -127,7 +127,7 @@
                         Command="{Binding RegenerateUsernameCommand}"
                         Grid.Column="2"
                         AutomationProperties.IsInAccessibleTree="True"
-                        AutomationProperties.Name="{u:I18n GenerateUsername}"
+                        SemanticProperties.Description="{u:I18n GenerateUsername}"
                         AutomationId="RegenerateValueButton" />
                 </Grid>
                 <BoxView StyleClass="box-row-separator"/>
@@ -161,7 +161,7 @@
                             Command="{Binding UsernameTypePromptHelpCommand}"
                             TextColor="{DynamicResource HyperlinkColor}"
                             AutomationProperties.IsInAccessibleTree="True"
-                            AutomationProperties.Name="{u:I18n UsernamePromptHelpLink}"
+                            SemanticProperties.Description="{u:I18n UsernamePromptHelpLink}"
                             VerticalOptions="Center"/>
                     </StackLayout>
                     <Picker
@@ -419,7 +419,7 @@
                                 StyleClass="box-label-regular"
                                 HorizontalOptions="StartAndExpand" 
                                 AutomationProperties.IsInAccessibleTree="True"
-                                AutomationProperties.Name="{u:I18n UppercaseAtoZ}"/>
+                                SemanticProperties.Description="{u:I18n UppercaseAtoZ}"/>
                             <Switch
                                 IsToggled="{Binding Uppercase}"
                                 IsEnabled="{Binding EnforcedPolicyOptions.UseUppercase,
@@ -427,7 +427,7 @@
                                 StyleClass="box-value"
                                 HorizontalOptions="End" 
                                 AutomationProperties.IsInAccessibleTree="True"
-                                AutomationProperties.Name="{u:I18n UppercaseAtoZ}"
+                                SemanticProperties.Description="{u:I18n UppercaseAtoZ}"
                                 AutomationId="UppercaseAtoZToggle" />
                         </StackLayout>
                         <BoxView StyleClass="box-row-separator" />
@@ -437,7 +437,7 @@
                                 StyleClass="box-label-regular"
                                 HorizontalOptions="StartAndExpand" 
                                 AutomationProperties.IsInAccessibleTree="True"
-                                AutomationProperties.Name="{u:I18n LowercaseAtoZ}"/>
+                                SemanticProperties.Description="{u:I18n LowercaseAtoZ}"/>
                             <Switch
                                 IsToggled="{Binding Lowercase}"
                                 IsEnabled="{Binding EnforcedPolicyOptions.UseLowercase,
@@ -445,7 +445,7 @@
                                 StyleClass="box-value"
                                 HorizontalOptions="End"
                                 AutomationProperties.IsInAccessibleTree="True"
-                                AutomationProperties.Name="{u:I18n LowercaseAtoZ}"
+                                SemanticProperties.Description="{u:I18n LowercaseAtoZ}"
                                 AutomationId="LowercaseAtoZToggle" />
                         </StackLayout>
                         <BoxView StyleClass="box-row-separator" />
@@ -455,7 +455,7 @@
                                 StyleClass="box-label-regular"
                                 HorizontalOptions="StartAndExpand" 
                                 AutomationProperties.IsInAccessibleTree="True"
-                                AutomationProperties.Name="{u:I18n NumbersZeroToNine}"/>
+                                SemanticProperties.Description="{u:I18n NumbersZeroToNine}"/>
                             <Switch
                                 IsToggled="{Binding Number}"
                                 IsEnabled="{Binding EnforcedPolicyOptions.UseNumbers,
@@ -463,7 +463,7 @@
                                 StyleClass="box-value"
                                 HorizontalOptions="End" 
                                 AutomationProperties.IsInAccessibleTree="True"
-                                AutomationProperties.Name="{u:I18n NumbersZeroToNine}"
+                                SemanticProperties.Description="{u:I18n NumbersZeroToNine}"
                                 AutomationId="NumbersZeroToNineToggle" />
                         </StackLayout>
                         <BoxView StyleClass="box-row-separator" />
@@ -473,7 +473,7 @@
                                 StyleClass="box-label-regular"
                                 HorizontalOptions="StartAndExpand" 
                                 AutomationProperties.IsInAccessibleTree="True"
-                                AutomationProperties.Name="{u:I18n SpecialCharacters}"/>
+                                SemanticProperties.Description="{u:I18n SpecialCharacters}"/>
                             <Switch
                                 IsToggled="{Binding Special}"
                                 IsEnabled="{Binding EnforcedPolicyOptions.UseSpecial,
@@ -481,7 +481,7 @@
                                 StyleClass="box-value"
                                 HorizontalOptions="End"
                                 AutomationProperties.IsInAccessibleTree="True"
-                                AutomationProperties.Name="{u:I18n SpecialCharacters}"
+                                SemanticProperties.Description="{u:I18n SpecialCharacters}"
                                 AutomationId="SpecialCharactersToggle" />
                         </StackLayout>
                         <BoxView StyleClass="box-row-separator" />

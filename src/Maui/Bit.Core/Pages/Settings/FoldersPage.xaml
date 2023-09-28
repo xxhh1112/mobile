@@ -24,7 +24,7 @@
             <ToolbarItem x:Name="_addItem" x:Key="addItem" IconImageSource="plus.png"
                          Clicked="AddButton_Clicked" Order="Primary"
                          AutomationProperties.IsInAccessibleTree="True"
-                         AutomationProperties.Name="{u:I18n AddItem}" />
+                         SemanticProperties.Description="{u:I18n AddItem}" />
             <StackLayout x:Name="_mainLayout" x:Key="mainLayout">
                 <Label IsVisible="{Binding ShowNoData}"
                        Text="{u:I18n NoFoldersToList}"
@@ -76,7 +76,7 @@
             AbsoluteLayout.LayoutFlags="PositionProportional"
             AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize"
             AutomationProperties.IsInAccessibleTree="True"
-            AutomationProperties.Name="{u:I18n AddFolder}">
+            SemanticProperties.Description="{u:I18n AddFolder}">
             <Button.Effects>
                 <effects:FabShadowEffect />
             </Button.Effects>

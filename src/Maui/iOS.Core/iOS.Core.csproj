@@ -1,9 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net7.0-ios;net7.0-android</TargetFrameworks>
+    <TargetFrameworks>net8.0-ios;net8.0-android</TargetFrameworks>
     <Nullable>enable</Nullable>
     <UseMaui>true</UseMaui>
     <ImplicitUsings>true</ImplicitUsings>
+
+    <ForceSimulatorX64ArchitectureInIDE>true</ForceSimulatorX64ArchitectureInIDE>
 
     <!--<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>-->
     <RootNamespace>Bit.iOS.Core</RootNamespace>
@@ -14,7 +16,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <CreatePackage>false</CreatePackage>
   </PropertyGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'net7.0-android'">
+  <ItemGroup Condition="'$(TargetFramework)' == 'net8.0-android'">
     <Content Remove="**" />
     <Compile Remove="**" />
     <EmbeddedResource Remove="**" />

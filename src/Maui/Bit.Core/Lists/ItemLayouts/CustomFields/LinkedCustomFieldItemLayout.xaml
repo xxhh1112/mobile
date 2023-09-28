@@ -58,7 +58,7 @@
             Grid.Column="1"
             Grid.RowSpan="2"
             AutomationProperties.IsInAccessibleTree="True"
-            AutomationProperties.Name="{u:I18n Options}"
+            SemanticProperties.Description="{u:I18n Options}"
             AutomationId="LinkedCustomFieldOptionsButton" />
     </Grid>
     <BoxView StyleClass="box-row-separator" IsVisible="{Binding IsEditing, Mode=OneWay, Converter={StaticResource inverseBool}}" />
