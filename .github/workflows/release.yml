@@ -42,7 +42,7 @@ jobs:
 
       - name: Check Release Version
         id: version
-        uses: bitwarden/gh-actions/release-version-check@4a7ddc1b38ca5cb4e3e43578f4df5cabe4f55a67
+        uses: bitwarden/gh-actions/release-version-check@ba6a77541fa0732735408d10f3ca1e122221201d
         with:
           release-type: ${{ github.event.inputs.release_type }}
           project-type: xamarin
